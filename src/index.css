@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 🌞 Enhanced Light Theme */
+    --background: 160 50% 98%;         /* Soft teal-white: #f5fffc */
+    --foreground: 170 20% 15%;         /* Rich dark teal-gray: #1e302a */
+
+    --card: 0 0% 100%;                 /* Pure white cards */
+    --card-foreground: 170 20% 15%;    /* Match foreground */
+
+    --popover: 160 40% 96%;            /* Light teal-gray popover */
+    --popover-foreground: 170 20% 15%;
+
+    --primary: 160 100% 40%;           /* Vibrant teal primary: #00cc99 */
+    --primary-foreground: 0 0% 100%;   /* White text on primary */
+
+    --secondary: 160 40% 94%;          /* Light teal secondary */
+    --secondary-foreground: 170 20% 15%;
+
+    --muted: 160 30% 92%;              /* Subtle teal-gray */
+    --muted-foreground: 170 10% 40%;   /* Readable muted text */
+
+    --accent: 160 100% 96%;            /* Soft teal accent */
+    --accent-foreground: 170 20% 15%;
+
+    --destructive: 0 84.2% 60.2%;      /* Red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 160 20% 85%;             /* Subtle teal-gray border */
+    --input: 160 20% 85%;
+    --ring: 160 100% 50%;              /* Vibrant teal ring */
+
+    --radius: 0.5rem;                  /* Standard Border Radius */
+  }
+
+
+  .dark {
+    /* 🌚 Enhanced Dark Mode */
+    --background: 170 15% 4%;          /* Deep dark teal background */
+    --foreground: 0 0% 95%;            /* Bright text */
+
+    --card: 170 15% 8%;                /* Slightly lighter card background */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 170 15% 6%;             /* Dark popover */
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 160 90% 40%;            /* Vibrant teal: #00cc99 */
+    --primary-foreground: 0 0% 0%;     /* Black text on primary */
+
+    --secondary: 160 80% 50%;          /* Lighter teal secondary */
+    --secondary-foreground: 0 0% 0%;   /* Black text on secondary */
+
+    --muted: 170 10% 15%;              /* Subtle dark teal-gray */
+    --muted-foreground: 170 5% 65%;    /* Readable muted text */
+
+    --accent: 160 90% 40%;             /* Teal accent */
+    --accent-foreground: 0 0% 0%;      /* Black text on accent */
+
+    --destructive: 0 62.8% 30.6%;      /* Dark red */
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 160 70% 30%;             /* Teal border */
+    --input: 160 70% 30%;
+    --ring: 160 90% 40%;               /* Teal ring */
+    
+    /* Updated sidebar variables to match new color scheme */
+    --sidebar-background: 170 15% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 160 90% 40%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 160 90% 40%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 160 70% 30%;
+    --sidebar-ring: 160 90% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(0, 204, 153, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 204, 153, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(0, 204, 153, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: subtle-pulse 15s ease-in-out infinite alternate;
+  }
+
+  .dark body::before {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(0, 204, 153, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 204, 153, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(0, 204, 153, 0.08) 0%, transparent 70%);
+    animation: subtle-pulse-dark 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes subtle-pulse {
+    0% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes subtle-pulse-dark {
+    0% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 204, 153, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 204, 153, 0.05) 1px, transparent 1px);
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(0, 204, 153, 0.08) 0%, transparent 60%);
+  z-index: 0;
+  animation: subtle-float 20s ease-in-out infinite alternate;
+}
+
+.dark .grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 204, 153, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 204, 153, 0.08) 1px, transparent 1px);
+}
+
+.dark .grid-pattern::before {
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(0, 204, 153, 0.12) 0%, transparent 60%);
+  animation: subtle-float-dark 20s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
+
+@keyframes subtle-float-dark {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
+
+@layer components {
+  .tech-card {
+    @apply relative overflow-hidden rounded-lg border bg-card p-6 text-card-foreground shadow-md transition-all duration-500;
+    transform: translateZ(0);
+  }
+
+  .tech-card:hover {
+    @apply shadow-xl;
+    transform: translateY(-5px);
+  }
+
+  .loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Light theme card gradient */
+  .tech-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-image: linear-gradient(
+      to right,
+      hsl(160, 100%, 40%),
+      hsl(160, 100%, 50%),
+      hsl(160, 100%, 40%)
+    );
+    transition: height 0.3s ease;
+  }
+
+  /* Dark theme card gradient */
+  .dark .tech-card::after {
+    background-image: linear-gradient(
+      to right,
+      hsl(160, 90%, 40%),
+      hsl(160, 90%, 50%),
+      hsl(160, 90%, 40%)
+    );
+  }
+
+  .tech-card:hover::after {
+    height: 6px;
+  }
+
+  /* Light theme hero gradient */
+  .hero-gradient {
+    background: linear-gradient(
+      to bottom right,
+      hsl(160, 100%, 40%) 0%,
+      hsl(160, 100%, 60%) 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Dark theme hero gradient */
+  .dark .hero-gradient {
+    background: linear-gradient(
+      to bottom right,
+      hsl(160, 90%, 40%) 0%,
+      hsl(160, 90%, 50%) 100%
+    );
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    animation: hero-pulse 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes hero-pulse {
+    0% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+  }
+
+  .animated-gradient-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Light theme animated border */
+  .animated-gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-image: linear-gradient(
+      to right,
+      hsl(160, 100%, 40%),
+      hsl(160, 100%, 60%),
+      hsl(160, 100%, 40%)
+    );
+    animation: gradient-x 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Dark theme animated border */
+  .dark .animated-gradient-border::before {
+    background-image: linear-gradient(
+      to right,
+      hsl(160, 90%, 40%),
+      hsl(160, 90%, 50%),
+      hsl(160, 90%, 40%)
+    );
+  }
+
+  @keyframes gradient-x {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Add smooth transitions for theme switching */
+  *, *::before, *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+}
