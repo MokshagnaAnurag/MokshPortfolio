@@ -72,7 +72,7 @@ const AboutMe = () => {
             <div className="text-center mb-16">
               <div className="mx-auto mb-6 h-24 w-24 rounded-full overflow-hidden border-4 border-primary shadow-md">
                 <img
-                  src="/lovable-uploads/2ababfc8-b745-4dfc-8090-286e082497d7.png"
+                  src="/pictures/Image.jpeg"
                   alt="Kankati Mokshagna Anurag"
                   className="object-cover w-full h-full"
                 />
@@ -81,7 +81,7 @@ const AboutMe = () => {
                 About Me
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Electronics and Communication Engineering student passionate about Cybersecurity, IoT, Embedded Systems, Robotics and AI/ML.
+                
               </p>
               {/* Social Links */}
               <div className="flex justify-center mt-6 space-x-4">
@@ -106,7 +106,7 @@ const AboutMe = () => {
                 <div className="w-full md:w-1/3 flex justify-center">
                   <div className="relative w-64 h-64 rounded-xl overflow-hidden border shadow-md">
                     <img
-                      src="/lovable-uploads/2ababfc8-b745-4dfc-8090-286e082497d7.png"
+                      src="/pictures/Image.jpeg"
                       alt="Kankati Mokshagna Anurag"
                       className="object-cover w-full h-full"
                     />
@@ -131,15 +131,7 @@ const AboutMe = () => {
                     <p>
                       I actively contribute to open-source projects like <strong>Voice AI Telugu</strong> and <strong>OpenStreetMap</strong>. I'm also a volunteer at <strong>SwechaAP</strong>, <strong>MVGR GLUG</strong>, and the <strong>National Service Scheme (NSS)</strong>, promoting community-driven technology through workshops and awareness programs.
                     </p>
-                    <p><strong>Some of my achievements include:</strong></p>
-                    <ul className="list-disc pl-5">
-                      <li>🏆 Winner – <strong>Cyber Secured Champion Competition</strong> (500+ participants)</li>
-                      <li>🥈 2nd Place – <strong>AVISHKAR Season-2 Hackathon</strong> (₹1 Lakh prize)</li>
-                      <li>🎯 <strong>Top 6 Rank</strong> – Embedded Scholarship Exam by SENSE Academia</li>
-                      <li>🚁 Presented drone-based innovations at <strong>Andhra Pradesh Hackathon on Drones</strong></li>
-                      <li>🏅 <strong>Top 10 Finalist</strong> – Serve Smart Hackathon by IIT BHU</li>
-                      <li>🎖️ Finalist – <strong>Hack IITK</strong> by IIT Kanpur's C3i Hub</li>
-                    </ul>
+                  
                     <p>
                       I’m currently pursuing a <strong>B.Tech in Electronics and Communication Engineering</strong> at <strong>MVGR College of Engineering</strong> and completed my Class 12 (PCM) at <strong>Apex Junior College</strong>.
                     </p>

@@ -80,6 +80,34 @@ const achievements = [
     tags: ["IoT", "Arduino", "NodeMCU", "LIDAR", "Cloud", "Open Source"],
     category: "teaching",
     status: "completed"
+  },
+  {
+    id: 6,
+    title: "STAR-PNT Summer Internship Program 2025 (IIT Tirupati Navavishkar I-Hub Foundation)",
+    date: "July 2025",
+    description:
+      "Selected for the prestigious STAR-PNT Summer Internship 2025 by IIT Tirupati Navavishkar I-Hub Foundation (DST, NM-ICPS) for my OCR-based solution to extract alphanumeric data from cadastral maps. Received a Merit Grade of 'Excellent' and will intern under Dr. Surya Prasad Potnuru (MVGR ECE) to work on real-world Remote Sensing, GNSS, and Computer Vision challenges.",
+    icon: <Award className="h-6 w-6 text-blue-500" />,
+    driveLink: "https://media.licdn.com/dms/image/v2/D5622AQF7P5IcHEUvQw/feedshare-shrink_1280/B56ZgmtzwBHUAk-/0/1752996200476?e=1756339200&v=beta&t=6F9uWwu7oxpt5Q8WYob4KYgHdsJOv8_pSnpFE147d14",
+    backgroundImage: "url('https://media.licdn.com/dms/image/v2/D5622AQF7P5IcHEUvQw/feedshare-shrink_1280/B56ZgmtzwBHUAk-/0/1752996200476?e=1756339200&v=beta&t=6F9uWwu7oxpt5Q8WYob4KYgHdsJOv8_pSnpFE147d14')",
+    tag: "Remote Sensing & Research",
+    tags: ["STARInternship", "IITTNiF", "IITtirupati", "PNT", "RemoteSensing", "OCR", "GeospatialTech", "GNSS", "ComputerVision", "Research", "ECE", "MVGR", "Innovation", "CadastralMaps", "SummerInternship", "NMICPS"],
+    category: "competition",
+    status: "completed"
+  },
+  {
+    id: 7,
+    title: "Top 100 Teams - Odoo Hackathon 2025 Finalist",
+    date: "2025",
+    description:
+      "Selected as one of the top 100 teams out of 150,000+ applications for the Odoo Hackathon 2025 finals, recognizing our innovation and technical excellence among global participants.",
+    icon: <Award className="h-6 w-6 text-indigo-500" />,
+    driveLink: "https://www.odoo.com/event/odoo-hackathon-2025-1234/page/overview", // Replace with actual event link if available
+    backgroundImage: "url('https://s3-eu-west-1.amazonaws.com/tpd/logos/56b202fa0000ff000588733a/0x0.png')",
+    tag: "Hackathon Finalist",
+    tags: ["Odoo", "Hackathon", "Top100", "Innovation", "2025"],
+    category: "hackathon",
+    status: "completed"
   }
 ];
 
@@ -139,7 +167,21 @@ const certifications = [
   tags: ["Industry 4.0", "IIoT", "Smart Manufacturing", "Cyber-Physical Systems"],
   category: "certification",
   status: "completed"
-}
+},
+  {
+    id: 5,
+    title: "Introduction To Industry 4.0 And Industrial Internet Of Things",
+    date: "May 2025",
+    description:
+      "Completed the NPTEL course on Introduction to Industry 4.0 and Industrial Internet of Things. Credential ID: NPTEL25CS43S660400772.",
+    icon: <GraduationCap className="h-6 w-6 text-blue-500" />,
+    driveLink: "https://nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS43S660400772", // Replace with actual certificate link if available
+    backgroundImage: "url('https://nptel.ac.in/assets/images/nptel-logo.png')", // Use NPTEL logo or course image if available
+    tag: "Industry 4.0 & IIoT",
+    tags: ["Industry 4.0", "IIoT", "NPTEL", "Smart Manufacturing", "Credential ID: NPTEL25CS43S660400772"],
+    category: "certification",
+    status: "completed"
+  }
 
 ];
 

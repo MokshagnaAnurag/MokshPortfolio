@@ -108,6 +108,28 @@
           links: {
             github: "https://github.com/MokshagnaAnurag/SEMANTIC-SEGMENTATION-IN-AUTONOMOUS-VEHICLES.git",
           }
+        },
+        {
+          id: 9,
+          title: "Map Text Extractor (OCR)",
+          description: "A Python tool for extracting region numbers and place names from topographic maps using OCR. Features multi-stage image processing, CSV export, and visualizations for detected text.",
+          category: "Computer Vision",
+          image: "https://raw.githubusercontent.com/MokshagnaAnurag/OCR/main/extraction_results.jpg", // Use project visualization if available
+          tags: ["Python", "OpenCV", "EasyOCR", "Image Processing", "CSV"],
+          links: {
+            github: "https://github.com/MokshagnaAnurag/OCR.git"
+          }
+        },
+        {
+          id: 10,
+          title: "AMR (Autonomous Mobile Robot) Package",
+          description: "A professional-grade ROS2 package for an Autonomous Mobile Robot, designed in Fusion 360 & SolidWorks. Features 4WD, integrated LiDAR, full URDF, Gazebo simulation, and modular CAD design.",
+          category: "Robotics",
+          image: "https://raw.githubusercontent.com/MokshagnaAnurag/amr_urdf/main/images/complete_robot.png", // Use robot assembly image if available
+          tags: ["ROS2", "Gazebo", "Fusion 360", "SolidWorks", "URDF", "LiDAR", "Robotics"],
+          links: {
+            github: "https://github.com/MokshagnaAnurag/amr_urdf.git"
+          }
         }
         
     ];

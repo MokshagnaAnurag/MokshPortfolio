@@ -50,29 +50,62 @@ const Experience = () => {
   };
 
   const experienceItems = [
-     {
-    title: "Freelance Developer",
-    company: "Fiverr",
-    location: "Remote",
-    period: "June 2025 - Present",
-    type: "Remote",
-    description: "Providing freelance technical services including software development, debugging, and tech consultation for clients worldwide via the Fiverr platform.",
-    responsibilities: [
-      "Delivered tailored coding solutions to client-specific problems",
-      "Provided consultation and troubleshooting for web and software projects",
-      "Maintained clear communication with clients to understand and meet project requirements",
-      "Managed project timelines and expectations as an independent contractor"
-    ],
-    skills: ["Freelancing", "Client Communication", "Web Development", "Debugging", "Consulting"],
-    logo: "https://th.bing.com/th/id/OIP.DU-CEn_a5oYN4lobC2wgfwHaHa?r=0&rs=1&pid=ImgDetMain",
-    category: "freelance",
-    status: "current"
-  },
+    {
+      title: "Project Intern",
+      company: "CS^3: Cloud & Smart System Services Lab",
+      location: "Mangaluru, Karnataka, India · Remote",
+      period: "Jul 2025 - Present",
+      type: "Remote",
+      description: "As an extension of the LEAD (Learning-Enabled Autonomous Driving) project, this phase focuses on advancing the prototype autonomous vehicle system within an IoV (Internet of Vehicles) framework.",
+      responsibilities: [
+        "Enhancing intelligent lane detection and obstacle handling capabilities through onboard learning algorithms.",
+        "Implementing real-time trajectory mapping using sensor fusion (RP LIDAR, camera) and localization techniques in ROS 2.",
+        "Integrating V2I (Vehicle-to-Infrastructure) communication for dynamic route updates and cooperative driving scenarios.",
+        "Working with NAV2, SLAM Toolbox, and custom planning strategies to ensure robust navigation in diverse environments.",
+        "Under the guidance of: Dr. Sourav Kanti Addya (Supervisor), Mr. Rajeev K K (PhD Scholar)"
+      ],
+      skills: ["IoV", "ROS 2", "Sensor Fusion", "Autonomous Vehicles", "SLAM", "V2I Communication"],
+      logo: "https://media.licdn.com/dms/image/v2/D560BAQEnThuLlVzTKA/company-logo_200_200/company-logo_200_200/0/1724931797603/cs3_csss_logo?e=1756339200&v=beta&t=ThdQuZRBP6yB7Da9xD-01h7ijoKiTMVVHJvDreRzEo8",
+      category: "research",
+      status: "current"
+    },
+    {
+      title: "Intern",
+      company: "Aerostem Technology Pvt Ltd",
+      location: "Mehsana, Gujarat, India · Remote",
+      period: "Jul 2025 - Present",
+      type: "Remote",
+      description: "Internship at Aerostem Technology Pvt Ltd, contributing to technology and engineering projects.",
+      responsibilities: [
+        "Participating in remote engineering and technology projects.",
+        "Collaborating with teams to deliver project milestones."
+      ],
+      skills: ["Engineering", "Remote Collaboration", "Technology Projects"],
+      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGOWdDhRwCoUg/company-logo_200_200/B4DZfraAhKH4AQ-/0/1752001154848?e=1756339200&v=beta&t=Ice0mHqbwYUGPhdaDYgN1xNCUBLDnu-NJabHQE5Fg4w",
+      category: "engineering",
+      status: "current"
+    },
+    {
+      title: "Project Intern",
+      company: "IIT Tirupati Navavishkar I-Hub Foundation",
+      location: "Tirupati, Andhra Pradesh, India · Hybrid",
+      period: "Jun 2025 - Present",
+      type: "Hybrid",
+      description: "Project Intern at IIT Tirupati Navavishkar I-Hub Foundation, working on innovation and research in positioning and precision technology.",
+      responsibilities: [
+        "Contributing to research and development in positioning and precision technology.",
+        "Collaborating with interdisciplinary teams in a hybrid work environment."
+      ],
+      skills: ["Research", "Innovation", "Positioning Technology", "Precision Technology"],
+      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQEE1s7P_-Nw0Q/company-logo_200_200/company-logo_200_200/0/1674016650862/iittnif_logo?e=1756339200&v=beta&t=Z6XTAc9YRh9HVx8NPw-WZFKXYjVgcn15L_RVWzBe-54",
+      category: "research",
+      status: "current"
+    },
     {
       title: "Summer Research Intern",
       company: "National Institute of Technology Karnataka",
       location: "Surathkal, Mangaluru, Karnataka, India",
-      period: "May 2025 - Present",
+      period: "May 2025 - Jul 2025",
       type: "Onsite",
       description: "Working on cutting-edge Internet of Vehicles (IoV) research, contributing to the future of connected transportation systems.",
       responsibilities: [
@@ -84,7 +117,7 @@ const Experience = () => {
       skills: ["IoT", "Research", "V2X", "Networking"],
       logo: "https://media.licdn.com/dms/image/v2/C560BAQELOxKVJQ1O1Q/company-logo_100_100/company-logo_100_100/0/1630582637661/national_institute_of_technology_karnataka_logo?e=1753920000&v=beta&t=yvoigf0eBFqB6PUzBPo6f1xfoRxGpWbCwg61g7BTysk",
       category: "research",
-      status: "current"
+      status: "completed"
     },
     {
       title: "Academic Research Intern",
