@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -37,6 +37,7 @@ const Home = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
   const typedName = useTypingEffect(" Hello, I'm Kankati Mokshagna Anurag", 100);
+  const navigate = useNavigate();
 
   // Scroll animation for "animate-on-scroll" elements
   useEffect(() => {
@@ -236,7 +237,11 @@ const Home = () => {
           </div>
 
           <div className="mt-16 text-center animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 border-none">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 border-none"
+              onClick={() => navigate('/projects')}
+            >
               Explore My Projects <ArrowRight size={16} className="ml-2" />
             </Button>
           </div>
