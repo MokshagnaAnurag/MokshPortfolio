@@ -36,7 +36,7 @@ const useTypingEffect = (text: string, speed: number = 50) => {
 const Home = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
-  const typedName = useTypingEffect("H Hello, I'm Kankati Mokshagna Anurag", 100);
+  const typedName = useTypingEffect("  Hello, I'm Kankati Mokshagna Anurag", 100);
   const navigate = useNavigate();
 
   // Scroll animation for "animate-on-scroll" elements
