@@ -97,35 +97,34 @@ const Navbar = () => {
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
+            {/* Fluid Circular Menu for Mobile - now inside navbar */}
+            <div className="lg:hidden ml-2">
+              <MenuContainer>
+                <MenuItem
+                  icon={
+                    <div className="relative w-6 h-6">
+                      <div className="absolute inset-0 transition-all duration-300 ease-in-out origin-center opacity-100 scale-100 rotate-0 [div[data-expanded=true]_&]:opacity-0 [div[data-expanded=true]_&]:scale-0 [div[data-expanded=true]_&]:rotate-180">
+                        <MenuIcon size={24} strokeWidth={1.5} />
+                      </div>
+                      <div className="absolute inset-0 transition-all duration-300 ease-in-out origin-center opacity-0 scale-0 -rotate-180 [div[data-expanded=true]_&]:opacity-100 [div[data-expanded=true]_&]:scale-100 [div[data-expanded=true]_&]:rotate-0">
+                        <X size={24} strokeWidth={1.5} />
+                      </div>
+                    </div>
+                  }
+                />
+                <MenuItem icon={<Home size={24} strokeWidth={1.5} />} onClick={() => navigate("/")} />
+                <MenuItem icon={<UserIcon size={24} strokeWidth={1.5} />} onClick={() => navigate("/about")} />
+                <MenuItem icon={<Briefcase size={24} strokeWidth={1.5} />} onClick={() => navigate("/experience")} />
+                <MenuItem icon={<GraduationCap size={24} strokeWidth={1.5} />} onClick={() => navigate("/education")} />
+                <MenuItem icon={<Code size={24} strokeWidth={1.5} />} onClick={() => navigate("/skills")} />
+                <MenuItem icon={<Folder size={24} strokeWidth={1.5} />} onClick={() => navigate("/projects")} />
+                <MenuItem icon={<Award size={24} strokeWidth={1.5} />} onClick={() => navigate("/achievements")} />
+                <MenuItem icon={<Mail size={24} strokeWidth={1.5} />} onClick={() => navigate("/contact")} />
+              </MenuContainer>
+            </div>
           </div>
         </div>
       </nav>
-
-      {/* Fluid Circular Menu for Mobile */}
-      <div className="lg:hidden fixed bottom-6 right-6 z-50">
-        <MenuContainer>
-          <MenuItem
-            icon={
-              <div className="relative w-6 h-6">
-                <div className="absolute inset-0 transition-all duration-300 ease-in-out origin-center opacity-100 scale-100 rotate-0 [div[data-expanded=true]_&]:opacity-0 [div[data-expanded=true]_&]:scale-0 [div[data-expanded=true]_&]:rotate-180">
-                  <MenuIcon size={24} strokeWidth={1.5} />
-                </div>
-                <div className="absolute inset-0 transition-all duration-300 ease-in-out origin-center opacity-0 scale-0 -rotate-180 [div[data-expanded=true]_&]:opacity-100 [div[data-expanded=true]_&]:scale-100 [div[data-expanded=true]_&]:rotate-0">
-                  <X size={24} strokeWidth={1.5} />
-                </div>
-              </div>
-            }
-          />
-          <MenuItem icon={<Home size={24} strokeWidth={1.5} />} onClick={() => navigate("/")} />
-          <MenuItem icon={<UserIcon size={24} strokeWidth={1.5} />} onClick={() => navigate("/about")} />
-          <MenuItem icon={<Briefcase size={24} strokeWidth={1.5} />} onClick={() => navigate("/experience")} />
-          <MenuItem icon={<GraduationCap size={24} strokeWidth={1.5} />} onClick={() => navigate("/education")} />
-          <MenuItem icon={<Code size={24} strokeWidth={1.5} />} onClick={() => navigate("/skills")} />
-          <MenuItem icon={<Folder size={24} strokeWidth={1.5} />} onClick={() => navigate("/projects")} />
-          <MenuItem icon={<Award size={24} strokeWidth={1.5} />} onClick={() => navigate("/achievements")} />
-          <MenuItem icon={<Mail size={24} strokeWidth={1.5} />} onClick={() => navigate("/contact")} />
-        </MenuContainer>
-      </div>
     </div>
   );
 };
