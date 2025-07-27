@@ -150,7 +150,7 @@ const Home = () => {
                 } : {
                   borderRadius: '6px',
                 }}
-                onClick={() => window.location.href='/projects'}
+                onClick={() => window.location.href='/Projects'}
               >
                 View Projects <ArrowRight size={16} className="ml-2" />
               </Button>
