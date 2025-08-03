@@ -70,21 +70,23 @@ const Experience = () => {
       status: "current"
     },
     {
-      title: "Intern",
-      company: "Aerostem Technology Pvt Ltd",
-      location: "Mehsana, Gujarat, India · Remote",
-      period: "Jul 2025 - Present",
-      type: "Remote",
-      description: "Internship at Aerostem Technology Pvt Ltd, contributing to technology and engineering projects.",
-      responsibilities: [
-        "Participating in remote engineering and technology projects.",
-        "Collaborating with teams to deliver project milestones."
-      ],
-      skills: ["Engineering", "Remote Collaboration", "Technology Projects"],
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGOWdDhRwCoUg/company-logo_200_200/B4DZfraAhKH4AQ-/0/1752001154848?e=1756339200&v=beta&t=Ice0mHqbwYUGPhdaDYgN1xNCUBLDnu-NJabHQE5Fg4w",
-      category: "engineering",
-      status: "current"
-    },
+  "title": "Intern",
+  "company": "Daloft Aerospace Private Limited",
+  "location": "Chennai, Tamil Nadu, India · Remote",
+  "period": "Aug 2025 - Present · 1 mo",
+  "type": "Remote",
+  "description": "Internship at Daloft Aerospace Private Limited, contributing to aerospace and defense-related technology initiatives.",
+  "responsibilities": [
+    "Engaging in research and development tasks focused on aerospace technology.",
+    "Collaborating remotely with technical teams to support ongoing defense-oriented projects.",
+    "Contributing to documentation, simulations, and technical evaluations of aerospace systems."
+  ],
+  "skills": ["Aerospace Engineering", "Defense Technology", "Remote Collaboration", "Research & Development"],
+  "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQHXXyK1navx0g/company-logo_200_200/company-logo_200_200/0/1676697668638?e=1756944000&v=beta&t=sc6okNOUSsQyu6P9-04_ByV__r9Ixmj_PgHZ2Nwmdg8",
+  "category": "engineering",
+  "status": "current"
+},
+
     {
       title: "Project Intern",
       company: "IIT Tirupati Navavishkar I-Hub Foundation",
