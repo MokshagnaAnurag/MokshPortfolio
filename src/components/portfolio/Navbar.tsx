@@ -1,3 +1,6 @@
+import { RippleButton } from "@/components/ui/multi-type-ripple-buttons";
+import { BorderBeam } from "@/components/ui/border-beam";
+
 const links = [
   { href: "#work", label: "Work" },
   { href: "#experience", label: "Experience" },
@@ -21,7 +24,8 @@ export function Navbar() {
             </span>
           </a>
 
-          <div className="hidden items-center gap-1 rounded-full border border-hairline bg-background/70 px-2 py-1.5 backdrop-blur md:flex">
+          {/* Nav pill with BorderBeam */}
+          <div className="relative hidden items-center gap-1 rounded-full border border-hairline bg-background/70 px-2 py-1.5 backdrop-blur md:flex overflow-hidden">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -31,14 +35,28 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
+            <BorderBeam
+              size={80}
+              duration={8}
+              delay={0}
+              colorFrom="oklch(0.55 0.22 265)"
+              colorTo="oklch(0.53 0.25 295)"
+              borderWidth={1}
+            />
           </div>
 
-          <a
-            href="#contact"
-            className="hidden rounded-full bg-foreground px-5 py-2.5 text-sm text-background transition hover:opacity-90 md:inline-block"
+          {/* Desktop CTA — hoverborder ripple button */}
+          <RippleButton
+            variant="hoverborder"
+            hoverBorderEffectColor="oklch(0.53 0.25 295 / 0.6)"
+            hoverBorderEffectThickness="1.5px"
+            className="hidden rounded-full bg-foreground text-sm text-background md:inline-flex items-center px-5 py-2.5 font-sans text-base leading-none"
+            onClick={() => { window.location.href = "#contact"; }}
           >
             Get in touch
-          </a>
+          </RippleButton>
+
+          {/* Mobile CTA */}
           <a
             href="#contact"
             className="rounded-full bg-foreground px-4 py-2 text-xs text-background md:hidden"

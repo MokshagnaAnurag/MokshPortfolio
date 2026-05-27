@@ -27,7 +27,7 @@ export function About() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                I am an Electronics and Communication Engineering graduate from MVGR College of Engineering with strong interests in IoT, Robotics, Autonomous Systems, AI/ML, Embedded Systems, and Cybersecurity.
+                I am an Electronics and Communication Engineering graduate from MVGR College of Engineering with strong interests in IoT, Robotics, Autonomous Systems, AI/ML, Embedded Systems, and Physical AI.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
@@ -62,7 +62,7 @@ export function About() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1 w-1 rounded-full bg-accent-violet/75" />
-                    Cybersecurity & Intelligent Systems
+                    Physical AI
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1 w-1 rounded-full bg-accent-violet/75" />

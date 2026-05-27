@@ -33,3 +33,5 @@ dist-ssr
 
 # Portable git (local only)
 .git-portable/
+
+.git-portable

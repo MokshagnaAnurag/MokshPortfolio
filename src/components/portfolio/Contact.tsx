@@ -30,7 +30,7 @@ export function Contact() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.28}>
           <div className="mx-auto mt-16 max-w-4xl border-t border-hairline">
             {links.map((l) => (
               <a

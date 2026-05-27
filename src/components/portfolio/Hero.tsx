@@ -31,9 +31,23 @@ export function Hero() {
           <div className="mt-12 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-[auto_1fr] sm:gap-12">
             <div className="label-mono whitespace-nowrap pt-1">— Profile</div>
             <div>
-              <p className="text-xl text-foreground sm:text-2xl leading-snug">
-                Electronics &amp; Embedded Systems Engineer building intelligent autonomous technologies.
-              </p>
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xl text-foreground sm:text-2xl leading-snug">
+                  <span>Robotics </span>
+                  <span className="text-hairline/60">/</span>
+                  <span>Embedded Systems</span>
+                  <span className="text-hairline/60">/</span>
+                  <span>Physical AI</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground/80">
+                  <span className="rounded border border-hairline/60 bg-surface/20 px-2.5 py-1">ROS 2</span>
+                  <span className="rounded border border-hairline/60 bg-surface/20 px-2.5 py-1">SLAM</span>
+                  <span className="rounded border border-hairline/60 bg-surface/20 px-2.5 py-1">Nav2</span>
+                  <span className="rounded border border-hairline/60 bg-surface/20 px-2.5 py-1">UAV Systems</span>
+                  <span className="rounded border border-hairline/60 bg-surface/20 px-2.5 py-1">Mobile Robots</span>
+                  <span className="rounded border border-hairline/60 bg-surface/20 px-2.5 py-1">IoT</span>
+                </div>
+              </div>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
                 Focused on robotics, CubeSat subsystems, control architectures, and learning-enabled autonomy — quietly bridging physical hardware and digital reasoning with considered intent.
               </p>

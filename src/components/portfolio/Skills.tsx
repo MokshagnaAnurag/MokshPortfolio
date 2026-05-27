@@ -1,5 +1,15 @@
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  Cpu,
+  Radio,
+  Bot,
+  Satellite,
+  Activity,
+  BrainCircuit,
+} from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
+import { FeatureCard } from "@/components/ui/grid-feature-cards";
 
 const groups = [
   {
@@ -60,6 +70,71 @@ const achievements: AchievementItem[] = [
   },
 ];
 
+/* ─── Capability feature cards ───────────────────────────────────────────── */
+const capabilityFeatures = [
+  {
+    title: "Embedded Intelligence",
+    icon: Cpu,
+    description:
+      "Designing firmware and hardware integration for STM32, ESP32, RP2040 and Arduino-based systems with real-time constraints.",
+  },
+  {
+    title: "Autonomous Navigation",
+    icon: Bot,
+    description:
+      "Full-stack robotics using ROS 2, Nav2, SLAM and sensor fusion — from LIDAR mapping to autonomous path planning.",
+  },
+  {
+    title: "Wireless & IoT",
+    icon: Radio,
+    description:
+      "End-to-end IoT solutions over LoRa, Zigbee, MQTT and cloud integrations with Firebase and ThingSpeak.",
+  },
+  {
+    title: "Space & CubeSats",
+    icon: Satellite,
+    description:
+      "OBC design and integration for a 1U CubeSat — LoRaWAN telemetry, multi-sensor arrays, and RP2040-based control systems.",
+  },
+  {
+    title: "Physical AI",
+    icon: Activity,
+    description:
+      "Integrating AI models with physical actuators and sensors for real-world interaction, edge inference, and intelligent control.",
+  },
+  {
+    title: "AI / ML Applications",
+    icon: BrainCircuit,
+    description:
+      "Applying computer vision and machine learning to real-world robotics — OpenCV pipelines, voice AI (Telugu) and sensor analytics.",
+  },
+];
+
+/* ─── Animated wrapper (mirrors demo.tsx) ───────────────────────────────── */
+function AnimatedContainer({
+  className,
+  delay = 0.1,
+  children,
+}: {
+  delay?: number;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const shouldReduceMotion = useReducedMotion();
+  if (shouldReduceMotion) return <>{children}</>;
+  return (
+    <motion.div
+      initial={{ filter: "blur(4px)", translateY: -8, opacity: 0 }}
+      whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.8 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export function Skills() {
   return (
     <section id="skills" className="relative py-32 md:py-44">
@@ -79,29 +154,61 @@ export function Skills() {
           </div>
         </Reveal>
 
-        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-[2rem] border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-4">
-          {groups.map((g, i) => (
-            <Reveal key={g.title} delay={i * 0.04}>
-              <div className="h-full bg-background p-8 md:p-10">
-                <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
-                  <span>{String(i + 1).padStart(2, "0")}</span>
-                  <span className="h-px w-6 bg-foreground/15" />
+        {/* ── Capability Feature Cards (MOVED TO TOP) ───────────────────── */}
+        <div className="mt-24">
+          <AnimatedContainer className="mb-10 max-w-2xl">
+            <h3 className="font-display text-3xl tracking-tight md:text-4xl">
+              Core <span className="italic">capabilities</span>
+            </h3>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Six domains where I've shipped real work — from firmware to orbit.
+            </p>
+          </AnimatedContainer>
+
+          <AnimatedContainer
+            delay={0.3}
+            className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed border-hairline sm:grid-cols-2 md:grid-cols-3 rounded-[1.5rem] overflow-hidden"
+          >
+            {capabilityFeatures.map((feature, i) => (
+              <FeatureCard key={i} feature={feature} />
+            ))}
+          </AnimatedContainer>
+        </div>
+
+        {/* Skill groups grid (MOVED BELOW) */}
+        <div className="mt-32">
+          <Reveal>
+            <div className="mb-10 max-w-2xl">
+              <h3 className="font-display text-3xl tracking-tight md:text-4xl">
+                Technical <span className="italic">stack</span>
+              </h3>
+            </div>
+          </Reveal>
+          
+          <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-[2rem] border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-4">
+            {groups.map((g, i) => (
+              <Reveal key={g.title} delay={i * 0.04}>
+                <div className="h-full bg-background p-8 md:p-10">
+                  <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    <span className="h-px w-6 bg-foreground/15" />
+                  </div>
+                  <h3 className="mt-5 font-display text-2xl tracking-tight">{g.title}</h3>
+                  <ul className="mt-6 space-y-2.5">
+                    {g.items.map((it) => (
+                      <li
+                        key={it}
+                        className="flex items-baseline justify-between text-sm text-foreground/85"
+                      >
+                        <span>{it}</span>
+                        <span className="ml-4 flex-1 translate-y-[-3px] border-b border-dashed border-hairline" />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="mt-5 font-display text-2xl tracking-tight">{g.title}</h3>
-                <ul className="mt-6 space-y-2.5">
-                  {g.items.map((it) => (
-                    <li
-                      key={it}
-                      className="flex items-baseline justify-between text-sm text-foreground/85"
-                    >
-                      <span>{it}</span>
-                      <span className="ml-4 flex-1 translate-y-[-3px] border-b border-dashed border-hairline" />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
 
         {/* Distinctions & Achievements */}
