@@ -5,7 +5,7 @@ import { SectionLabel } from "./SectionLabel";
 const links = [
   { label: "Email", value: "kankati.mokshagnaanurag@gmail.com", href: "mailto:kankati.mokshagnaanurag@gmail.com", icon: Mail },
   { label: "GitHub", value: "github.com/MokshagnaAnurag", href: "https://github.com/MokshagnaAnurag", icon: Github },
-  { label: "LinkedIn", value: "in/kankati-mokshagna-anurag", href: "https://linkedin.com/in/kankati-mokshagna-anurag/", icon: Linkedin },
+  { label: "LinkedIn", value: "in/kankati-mokshagna-anurag", href: "https://www.linkedin.com/in/mokshagnaanurag/", icon: Linkedin },
 ];
 
 export function Contact() {
