@@ -14,7 +14,7 @@ export function Contact() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <Reveal>
           <div className="flex justify-center">
-            <SectionLabel index="07">Contact</SectionLabel>
+            <SectionLabel index="08">Contact</SectionLabel>
           </div>
         </Reveal>
 

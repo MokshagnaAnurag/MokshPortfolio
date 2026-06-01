@@ -13,7 +13,7 @@ export function About() {
     <section id="about" className="relative py-32 md:py-44">
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <Reveal>
-          <SectionLabel index="05">About</SectionLabel>
+          <SectionLabel index="06">About</SectionLabel>
         </Reveal>
 
         <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">

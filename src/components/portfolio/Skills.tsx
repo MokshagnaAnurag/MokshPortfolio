@@ -142,7 +142,7 @@ export function Skills() {
         <Reveal>
           <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
             <div>
-              <SectionLabel index="06">Capability Architecture</SectionLabel>
+              <SectionLabel index="07">Capability Architecture</SectionLabel>
               <h2 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
                 A working <span className="italic">vocabulary</span>.
               </h2>
