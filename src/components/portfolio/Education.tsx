@@ -1,81 +1,122 @@
+import React from "react";
 import { Reveal } from "./Reveal";
-import { SectionLabel } from "./SectionLabel";
 
 const items = [
   {
     institution: "MVGR College of Engineering",
-    degree: "Bachelor of Technology — Electronics & Communication Engineering",
-    period: "Nov 2022 – Apr 2026",
-    location: "Vizianagaram, AP",
-    skills: "Arduino, Internet of Things (IoT)",
+    degree: "B.Tech — Electronics & Communication",
+    period: "Nov 2022 – May 2026",
+    location: "Andhra Pradesh, India",
+    courses: [
+      "Embedded Systems & RTOS",
+      "Digital Image Processing",
+      "Electronic Design & Circuits",
+      "Artificial Intelligence & IT",
+      "Machine Learning",
+      "Control Systems",
+    ],
+    hoverClass: "hover:border-[var(--color-industrial-orange)] hover:-translate-y-2",
+    color: "var(--color-industrial-orange)",
+    icon: "MAIN_BOARD"
   },
   {
     institution: "Apex Junior College",
     degree: "Class 12 — PCM",
     period: "Jun 2020 – May 2022",
     location: "India",
+    hoverClass: "hover:border-[var(--color-industrial-green)] hover:-translate-y-2",
+    color: "var(--color-industrial-green)",
+    icon: "LOGIC_GATE"
   },
   {
     institution: "Fort City School",
     degree: "Secondary School Education",
     period: "Jun 2014 – Mar 2020",
-    grade: "Grade: A",
     location: "India",
+    grade: "Grade: A",
+    hoverClass: "hover:border-[var(--color-industrial-cyan)] hover:-translate-y-2",
+    color: "var(--color-industrial-cyan)",
+    icon: "BASE_OS"
   },
 ];
 
 export function Education() {
   return (
-    <section id="education" className="relative py-32 md:py-44 bg-surface/30">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+    <section id="education" className="relative py-32 bg-[var(--color-industrial-dark)] border-b-4 border-mech overflow-hidden">
+      
+      {/* Blueprint Dark Overlay */}
+      <div className="absolute inset-0 bg-blueprint-dark opacity-30 pointer-events-none"></div>
+
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
         <Reveal>
-          <SectionLabel index="04">Education</SectionLabel>
-          <h2 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
-            Academic <span className="italic">foundations</span>.
+          <div className="inline-flex items-center font-mono text-xs font-bold tracking-[0.2em] uppercase bg-[var(--color-industrial-bg)] text-[var(--color-industrial-dark)] px-4 py-1 border border-transparent shadow-[0_0_12px_rgba(255,255,255,0.2)] mb-12 relative">
+            <span className="mr-2 opacity-70">[&gt;</span>
+            ACADEMIC PROFILE
+            <span className="ml-2 opacity-70">]</span>
+          </div>
+          <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-16 leading-[0.9] text-[var(--color-industrial-white)]">
+            Academic <br/>
+            <span className="text-[var(--color-industrial-blue)] text-stroke-mech-white">Foundations</span>.
           </h2>
         </Reveal>
 
-        <div className="mt-20 border-t border-hairline">
-          {items.map((it, i) => (
-            <Reveal key={it.institution} delay={i * 0.05}>
-              <div className="group grid grid-cols-12 items-baseline gap-6 border-b border-hairline py-8 transition-colors hover:bg-surface/60 md:py-10">
-                {/* Period */}
-                <div className="col-span-12 font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground md:col-span-3">
-                  {it.period}
-                </div>
-
-                {/* Institution & Degree */}
-                <div className="col-span-12 md:col-span-5">
-                  <h3 className="font-display text-2xl tracking-tight md:text-3xl">
-                    {it.institution}
-                  </h3>
-                  <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                    {it.degree}
-                  </p>
-                </div>
-
-                {/* Info (Skills/Grade) */}
-                <div className="col-span-12 text-sm leading-relaxed text-muted-foreground md:col-span-4 md:text-right">
-                  {it.skills && (
-                    <div className="font-mono text-[11px] tracking-wide">
-                      <span className="text-muted-foreground/60 uppercase">Skills: </span>
-                      {it.skills}
-                    </div>
-                  )}
-                  {it.grade && (
-                    <div className="font-mono text-[11px] tracking-wide">
-                      <span className="text-muted-foreground/60 uppercase">Result: </span>
-                      {it.grade}
-                    </div>
-                  )}
-                  <div className="mt-1 font-mono text-[10px] text-muted-foreground/45 uppercase tracking-wider">
-                    {it.location}
+        <Reveal delay={0.1}>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 mt-16">
+            {items.map((it, i) => (
+              <div 
+                key={it.institution}
+                className={`group flex-1 bg-[var(--color-industrial-white)] border-4 border-mech shadow-[8px_8px_0_rgba(10,10,10,1)] p-8 md:p-10 transition-all duration-300 ${it.hoverClass} relative flex flex-col clip-mech`}
+              >
+                {/* Decorative header */}
+                <div className="absolute top-0 left-0 w-full h-2 bg-warning-stripes opacity-30"></div>
+                
+                <div className="flex justify-between items-start mb-6 mt-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-none shadow-sm" style={{ backgroundColor: it.color }}></div>
+                    <span className="font-mono text-[0.65rem] font-bold text-[var(--color-industrial-gray)] tracking-widest uppercase">
+                      {it.period}
+                    </span>
+                  </div>
+                  <div className="font-mono text-[0.6rem] font-bold px-2 py-0.5 border border-dashed border-[var(--color-industrial-dark)] text-[var(--color-industrial-dark)] bg-gray-100 uppercase tracking-widest">
+                    {it.icon}
                   </div>
                 </div>
+                
+                <h3 className="font-display text-2xl font-black uppercase mb-4 leading-tight text-[var(--color-industrial-dark)] pr-8">
+                  {it.degree}
+                </h3>
+                
+                <div className="font-mono text-sm leading-[1.7] text-gray-800 border-l-4 pl-4 mb-6 flex-1" style={{ borderColor: it.color }}>
+                  <strong className="text-[var(--color-industrial-dark)] text-base block mb-1">{it.institution}</strong>
+                  <span className="opacity-70 text-xs font-bold tracking-wider">// LOC: {it.location}</span>
+                </div>
+
+                {it.courses && (
+                  <div className="mt-auto pt-6 border-t-2 border-dashed border-gray-400">
+                    <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest block mb-3 text-gray-500">
+                      // Core Subsystems
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {it.courses.map((course, idx) => (
+                        <span key={idx} className="font-mono text-[0.6rem] uppercase font-bold px-2 py-1 bg-[var(--color-industrial-dark)] text-[var(--color-industrial-white)] group-hover:bg-[var(--color-industrial-blue)] group-hover:text-[var(--color-industrial-white)] transition-colors shadow-sm">
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {it.grade && (
+                  <div className="mt-auto pt-6 border-t-2 border-dashed border-gray-400">
+                    <span className="inline-block px-3 py-1.5 bg-[var(--color-industrial-bg)] border border-[var(--color-industrial-dark)] font-mono text-[0.7rem] font-bold uppercase text-[var(--color-industrial-dark)] shadow-[2px_2px_0_rgba(10,10,10,1)]">
+                      {`OUTPUT: ${it.grade}`}
+                    </span>
+                  </div>
+                )}
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

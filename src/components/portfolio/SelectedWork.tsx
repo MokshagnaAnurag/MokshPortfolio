@@ -1,14 +1,11 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Search } from "lucide-react";
+import { Github, Search, ExternalLink, ShieldAlert } from "lucide-react";
 import drone from "@/assets/project-drone.jpg";
 import cubesat from "@/assets/project-cubesat.jpg";
 import driving from "@/assets/project-driving.jpg";
-import iov from "@/assets/project-iov.jpg";
-import voice from "@/assets/project-voice.jpg";
 import lunabot from "@/assets/project-lunabot.png";
 import { Reveal } from "./Reveal";
-import { SectionLabel } from "./SectionLabel";
 
 interface ProjectItem {
   no: string;
@@ -17,7 +14,6 @@ interface ProjectItem {
   year: string;
   stack: string[];
   image: string;
-  span: string;
   github: string;
 }
 
@@ -30,7 +26,6 @@ const featuredProjects: ProjectItem[] = [
     year: "2025",
     stack: ["PX4", "ROS2", "SLAM", "Embedded C"],
     image: drone,
-    span: "lg:col-span-7",
     github: "https://github.com/MokshagnaAnurag/ardupilot-gazebo-gimbal-simulation",
   },
   {
@@ -41,7 +36,6 @@ const featuredProjects: ProjectItem[] = [
     year: "2024",
     stack: ["STM32", "RTOS", "Telemetry"],
     image: cubesat,
-    span: "lg:col-span-5",
     github: "https://github.com/MokshagnaAnurag",
   },
   {
@@ -52,7 +46,6 @@ const featuredProjects: ProjectItem[] = [
     year: "2024",
     stack: ["LiDAR", "ROS2", "Python"],
     image: driving,
-    span: "lg:col-span-6",
     github: "https://github.com/MokshagnaAnurag/Self_driving_bot",
   },
   {
@@ -63,7 +56,6 @@ const featuredProjects: ProjectItem[] = [
     year: "2025",
     stack: ["ROS2", "Python", "Nav2", "RViz"],
     image: lunabot,
-    span: "lg:col-span-6",
     github: "https://github.com/MokshagnaAnurag/LUNA_BOT",
   },
 ];
@@ -112,7 +104,7 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "Cybercrime Reporting Chatbot",
-    summary: "Developed intent recognition and sentiment analysis using Scikit-learn to classify user inputs and extract report insights. Launched a Gradio-based frontend to enhance accessibility and streamline crime reporting workflows.",
+    summary: "Developed intent recognition and sentiment analysis using Scikit-learn to classify user inputs and extract report insights. Launched a Gradio-based interface to enhance accessibility and streamline crime reporting workflows.",
     year: "2024",
     category: "AI & Vision",
     stack: ["Python", "AI", "Gradio", "NLP"],
@@ -211,81 +203,92 @@ export function SelectedWork() {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <section id="work" className="relative py-32 md:py-44">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+    <section id="work" className="relative py-24 bg-[var(--color-industrial-dark)] border-b-4 border-mech text-[var(--color-industrial-white)]">
+      
+      {/* Dark Blueprint Background */}
+      <div className="absolute inset-0 bg-blueprint-dark opacity-30 pointer-events-none"></div>
+
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
         <Reveal>
-          <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-            <div>
-              <SectionLabel index="02">Selected Work</SectionLabel>
-              <h2 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
-                A small archive of <span className="italic">considered</span> engineering.
-              </h2>
-            </div>
-            <p className="max-w-sm text-base text-muted-foreground">
-              Featured projects across robotics, aerospace and applied intelligence — each built
-              with restraint, attention and clear intent.
-            </p>
+          <div className="inline-flex items-center font-mono text-xs font-bold tracking-[0.2em] uppercase bg-[var(--color-industrial-white)] text-[var(--color-industrial-dark)] px-4 py-1 border border-[var(--color-industrial-white)] shadow-[0_0_12px_rgba(255,255,255,0.2),4px_4px_0_rgba(255,255,255,1)] mb-12 relative">
+            <span className="mr-2 opacity-70">[&gt;</span>
+            DOSSIER
+            <span className="ml-2 opacity-70">]</span>
           </div>
+
+          <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-8 leading-[0.9]">
+            <span className="text-[var(--color-industrial-blue)] text-stroke-mech-white">ENGINEERED</span> SYSTEMS
+          </h2>
         </Reveal>
 
         {/* Featured Projects Grid */}
-        <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2">
           {featuredProjects.map((p, i) => (
-            <Reveal key={p.no} delay={i * 0.05} className={p.span}>
-              <article className="editorial-card editorial-card-hover group overflow-hidden p-6 md:p-8">
-                <div className="overflow-hidden rounded-[1.25rem] bg-surface relative">
+            <Reveal key={p.no} delay={i * 0.1}>
+              <article className="group bg-[var(--color-industrial-bg)] text-[var(--color-industrial-dark)] border-mech shadow-mech-md transition-all duration-300 hover:translate-x-1 hover:translate-y-1 hover:shadow-none flex flex-col h-full relative clip-mech">
+                
+                {/* Dossier Header */}
+                <div className="border-b-4 border-[var(--color-industrial-dark)] p-4 flex justify-between items-center bg-warning-stripes relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[var(--color-industrial-yellow)] opacity-80 mix-blend-multiply"></div>
+                  <div className="relative z-10 flex gap-2 bg-[var(--color-industrial-dark)] text-[var(--color-industrial-yellow)] px-3 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-widest border border-[var(--color-industrial-dark)]">
+                    <ShieldAlert size={12} className="mr-1" />
+                    CLASSIFIED: CONFIDENTIAL
+                  </div>
+                  <span className="relative z-10 font-mono text-[0.7rem] bg-[var(--color-industrial-white)] px-2 py-0.5 border border-[var(--color-industrial-dark)] font-bold uppercase tracking-widest">{p.year}</span>
+                </div>
+                
+                {/* Image Section */}
+                <div className="relative border-b-4 border-[var(--color-industrial-dark)] h-64 overflow-hidden bg-gray-900 p-2">
+                  <div className="absolute top-4 left-4 z-10">
+                     <span className="font-mono text-[3rem] font-black text-[var(--color-industrial-white)] leading-none drop-shadow-md">
+                       {p.no}
+                     </span>
+                  </div>
+                  
+                  {/* Tech HUD overlay on image */}
+                  <div className="absolute inset-2 border border-dashed border-white/30 z-10 pointer-events-none"></div>
+                  
                   <img
                     src={p.image}
                     alt={p.title}
-                    loading="lazy"
-                    width={1600}
-                    height={1200}
-                    className="aspect-[4/3] h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
+                    className="w-full h-full object-cover filter contrast-125 sepia-[0.3] group-hover:sepia-0 group-hover:scale-105 transition-all duration-700"
                   />
-                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                  
+                  <div className="absolute bottom-4 right-4 z-10">
                     <a
                       href={p.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground border border-hairline shadow-sm backdrop-blur transition hover:scale-105 hover:bg-foreground hover:text-background"
-                      title="View GitHub Repository"
-                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex h-12 w-12 items-center justify-center bg-[var(--color-industrial-blue)] text-[var(--color-industrial-white)] border-mech-sm transition-all hover:bg-[var(--color-industrial-orange)] hover:text-black shadow-[4px_4px_0_rgba(10,10,10,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
                     >
-                      <Github className="h-4 w-4" />
+                      <Github className="h-6 w-6" />
                     </a>
                   </div>
                 </div>
-                <div className="mt-7 flex items-start justify-between gap-6">
-                  <div>
-                    <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
-                      <span>{p.no}</span>
-                      <span className="h-px w-6 bg-foreground/15" />
-                      <span>{p.year}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <h3 className="mt-4 font-display text-2xl tracking-tight md:text-3xl">
-                        {p.title}
-                      </h3>
-                      <a
-                        href={p.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-4 md:hidden inline-flex h-7 w-7 items-center justify-center rounded-full border border-hairline bg-background text-muted-foreground transition hover:bg-foreground hover:text-background"
-                        title="View GitHub Repository"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Github className="h-3.5 w-3.5" />
-                      </a>
-                    </div>
-                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {p.summary}
-                    </p>
+
+                {/* Content Section */}
+                <div className="p-6 md:p-8 flex-1 flex flex-col bg-[var(--color-industrial-white)] relative">
+                  
+                  {/* Decorative barcode */}
+                  <div className="absolute top-8 right-8 font-mono text-[0.5rem] tracking-[-0.1em] text-[var(--color-industrial-gray)] opacity-50 transform rotate-90 origin-top-right">
+                    |||| || ||| || |||| | |||
                   </div>
-                  <div className="hidden shrink-0 flex-col items-end gap-1.5 md:flex">
+
+                  <h3 className="font-display text-2xl md:text-3xl font-black uppercase tracking-tight mb-4 pr-10">
+                    {p.title}
+                  </h3>
+                  <p className="font-mono text-sm leading-[1.8] text-gray-800 flex-1 border-l-4 border-[var(--color-industrial-blue)] pl-4">
+                    {p.summary}
+                  </p>
+
+                  <div className="mt-8 flex flex-wrap gap-2 pt-6 border-t-2 border-dashed border-[var(--color-industrial-gray)]">
+                    <span className="font-mono text-[0.6rem] uppercase tracking-widest text-gray-500 mr-2 self-center font-bold">
+                      MODULES:
+                    </span>
                     {p.stack.map((s) => (
                       <span
                         key={s}
-                        className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground"
+                        className="bg-[var(--color-industrial-dark)] text-[var(--color-industrial-green)] font-mono text-[0.65rem] font-bold px-2 py-1 uppercase"
                       >
                         {s}
                       </span>
@@ -298,42 +301,39 @@ export function SelectedWork() {
         </div>
 
         {/* Complete Project Archive */}
-        <div className="mt-32 md:mt-48">
+        <div className="mt-32">
           <Reveal>
-            <div className="border-t border-hairline pt-16">
-              <div className="flex flex-col gap-8 md:flex-row md:items-baseline md:justify-between">
+            <div className="border-t-4 border-[var(--color-industrial-white)] pt-16">
+              <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-10">
                 <div>
-                  <h3 className="font-display text-3xl tracking-tight md:text-4xl">
-                    Open Source & Research Archive
+                  <h3 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tight">
+                    DATA <span className="text-[var(--color-industrial-orange)] text-stroke-mech-white">ARCHIVE</span>
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground max-w-md">
-                    Additional exploratory packages, system models, and application designs.
-                  </p>
                 </div>
 
                 {/* Search Input */}
-                <div className="relative w-full max-w-xs self-start md:self-end">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground/50" />
+                <div className="relative w-full max-w-sm">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--color-industrial-dark)]" />
                   <input
                     type="text"
-                    placeholder="Search stack, text..."
+                    placeholder="SCAN ARCHIVES..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-surface/30 border border-hairline rounded-full py-2.5 pl-10 pr-4 text-xs font-mono placeholder:text-muted-foreground/45 focus:outline-none focus:border-foreground/30 transition-colors"
+                    className="w-full bg-[var(--color-industrial-bg)] text-[var(--color-industrial-dark)] border-mech py-3 pl-12 pr-4 font-mono text-sm focus:outline-none focus:bg-[var(--color-industrial-white)] transition-colors shadow-mech-sm placeholder:text-gray-500"
                   />
                 </div>
               </div>
 
               {/* Category Filter Tabs */}
-              <div className="mt-10 flex flex-wrap gap-2">
+              <div className="mb-12 flex flex-wrap gap-3">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`rounded-full px-5 py-2 text-[10px] font-mono uppercase tracking-[0.1em] transition-colors cursor-pointer ${
+                    className={`border-mech-sm px-4 py-2 font-mono text-xs font-bold uppercase transition-all shadow-[2px_2px_0_rgba(255,255,255,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none cursor-pointer ${
                       selectedCategory === cat
-                        ? "bg-foreground text-background"
-                        : "bg-surface/50 hover:bg-surface border border-hairline text-muted-foreground hover:text-foreground"
+                        ? "bg-[var(--color-industrial-orange)] text-[var(--color-industrial-dark)] border-[var(--color-industrial-orange)] shadow-none translate-x-[2px] translate-y-[2px]"
+                        : "bg-transparent text-[var(--color-industrial-white)] border-[var(--color-industrial-white)] hover:bg-[var(--color-industrial-blue)]"
                     }`}
                   >
                     {cat}
@@ -341,69 +341,58 @@ export function SelectedWork() {
                 ))}
               </div>
 
-              {/* Table List of Archive Projects */}
-              <div className="mt-12 border-t border-hairline">
+              {/* Grid List of Archive Projects */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <AnimatePresence mode="popLayout">
                   {filteredArchive.length > 0 ? (
                     filteredArchive.map((p, idx) => (
                       <motion.div
                         key={p.title}
                         layout
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -12 }}
-                        transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1], delay: idx * 0.02 }}
-                        className="group grid grid-cols-12 items-baseline gap-4 border-b border-hairline py-6 transition-colors hover:bg-surface/30 px-2"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="group bg-[var(--color-industrial-bg)] text-[var(--color-industrial-dark)] border-mech p-6 flex flex-col transition-all hover:bg-[var(--color-industrial-white)] hover:-translate-y-1 shadow-mech-md clip-mech-alt"
                       >
-                        {/* Year */}
-                        <div className="col-span-12 sm:col-span-1 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground/60">
-                          {p.year}
+                        <div className="flex justify-between items-start mb-4">
+                          <span className="font-mono text-xs font-bold px-2 py-1 bg-[var(--color-industrial-yellow)] border border-[var(--color-industrial-dark)]">
+                            {p.year}
+                          </span>
+                          <a
+                            href={p.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-1.5 border-mech-sm bg-[var(--color-industrial-white)] hover:bg-[var(--color-industrial-orange)] hover:text-white transition-colors"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                          </a>
                         </div>
+                        
+                        <h4 className="font-display text-xl font-black uppercase mb-3 leading-tight group-hover:text-[var(--color-industrial-blue)] transition-colors">
+                          {p.title}
+                        </h4>
+                        
+                        <p className="font-mono text-sm text-gray-700 leading-relaxed mb-6 flex-1">
+                          {p.summary}
+                        </p>
 
-                        {/* Title and Summary */}
-                        <div className="col-span-12 sm:col-span-6 pr-4">
-                          <h4 className="font-display text-xl tracking-tight text-foreground group-hover:text-accent-violet transition-all duration-500 ease-out group-hover:translate-x-1.5">
-                            {p.title}
-                          </h4>
-                          <p className="mt-1.5 text-xs md:text-sm text-muted-foreground leading-relaxed">
-                            {p.summary}
-                          </p>
-                        </div>
-
-                        {/* Stack Tags */}
-                        <div className="col-span-10 sm:col-span-4 flex flex-wrap gap-1.5 self-center">
+                        <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-dashed border-gray-400">
                           {p.stack.map((tag) => (
                             <span
                               key={tag}
-                              className="font-mono text-[9px] uppercase tracking-wider text-muted-foreground/75 bg-surface border border-hairline/60 rounded px-2 py-0.5"
+                              className="font-mono text-[10px] font-bold uppercase px-2 py-1 bg-[var(--color-industrial-dark)] text-[var(--color-industrial-green)]"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
-
-                        {/* Action Link (GitHub redirection) */}
-                        <div className="col-span-2 sm:col-span-1 flex justify-end items-center self-center">
-                          <a
-                            href={p.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-hairline bg-background text-muted-foreground transition-all hover:bg-foreground hover:text-background hover:scale-105"
-                            title="View Repository on GitHub"
-                          >
-                            <Github className="h-4 w-4" />
-                          </a>
-                        </div>
                       </motion.div>
                     ))
                   ) : (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="py-16 text-center text-sm font-mono text-muted-foreground"
-                    >
-                      No archived projects found matching filters.
-                    </motion.div>
+                    <div className="col-span-full py-16 text-center font-mono text-gray-400 font-bold tracking-widest border border-dashed border-gray-600">
+                      [ NO DATA FOUND IN CURRENT QUERY ]
+                    </div>
                   )}
                 </AnimatePresence>
               </div>

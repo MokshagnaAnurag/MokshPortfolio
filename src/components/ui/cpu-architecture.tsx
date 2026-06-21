@@ -232,10 +232,9 @@ const CpuArchitecture = ({
         />
         {/* CPU Text */}
         <text
-          x="100"
+          x="92"
           y="52.5"
-          textAnchor="middle"
-          fontSize="6"
+          fontSize="7"
           fill={animateText ? "url(#cpu-text-gradient)" : "white"}
           fontWeight="600"
           letterSpacing="0.05em"
