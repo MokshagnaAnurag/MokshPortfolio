@@ -1,8 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, Terminal, Zap, Crosshair } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 export function ToonhubHero() {
+  const [bootText, setBootText] = useState("");
+  const phrases = [
+    "> SYS.BOOT SEQUENCE INITIALIZED...",
+    "> LOADING KERNEL MODULES...",
+    "> ENGAGING HARDWARE PROTOCOLS...",
+    "> SYSTEM KERNEL ONLINE..."
+  ];
+
+  useEffect(() => {
+    let currentPhraseIndex = 0;
+    let currentText = "";
+    let isDeleting = false;
+    let timeoutId: NodeJS.Timeout;
+
+    const type = () => {
+      const currentFullText = phrases[currentPhraseIndex];
+      
+      if (isDeleting) {
+        currentText = currentFullText.substring(0, currentText.length - 1);
+      } else {
+        currentText = currentFullText.substring(0, currentText.length + 1);
+      }
+
+      setBootText(currentText);
+
+      let typeSpeed = isDeleting ? 30 : 60; // Faster deleting, slower typing
+
+      // If finished typing the word
+      if (!isDeleting && currentText === currentFullText) {
+        typeSpeed = 2000; // Pause at the end of phrase
+        isDeleting = true;
+      } else if (isDeleting && currentText === "> ") {
+        // We delete down to "> " and then switch
+        isDeleting = false;
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        typeSpeed = 500; // Pause before typing new phrase
+      } else if (isDeleting && currentText === "") {
+        // Fallback if it deleted entirely
+        isDeleting = false;
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        typeSpeed = 500;
+      }
+
+      timeoutId = setTimeout(type, typeSpeed);
+    };
+
+    // Start typing after initial delay
+    timeoutId = setTimeout(type, 800);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <section className="relative min-h-[95vh] bg-[var(--color-industrial-white)] overflow-hidden flex flex-col justify-center pt-24 pb-32 border-b-[6px] border-mech">
       
@@ -61,8 +113,21 @@ export function ToonhubHero() {
                <Crosshair size={22} className="text-[var(--color-industrial-dark)] animate-[spin_10s_linear_infinite]" />
             </div>
             <p className="font-mono text-sm md:text-base font-bold text-[var(--color-industrial-dark)] leading-relaxed text-left pl-2">
-              <span className="text-[var(--color-industrial-blue)] inline-block mb-2">&gt; SYS.BOOT SEQUENCE INITIALIZED...</span><br/>
-              I engineer robust embedded systems, autonomous robotics, and scalable IoT architecture. Precision hardware built for physical impact.
+              <span className="text-[var(--color-industrial-blue)] mb-2 inline-flex items-center h-[1.5em]">
+                {bootText}
+                <span className="inline-block w-[0.55em] h-[1em] bg-[var(--color-industrial-blue)] ml-1.5 animate-pulse" style={{ animationDuration: '0.8s' }}></span>
+              </span><br/>
+              <span className="leading-loose">
+                I engineer robust{" "}
+                <span className="inline-block px-2 py-0.5 mx-0.5 bg-[var(--color-industrial-dark)] text-white font-black uppercase text-xs tracking-wider shadow-[2px_2px_0_var(--color-industrial-green)] hover:-translate-y-1 hover:-translate-x-[1px] hover:shadow-[4px_4px_0_var(--color-industrial-green)] transition-all cursor-crosshair">embedded systems</span>
+                ,{" "}
+                <span className="inline-block px-2 py-0.5 mx-0.5 bg-[var(--color-industrial-dark)] text-white font-black uppercase text-xs tracking-wider shadow-[2px_2px_0_var(--color-industrial-yellow)] hover:-translate-y-1 hover:-translate-x-[1px] hover:shadow-[4px_4px_0_var(--color-industrial-yellow)] transition-all cursor-crosshair">autonomous robotics</span>
+                , and scalable{" "}
+                <span className="inline-block px-2 py-0.5 mx-0.5 bg-[var(--color-industrial-dark)] text-white font-black uppercase text-xs tracking-wider shadow-[2px_2px_0_var(--color-industrial-orange)] hover:-translate-y-1 hover:-translate-x-[1px] hover:shadow-[4px_4px_0_var(--color-industrial-orange)] transition-all cursor-crosshair">IoT architecture</span>
+                .{" "}
+                <span className="inline-block px-2 py-0.5 mx-0.5 bg-[var(--color-industrial-dark)] text-white font-black uppercase text-xs tracking-wider shadow-[2px_2px_0_var(--color-industrial-cyan)] hover:-translate-y-1 hover:-translate-x-[1px] hover:shadow-[4px_4px_0_var(--color-industrial-cyan)] transition-all cursor-crosshair">Precision hardware</span>
+                {" "}built for physical impact.
+              </span>
             </p>
           </div>
         </Reveal>
