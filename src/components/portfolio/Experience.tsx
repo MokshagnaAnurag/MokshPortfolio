@@ -20,7 +20,7 @@ const items: ExperienceItem[] = [
   {
     id: "exp-1", orgShort: "Spaceborn", orgFull: "Spaceborn",
     role: "Robotics & Simulation Intern", year: "2026",
-    period: "May 2026 – Present", location: "Remote",
+    period: "May 2026 – June 2026", location: "Remote",
     bullets: ["Working on autonomous drone and robotic systems design, physics-based simulations, and control optimization."]
   },
   {
