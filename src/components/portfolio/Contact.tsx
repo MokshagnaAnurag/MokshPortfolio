@@ -65,7 +65,7 @@ export function Contact() {
                 Currently Seeking
               </h3>
               <p className="font-mono text-base text-gray-800 leading-relaxed border-l-[4px] border-[var(--color-industrial-blue)] pl-5 bg-white/50 py-4 pr-3 shadow-mech-sm">
-                Full-time roles, internships, JRF, and project associate positions in hardware engineering, robotics, aerospace, and autonomous systems.
+                Full-time roles, internships, JRF, and project associate positions in hardware engineering, AI/ML, robotics, aerospace, and autonomous systems.
               </p>
 
               <div className="mt-12 w-full">
