@@ -55,32 +55,32 @@ export function About() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-start">
           <div className="lg:col-span-7 font-mono text-[1.05rem] leading-[1.85] text-[var(--color-industrial-white)]">
             <Reveal>
-              <p className="mb-6">
-                <span className="bg-[#0d0d0d] text-[var(--color-industrial-green)] font-mono font-bold px-3 py-1 border border-[var(--color-industrial-green)] border-l-4 shadow-[0_0_10px_rgba(0,255,65,0.18)] inline-block mb-4 leading-relaxed">
-                  &gt; I build systems that think quietly.
-                </span>
-                <br />
-                Robotics, aerospace platforms and embedded intelligence designed with the same restraint as fine instruments.
-              </p>
-            </Reveal>
+  <p className="mb-6">
+    <span className="bg-[#0d0d0d] text-[var(--color-industrial-green)] font-mono font-bold px-3 py-1 border border-[var(--color-industrial-green)] border-l-4 shadow-[0_0_10px_rgba(0,255,65,0.18)] inline-block mb-4 leading-relaxed">
+      &gt; Building intelligent systems from code to hardware.
+    </span>
+    <br />
+    Passionate about robotics, embedded systems, autonomous platforms, and the technologies that bridge perception, decision-making, and real-world interaction.
+  </p>
+</Reveal>
 
-            <Reveal delay={0.1}>
-              <p className="mb-6 text-gray-300">
-                I am an Electronics and Communication Engineering graduate from MVGR College of Engineering specializing in embedded intelligence, autonomous robotics, and physical AI hardware integration.
-              </p>
-            </Reveal>
+<Reveal delay={0.1}>
+  <p className="mb-6 text-gray-300">
+    I am an Electronics and Communication Engineering graduate from MVGR College of Engineering with interests in robotics, embedded intelligence, autonomous navigation, and physical AI. I enjoy developing systems that integrate sensing, computation, communication, and control to solve real-world engineering challenges.
+  </p>
+</Reveal>
 
-            <Reveal delay={0.15}>
-              <p className="mb-6 text-gray-300 border-l-4 border-[var(--color-industrial-blue)] pl-4 bg-[var(--color-industrial-white)]/5 py-3 pr-3">
-                During my roles at Daloft Aerospace and the IIT Tirupati Navavishkar I-Hub Foundation, I engineered advanced perception pipelines for UAVs using ROS 2 and PX4, and architected modular 1U CubeSat prototypes focusing on onboard telemetry and power management systems.
-              </p>
-            </Reveal>
+<Reveal delay={0.15}>
+  <p className="mb-6 text-gray-300 border-l-4 border-[var(--color-industrial-blue)] pl-4 bg-[var(--color-industrial-white)]/5 py-3 pr-3">
+    Through internships at Daloft Aerospace, NITK Surathkal, and IIT Tirupati Navavishkar I-Hub Foundation, I have worked on autonomous drones, ROS 2-based perception pipelines, Internet of Vehicles research, and modular CubeSat subsystems, gaining hands-on experience in building intelligent and scalable aerospace and robotic platforms.
+  </p>
+</Reveal>
 
-            <Reveal delay={0.2}>
-              <p className="mb-8 text-gray-300 border-l-4 border-[var(--color-industrial-blue)] pl-4 bg-[var(--color-industrial-white)]/5 py-3 pr-3">
-                Beyond academic hardware development, I contribute to open-source systems through SwechaAP. I am driven by the engineering of robust, scalable physical intelligence and deterministic control architectures.
-              </p>
-            </Reveal>
+<Reveal delay={0.2}>
+  <p className="mb-8 text-gray-300 border-l-4 border-[var(--color-industrial-blue)] pl-4 bg-[var(--color-industrial-white)]/5 py-3 pr-3">
+    Beyond academics, I actively contribute to open-source initiatives through SwechaAP, participate in hackathons and research projects, and continuously explore emerging technologies in autonomous systems, embedded AI, and space robotics.
+  </p>
+</Reveal>
 
             <Reveal delay={0.22}>
               <div className="mt-12 mb-8 w-full border border-[var(--color-industrial-gray)]/30 bg-[#050505] p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-8 rounded-lg shadow-[8px_8px_0_0_var(--color-industrial-dark)] hover:shadow-[12px_12px_0_0_var(--color-industrial-dark)] hover:-translate-y-1 transition-all duration-300">
