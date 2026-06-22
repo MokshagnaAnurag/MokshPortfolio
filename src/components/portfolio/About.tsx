@@ -39,7 +39,7 @@ export function About() {
 
   return (
     <section id="about" className="relative py-24 border-b-4 border-mech bg-[var(--color-industrial-dark)]">
-      
+
       {/* Blueprint Overlay */}
       <div className="absolute inset-0 bg-blueprint-dark opacity-30 pointer-events-none"></div>
 
@@ -75,15 +75,42 @@ export function About() {
                 During my roles at Daloft Aerospace and the IIT Tirupati Navavishkar I-Hub Foundation, I engineered advanced perception pipelines for UAVs using ROS 2 and PX4, and architected modular 1U CubeSat prototypes focusing on onboard telemetry and power management systems.
               </p>
             </Reveal>
-            
+
             <Reveal delay={0.2}>
               <p className="mb-8 text-gray-300 border-l-4 border-[var(--color-industrial-blue)] pl-4 bg-[var(--color-industrial-white)]/5 py-3 pr-3">
                 Beyond academic hardware development, I contribute to open-source systems through SwechaAP. I am driven by the engineering of robust, scalable physical intelligence and deterministic control architectures.
               </p>
             </Reveal>
 
+            <Reveal delay={0.22}>
+              <div className="mt-12 mb-8 w-full border border-[var(--color-industrial-gray)]/30 bg-[#050505] p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-8 rounded-lg shadow-[8px_8px_0_0_var(--color-industrial-dark)] hover:shadow-[12px_12px_0_0_var(--color-industrial-dark)] hover:-translate-y-1 transition-all duration-300">
+
+                <div className="flex flex-col items-center md:items-start group w-full md:w-auto">
+                  <span className="font-display text-5xl md:text-6xl font-black text-white group-hover:text-[var(--color-industrial-cyan)] transition-colors">15<span className="text-[var(--color-industrial-cyan)]">+</span></span>
+                  <span className="font-mono text-[10px] md:text-xs text-[var(--color-industrial-gray)] tracking-[0.2em] uppercase mt-2 group-hover:text-white transition-colors">Built Projects</span>
+                </div>
+
+                <div className="hidden md:block w-[2px] h-16 bg-[var(--color-industrial-gray)]/30"></div>
+                <div className="md:hidden w-full h-[2px] bg-[var(--color-industrial-gray)]/30"></div>
+
+                <div className="flex flex-col items-center md:items-start group w-full md:w-auto">
+                  <span className="font-display text-5xl md:text-6xl font-black text-white group-hover:text-[var(--color-industrial-yellow)] transition-colors">4<span className="text-[var(--color-industrial-yellow)]">+</span></span>
+                  <span className="font-mono text-[10px] md:text-xs text-[var(--color-industrial-gray)] tracking-[0.2em] uppercase mt-2 group-hover:text-white transition-colors">Tech Blogs</span>
+                </div>
+
+                <div className="hidden md:block w-[2px] h-16 bg-[var(--color-industrial-gray)]/30"></div>
+                <div className="md:hidden w-full h-[2px] bg-[var(--color-industrial-gray)]/30"></div>
+
+                <div className="flex flex-col items-center md:items-start group w-full md:w-auto">
+                  <span className="font-display text-5xl md:text-6xl font-black text-white group-hover:text-[var(--color-industrial-green)] transition-colors">02</span>
+                  <span className="font-mono text-[10px] md:text-xs text-[var(--color-industrial-gray)] tracking-[0.2em] uppercase mt-2 group-hover:text-white transition-colors">Publications</span>
+                </div>
+
+              </div>
+            </Reveal>
+
             <Reveal delay={0.25}>
-              <div className="mt-8 pt-6 border-t-[3px] border-dashed border-[var(--color-industrial-gray)]">
+              <div className="mt-8 pt-6">
                 <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--color-industrial-gray)] font-bold mb-4">// CORE COMPETENCIES & MODULES</h4>
                 <div className="flex flex-wrap gap-2.5">
                   {interests.map((interest, i) => (
@@ -102,11 +129,11 @@ export function About() {
                 <div className="absolute top-0 left-8 bg-[#0d0d0d] text-[var(--color-industrial-cyan)] font-mono text-[0.7rem] font-bold px-3 py-1 border border-[var(--color-industrial-cyan)] shadow-[0_0_8px_rgba(0,229,255,0.25)] tracking-widest z-10">
                   &gt; ID_CARD.EXE
                 </div>
-                
+
                 <div className="border-4 border-mech shadow-mech-lg bg-[var(--color-industrial-white)] p-6 md:p-8 clip-mech">
-                  
+
                   {/* Animated Profile Image */}
-                  <motion.div 
+                  <motion.div
                     className="w-full aspect-square mb-8 border-[4px] border-[var(--color-industrial-dark)] shadow-[8px_8px_0_0_var(--color-industrial-dark)] overflow-hidden relative group cursor-crosshair bg-white"
                   >
                     {/* Red Tag on Image */}
@@ -115,22 +142,22 @@ export function About() {
                     </div>
 
                     {/* Base Black & White Sketch */}
-                    <img 
-                      src={profileImgBase} 
-                      alt="Mokshagna Anurag Kankati" 
+                    <img
+                      src={profileImgBase}
+                      alt="Mokshagna Anurag Kankati"
                       className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
 
                     {/* Colored Sketch on Hover */}
-                    <img 
-                      src={profileImgHover} 
-                      alt="Mokshagna Anurag Kankati Colored" 
+                    <img
+                      src={profileImgHover}
+                      alt="Mokshagna Anurag Kankati Colored"
                       className="absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105 z-10"
                     />
                   </motion.div>
 
                   <h3 className="text-2xl font-black uppercase mb-1 font-display text-[var(--color-industrial-dark)]">MOKSHAGNA ANURAG KANKATI</h3>
-                  
+
                   <div className="h-6 relative overflow-hidden mb-1 w-full flex items-center">
                     <AnimatePresence mode="wait">
                       <motion.p
@@ -145,28 +172,28 @@ export function About() {
                       </motion.p>
                     </AnimatePresence>
                   </div>
-                  
-                <p className="font-mono text-xs text-[var(--color-industrial-gray)] font-bold mb-6">// MVGR College of Engineering</p>
 
-                <hr className="border-none border-t-2 border-dashed border-[var(--color-industrial-gray)] my-4" />
+                  <p className="font-mono text-xs text-[var(--color-industrial-gray)] font-bold mb-6">// MVGR College of Engineering</p>
 
-                <div className="font-mono text-sm leading-loose space-y-3">
-                  {meta.map(([k, v]) => (
-                    <div key={k} className="flex flex-col sm:flex-row sm:justify-between border-b border-black/10 pb-1">
-                      <span className="font-bold text-gray-500 uppercase text-xs sm:mt-1">{k}</span>
-                      <span className="font-bold text-[var(--color-industrial-dark)] text-right">{v}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <a href="#contact" className="inline-flex items-center gap-2 px-4 py-2 font-mono text-xs font-bold border-2 border-[var(--color-industrial-dark)] bg-[var(--color-industrial-white)] text-[var(--color-industrial-dark)] shadow-mech-sm transition-all duration-200 hover:bg-[var(--color-industrial-dark)] hover:text-[var(--color-industrial-white)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none clip-mech-alt">
-                    CONTACT ME
-                  </a>
-                  <a href="#work" className="inline-flex items-center gap-2 px-4 py-2 font-mono text-xs font-bold border-2 border-[var(--color-industrial-dark)] bg-[var(--color-industrial-yellow)] text-[var(--color-industrial-dark)] shadow-mech-sm transition-all duration-200 hover:bg-[var(--color-industrial-blue)] hover:text-[var(--color-industrial-white)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none clip-mech">
-                    VIEW WORK
-                  </a>
-                </div>
+                  <hr className="border-none border-t-2 border-dashed border-[var(--color-industrial-gray)] my-4" />
+
+                  <div className="font-mono text-sm leading-loose space-y-3">
+                    {meta.map(([k, v]) => (
+                      <div key={k} className="flex flex-col sm:flex-row sm:justify-between border-b border-black/10 pb-1">
+                        <span className="font-bold text-gray-500 uppercase text-xs sm:mt-1">{k}</span>
+                        <span className="font-bold text-[var(--color-industrial-dark)] text-right">{v}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a href="#contact" className="inline-flex items-center gap-2 px-4 py-2 font-mono text-xs font-bold border-2 border-[var(--color-industrial-dark)] bg-[var(--color-industrial-white)] text-[var(--color-industrial-dark)] shadow-mech-sm transition-all duration-200 hover:bg-[var(--color-industrial-dark)] hover:text-[var(--color-industrial-white)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none clip-mech-alt">
+                      CONTACT ME
+                    </a>
+                    <a href="#work" className="inline-flex items-center gap-2 px-4 py-2 font-mono text-xs font-bold border-2 border-[var(--color-industrial-dark)] bg-[var(--color-industrial-yellow)] text-[var(--color-industrial-dark)] shadow-mech-sm transition-all duration-200 hover:bg-[var(--color-industrial-blue)] hover:text-[var(--color-industrial-white)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none clip-mech">
+                      VIEW WORK
+                    </a>
+                  </div>
                 </div>
               </div>
             </Reveal>
