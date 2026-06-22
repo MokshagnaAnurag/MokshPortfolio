@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Reveal } from "./Reveal";
-import { MapPin, Calendar, ChevronRight } from "lucide-react";
+import { MapPin, Calendar, ChevronRight, ChevronLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ExperienceItem {
@@ -20,7 +20,7 @@ const items: ExperienceItem[] = [
   {
     id: "exp-1", orgShort: "Spaceborn", orgFull: "Spaceborn",
     role: "Robotics & Simulation Intern", year: "2026",
-    period: "May 2026 – June 2026", location: "Remote",
+    period: "May 2026 – Present", location: "Remote",
     bullets: ["Working on autonomous drone and robotic systems design, physics-based simulations, and control optimization."]
   },
   {
@@ -171,12 +171,72 @@ export function Experience() {
           </div>
         </Reveal>
 
-        {/* ── MAIN EDITORIAL GRID ── */}
+        {/* ── MOBILE UNIQUE DESIGN (GIANT TYPOGRAPHY WATERMARK) ── */}
         <Reveal delay={0.1}>
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-0 border-[3px] border-[var(--color-industrial-dark)] shadow-[8px_8px_0_var(--color-industrial-dark)]">
+          <div className="flex flex-col gap-6 lg:hidden mt-8 px-2 pb-8">
+            {items.map((it, i) => {
+              const c = accentColors[i % accentColors.length];
+              return (
+                <div key={it.id} className="relative bg-white border border-zinc-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl overflow-hidden p-6">
+                  
+                  {/* Left Accent Bar */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ backgroundColor: c }} />
+
+                  {/* Giant Year Watermark */}
+                  <span className="absolute -bottom-4 -right-4 font-display text-[7rem] font-black leading-none text-zinc-50 select-none pointer-events-none z-0">
+                    {it.year}
+                  </span>
+
+                  <div className="relative z-10">
+                    <div className="flex justify-between items-start mb-4">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+                        {it.period}
+                      </span>
+                      <span className="inline-flex items-center gap-1 font-mono text-[9px] font-bold uppercase tracking-widest text-zinc-400">
+                        <MapPin size={10} /> {it.location}
+                      </span>
+                    </div>
+
+                    <h3 className="font-display text-[1.8rem] font-black uppercase tracking-tighter text-zinc-900 leading-[1.1] mb-1">
+                      {it.orgShort}
+                    </h3>
+                    <p className="font-sans text-[13px] font-bold uppercase tracking-widest mb-4" style={{ color: c }}>
+                      {it.role}
+                    </p>
+
+                    {it.bullets && (
+                      <div className="space-y-2 mb-5">
+                        {it.bullets.map((b, idx) => (
+                          <p key={idx} className="font-sans text-[12px] leading-relaxed text-zinc-600 flex items-start gap-2">
+                            <span className="mt-[0.35rem] w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: c }} />
+                            {b}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+
+                    {it.skills && (
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {it.skills.split(",").map((s, si) => (
+                          <span key={si} className="font-mono text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-zinc-100 text-zinc-600 rounded-sm">
+                            {s.trim()}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        {/* ── DESKTOP EDITORIAL GRID ── */}
+        <Reveal delay={0.1}>
+          <div className="hidden lg:grid grid-cols-[1fr_320px] gap-0 border-[3px] border-[var(--color-industrial-dark)] shadow-[8px_8px_0_var(--color-industrial-dark)]">
 
             {/* LEFT — FEATURED STORY */}
-            <div className="border-r-0 lg:border-r-[3px] border-b-[3px] lg:border-b-0 border-[var(--color-industrial-dark)] relative overflow-hidden">
+            <div className="border-r-[3px] border-b-0 border-[var(--color-industrial-dark)] relative overflow-hidden">
 
               <AnimatePresence mode="wait">
                 <motion.div
@@ -193,17 +253,37 @@ export function Experience() {
                   {/* HEADLINE section */}
                   <div className="p-6 md:p-8 border-b-[3px] border-dashed border-[var(--color-industrial-dark)]">
 
-                    {/* Kicker label */}
-                    <div className="flex items-center gap-3 mb-3">
-                      <span
-                        className="font-mono text-[0.62rem] font-black tracking-[0.25em] uppercase px-2.5 py-1 text-white"
-                        style={{ backgroundColor: featuredColor }}
-                      >
-                        LEAD STORY
-                      </span>
-                      <span className="font-mono text-[0.62rem] text-[var(--color-industrial-gray)] tracking-widest uppercase opacity-50">
-                        {featured.year}
-                      </span>
+                    {/* Kicker label and Nav */}
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-3">
+                        <span
+                          className="font-mono text-[0.62rem] font-black tracking-[0.25em] uppercase px-2.5 py-1 text-white"
+                          style={{ backgroundColor: featuredColor }}
+                        >
+                          LEAD STORY
+                        </span>
+                        <span className="font-mono text-[0.62rem] text-[var(--color-industrial-gray)] tracking-widest uppercase opacity-50">
+                          {featured.year}
+                        </span>
+                      </div>
+                      
+                      {/* Navigation Buttons (Desktop) */}
+                      <div className="hidden md:flex items-center gap-2">
+                        <button 
+                          onClick={() => setFeaturedIdx(prev => prev > 0 ? prev - 1 : items.length - 1)}
+                          className="w-7 h-7 flex items-center justify-center border-[2px] border-[var(--color-industrial-dark)] text-[var(--color-industrial-dark)] hover:bg-[var(--color-industrial-dark)] hover:text-white transition-colors"
+                          aria-label="Previous Experience"
+                        >
+                          <ChevronLeft size={14} strokeWidth={3} />
+                        </button>
+                        <button 
+                          onClick={() => setFeaturedIdx(prev => prev < items.length - 1 ? prev + 1 : 0)}
+                          className="w-7 h-7 flex items-center justify-center border-[2px] border-[var(--color-industrial-dark)] text-[var(--color-industrial-dark)] hover:bg-[var(--color-industrial-dark)] hover:text-white transition-colors"
+                          aria-label="Next Experience"
+                        >
+                          <ChevronRight size={14} strokeWidth={3} />
+                        </button>
+                      </div>
                     </div>
 
                     {/* Headline org */}
@@ -289,7 +369,7 @@ export function Experience() {
               </div>
 
               {/* Brief items list */}
-              <div className="flex-1 overflow-y-auto divide-y-[2px] divide-[var(--color-industrial-dark)] divide-dashed">
+              <div className="flex-1 overflow-y-auto max-h-[600px] divide-y-[2px] divide-[var(--color-industrial-dark)] divide-dashed">
                 {items.map((it, i) => {
                   const c = accentColors[i];
                   const isActive = i === featuredIdx;
@@ -351,7 +431,7 @@ export function Experience() {
               </div>
 
               {/* Column footer */}
-              <div className="px-5 py-3 border-t-[3px] border-[var(--color-industrial-dark)]">
+              <div className="px-5 py-3 border-t-[3px] border-[var(--color-industrial-dark)] mt-auto">
                 <p className="font-mono text-[0.55rem] tracking-widest uppercase opacity-30 text-center">
                   SELECT ANY ENTRY TO FEATURE
                 </p>
