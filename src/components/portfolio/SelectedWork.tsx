@@ -64,7 +64,7 @@ const featuredProjects: ProjectItem[] = [
       "   │",
       "PX4 Flight Ctl"
     ],
-    links: { github: "https://github.com", docs: "https://docs.px4.io" }
+    links: { docs: "https://docs.px4.io" }
   },
   {
     no: "02",
@@ -100,9 +100,7 @@ const featuredProjects: ProjectItem[] = [
       "       │",
       "LoRaWAN Transceiver"
     ],
-    links: {
-      github: "https://github.com/MokshagnaAnurag",
-    }
+    links: {}
   },
   {
     no: "03",
@@ -186,7 +184,7 @@ interface ArchiveItem {
   year: string;
   category: "Robotics" | "Autonomous Systems" | "AI & Vision" | "Cybersecurity";
   stack: string[];
-  github: string;
+  github?: string;
 }
 
 const archiveProjects: ArchiveItem[] = [
@@ -204,7 +202,6 @@ const archiveProjects: ArchiveItem[] = [
     year: "2024",
     category: "Robotics",
     stack: ["Arduino", "MPU6050", "PID Control"],
-    github: "https://github.com/MokshagnaAnurag",
   },
   {
     title: "Line Following Robot",
@@ -220,7 +217,6 @@ const archiveProjects: ArchiveItem[] = [
     year: "2025",
     category: "AI & Vision",
     stack: ["IoT", "Raspberry Pi", "OpenCV"],
-    github: "https://github.com/MokshagnaAnurag",
   },
   {
     title: "Cybercrime Reporting Chatbot",
@@ -228,7 +224,6 @@ const archiveProjects: ArchiveItem[] = [
     year: "2024",
     category: "AI & Vision",
     stack: ["Python", "AI", "Gradio", "NLP"],
-    github: "https://github.com/MokshagnaAnurag",
   },
   {
     title: "Automatic Vehicle Number Plate Detection",
@@ -349,22 +344,22 @@ export function SelectedWork() {
 
   return (
     <>
-      {/* Engineered Systems Showcase - Black Background Maintained */}
-      <section id="work" className="relative py-24 bg-[var(--color-industrial-dark)] border-b-4 border-mech text-[var(--color-industrial-white)]">
+      {/* Engineered Systems Showcase - White Background */}
+      <section id="work" className="relative py-24 bg-[var(--color-industrial-white)] border-b-4 border-mech text-[var(--color-industrial-dark)]">
 
         {/* Blueprint Grid Lines Overlay */}
-        <div className="absolute inset-0 bg-blueprint-dark opacity-20 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-blueprint opacity-10 pointer-events-none"></div>
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
           <Reveal>
-            <div className="inline-flex items-center font-mono text-xs font-bold tracking-[0.2em] uppercase bg-[var(--color-industrial-white)] text-[var(--color-industrial-dark)] px-4 py-1 border border-[var(--color-industrial-white)] shadow-[0_0_12px_rgba(255,255,255,0.2),4px_4px_0_rgba(255,255,255,1)] mb-12 relative">
+            <div className="inline-flex items-center font-mono text-xs font-bold tracking-[0.2em] uppercase bg-[var(--color-industrial-dark)] text-[var(--color-industrial-white)] px-4 py-1 border border-[var(--color-industrial-dark)] shadow-[0_0_12px_rgba(0,0,0,0.1),4px_4px_0_rgba(0,0,0,1)] mb-12 relative">
               <span className="mr-2 opacity-70">[&gt;</span>
               DOSSIER
               <span className="ml-2 opacity-70">]</span>
             </div>
 
-            <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-8 leading-[0.9]">
-              <span className="text-[var(--color-industrial-blue)] text-stroke-mech-white">ENGINEERED</span> SYSTEMS
+            <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-8 leading-[0.9] text-[var(--color-industrial-dark)]">
+              <span className="text-[var(--color-industrial-blue)] text-stroke-mech-2">ENGINEERED</span> SYSTEMS
             </h2>
           </Reveal>
 
@@ -378,7 +373,7 @@ export function SelectedWork() {
                 <Reveal key={p.no} delay={idx * 0.1}>
                   {/* --- DETAILED DESIGN (ALL SCREENS) --- */}
                   <article
-                    className="group relative w-full flex flex-col lg:flex-row overflow-hidden bg-[#0d0d11]/80 border border-zinc-800/80 hover:border-zinc-500 transition-all duration-500 shadow-[8px_8px_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_var(--card-accent)]"
+                    className="group relative w-full flex flex-col lg:flex-row overflow-hidden bg-white border border-black/10 hover:border-black transition-all duration-500 shadow-[8px_8px_0_rgba(0,0,0,0.15)] hover:shadow-[12px_12px_0_var(--card-accent)]"
                     style={{ ["--card-accent" as any]: accentColor }}
                   >
                     {/* Color Glow Effect behind content */}
@@ -387,40 +382,40 @@ export function SelectedWork() {
                     <div className="flex flex-col lg:flex-row h-full w-full relative z-10">
 
                       {/* Left Column: Image and Arch Diagram */}
-                      <div className="w-full lg:w-[40%] flex flex-col border-b lg:border-b-0 lg:border-r border-zinc-800/80 relative">
+                      <div className="w-full lg:w-[40%] flex flex-col border-b lg:border-b-0 lg:border-r border-black/10 relative">
                         {/* Image Box */}
-                        <div className="relative aspect-video lg:aspect-auto lg:flex-1 overflow-hidden group-hover:after:absolute group-hover:after:inset-0 group-hover:after:bg-[var(--card-accent)] group-hover:after:mix-blend-overlay group-hover:after:opacity-30">
+                        <div className="relative aspect-video lg:aspect-auto lg:flex-1 overflow-hidden group-hover:after:absolute group-hover:after:inset-0 group-hover:after:bg-[var(--card-accent)] group-hover:after:mix-blend-overlay group-hover:after:opacity-20">
                           <img
                             src={p.image}
                             alt={p.title}
-                            className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-105"
+                            className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d11] via-transparent to-transparent opacity-80"></div>
-                          <span className="absolute bottom-4 left-6 font-display text-6xl font-black text-white/10 group-hover:text-[var(--card-accent)] group-hover:opacity-20 transition-colors duration-500 select-none">
+                          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-80"></div>
+                          <span className="absolute bottom-4 left-6 font-display text-6xl font-black text-black/10 group-hover:text-[var(--card-accent)] group-hover:opacity-30 transition-colors duration-500 select-none">
                             {p.no}
                           </span>
                         </div>
 
                         {/* Arch Diagram Box */}
-                        <div className="p-6 bg-[#050505] relative overflow-hidden group-hover:bg-[#0a0a0c] transition-colors duration-500">
+                        <div className="p-6 bg-gray-50 relative overflow-hidden group-hover:bg-gray-100 transition-colors duration-500">
                           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-accent)] to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                          <h5 className="font-mono text-[9px] uppercase tracking-[0.3em] font-bold mb-4 opacity-50 text-white flex items-center gap-2 group-hover:opacity-100 transition-opacity">
+                          <h5 className="font-mono text-[9px] uppercase tracking-[0.3em] font-bold mb-4 opacity-60 text-black flex items-center gap-2 group-hover:opacity-100 transition-opacity">
                             <ChevronRight size={12} className="text-[var(--card-accent)]" />
                             Architecture
                           </h5>
-                          <pre className="font-mono text-[10px] leading-tight text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                          <pre className="font-mono text-[10px] leading-tight text-gray-500 group-hover:text-black transition-colors">
                             {p.architecture.join('\n')}
                           </pre>
                         </div>
                       </div>
 
                       {/* Right Column: Content */}
-                      <div className="w-full lg:w-[60%] p-6 md:p-8 flex flex-col justify-between bg-gradient-to-br from-transparent to-[#050505]/50">
+                      <div className="w-full lg:w-[60%] p-6 md:p-8 flex flex-col justify-between bg-white">
                         <div>
                           {/* Category Tag */}
                           <div className="mb-3">
                             <span
-                              className="inline-flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-black/40 border border-zinc-700/50 group-hover:border-[var(--card-accent)] transition-colors shadow-sm"
+                              className="inline-flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-gray-50 border border-gray-200 group-hover:border-[var(--card-accent)] transition-colors shadow-sm text-black"
                               style={{ color: accentColor }}
                             >
                               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }}></span>
@@ -430,26 +425,26 @@ export function SelectedWork() {
 
                           {/* Title & Badge */}
                           <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                            <h3 className="font-display text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-none group-hover:text-[var(--card-accent)] transition-colors duration-300">
+                            <h3 className="font-display text-3xl md:text-4xl font-black uppercase tracking-tight text-black leading-none group-hover:text-[var(--card-accent)] transition-colors duration-300">
                               {p.title}
                             </h3>
-                            <span className="inline-flex shrink-0 items-center gap-2 font-mono text-[10px] font-bold uppercase border border-zinc-700 bg-zinc-900/50 text-zinc-300 px-3 py-1.5 shadow-[2px_2px_0_rgba(0,0,0,0.5)] group-hover:border-[var(--card-accent)] transition-colors">
+                            <span className="inline-flex shrink-0 items-center gap-2 font-mono text-[10px] font-bold uppercase border border-gray-300 bg-gray-50 text-gray-700 px-3 py-1.5 shadow-[2px_2px_0_rgba(0,0,0,0.1)] group-hover:border-[var(--card-accent)] transition-colors">
                               <span style={{ color: accentColor }}>{getStatusIcon(p.status)}</span>
                               {p.status}
                             </span>
                           </div>
 
                           {/* Summary Blockquote */}
-                          <blockquote className="border-l-4 pl-4 mb-6 font-mono text-xs leading-relaxed text-zinc-400 italic bg-gradient-to-r from-[var(--card-accent)]/10 to-transparent py-2 group-hover:text-zinc-300 transition-colors" style={{ borderColor: accentColor }}>
+                          <blockquote className="border-l-4 pl-4 mb-6 font-mono text-xs leading-relaxed text-gray-600 italic bg-gradient-to-r from-[var(--card-accent)]/10 to-transparent py-2 group-hover:text-black transition-colors" style={{ borderColor: accentColor }}>
                             "{p.summary}"
                           </blockquote>
 
                           {/* Tech Stack Chips */}
-                          <div className="flex flex-wrap gap-2 mb-8 pb-6 border-b border-dashed border-zinc-800">
+                          <div className="flex flex-wrap gap-2 mb-8 pb-6 border-b border-dashed border-gray-200">
                             {p.stack.map((s) => (
                               <span
                                 key={s}
-                                className="bg-black/50 text-zinc-300 font-mono text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider border border-zinc-800 hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 cursor-default shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"
+                                className="bg-gray-50 text-gray-700 font-mono text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider border border-gray-200 hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 cursor-default shadow-sm"
                               >
                                 {s}
                               </span>
@@ -461,22 +456,22 @@ export function SelectedWork() {
 
                             {/* Problem */}
                             <div className="group/item">
-                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-[var(--card-accent)] transition-colors">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 group-hover/item:text-[var(--card-accent)] transition-colors">
                                 Problem Statement
                               </h4>
-                              <p className="font-mono text-[11px] leading-relaxed text-zinc-300">
+                              <p className="font-mono text-[11px] leading-relaxed text-gray-700">
                                 {p.problem}
                               </p>
                             </div>
 
                             {/* Methodology */}
                             <div className="group/item">
-                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-[var(--card-accent)] transition-colors">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 group-hover/item:text-[var(--card-accent)] transition-colors">
                                 Methodology
                               </h4>
                               <ul className="space-y-1">
                                 {p.methodology.map((m, i) => (
-                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-zinc-300 flex items-start gap-2">
+                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-gray-700 flex items-start gap-2">
                                     <span className="mt-0.5" style={{ color: accentColor }}>•</span>
                                     {m}
                                   </li>
@@ -486,13 +481,13 @@ export function SelectedWork() {
 
                             {/* Challenges */}
                             <div className="group/item">
-                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-red-400 transition-colors">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 group-hover/item:text-red-500 transition-colors">
                                 Challenges
                               </h4>
                               <ul className="space-y-1">
                                 {p.challenges.map((c, i) => (
-                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-zinc-300 flex items-start gap-2">
-                                    <span className="text-red-500/80 mt-0.5 group-hover/item:text-red-400">•</span>
+                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-gray-700 flex items-start gap-2">
+                                    <span className="text-red-500 mt-0.5">•</span>
                                     {c}
                                   </li>
                                 ))}
@@ -501,13 +496,13 @@ export function SelectedWork() {
 
                             {/* Results */}
                             <div className="group/item">
-                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-green-400 transition-colors">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 group-hover/item:text-green-600 transition-colors">
                                 Results
                               </h4>
                               <ul className="space-y-1">
                                 {p.results.map((r, i) => (
-                                  <li key={i} className="font-mono text-[11px] leading-relaxed font-bold text-white flex items-start gap-2">
-                                    <span className="text-green-500 mt-0.5 group-hover/item:text-green-400">✓</span>
+                                  <li key={i} className="font-mono text-[11px] leading-relaxed font-bold text-black flex items-start gap-2">
+                                    <span className="text-green-600 mt-0.5 group-hover/item:text-green-500">✓</span>
                                     {r.replace('✓ ', '')}
                                   </li>
                                 ))}
@@ -517,24 +512,24 @@ export function SelectedWork() {
                         </div>
 
                         {/* Action Links */}
-                        <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-zinc-800/80">
+                        <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-gray-200">
                           {p.links.github && (
-                            <a href={p.links.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a href={p.links.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
                               <Github size={14} /> Source Code
                             </a>
                           )}
                           {p.links.demo && (
-                            <a href={p.links.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a href={p.links.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
                               <Globe size={14} /> Demo
                             </a>
                           )}
                           {p.links.docs && (
-                            <a href={p.links.docs} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a href={p.links.docs} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
                               <FileText size={14} /> Documentation
                             </a>
                           )}
                           {p.links.paper && (
-                            <a href={p.links.paper} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a href={p.links.paper} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
                               <BookOpen size={14} /> Research Paper
                             </a>
                           )}
@@ -685,16 +680,23 @@ export function SelectedWork() {
                             <span className="font-mono text-[8px] text-zinc-500 font-bold">
                               REF // 0{idx + 1}-{p.year}
                             </span>
-                            <a
-                              href={p.github}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold text-[var(--color-industrial-white)] group-hover:text-[var(--accent-color)] transition-colors"
-                            >
-                              <Github size={12} />
-                              INSPECT CODE
-                              <ArrowUpRight size={10} className="opacity-50" />
-                            </a>
+                            {p.github ? (
+                              <a
+                                href={p.github}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold text-[var(--color-industrial-white)] group-hover:text-[var(--accent-color)] transition-colors"
+                              >
+                                <Github size={12} />
+                                INSPECT CODE
+                                <ArrowUpRight size={10} className="opacity-50" />
+                              </a>
+                            ) : (
+                              <span className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold text-zinc-600 cursor-not-allowed">
+                                <Search size={12} />
+                                PRIVATE SYSTEM
+                              </span>
+                            )}
                           </div>
                         </div>
 
