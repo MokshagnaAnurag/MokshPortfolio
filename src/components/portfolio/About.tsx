@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "./Reveal";
+import profileImgBase from "../../assets/profile-sketch.jpg";
+import profileImgHover from "../../assets/profile-sketch-hover-v3.png";
 
 const meta = [
   ["Credentials", "ECE Graduate"],
@@ -101,8 +103,33 @@ export function About() {
                   &gt; ID_CARD.EXE
                 </div>
                 
-                <div className="border-4 border-mech shadow-mech-lg bg-[var(--color-industrial-white)] p-8 clip-mech">
-                  <h3 className="text-2xl font-black uppercase mb-1 font-display mt-2 text-[var(--color-industrial-dark)]">MOKSHAGNA ANURAG KANKATI</h3>
+                <div className="border-4 border-mech shadow-mech-lg bg-[var(--color-industrial-white)] p-6 md:p-8 clip-mech">
+                  
+                  {/* Animated Profile Image */}
+                  <motion.div 
+                    className="w-full aspect-square mb-8 border-[4px] border-[var(--color-industrial-dark)] shadow-[8px_8px_0_0_var(--color-industrial-dark)] overflow-hidden relative group cursor-crosshair bg-white"
+                  >
+                    {/* Red Tag on Image */}
+                    <div className="absolute top-2.5 left-2.5 bg-red-500 text-white font-mono text-[0.72rem] font-bold px-2 py-[3px] border border-[var(--color-industrial-dark)] z-40 uppercase shadow-sm">
+                      READY TO WORK
+                    </div>
+
+                    {/* Base Black & White Sketch */}
+                    <img 
+                      src={profileImgBase} 
+                      alt="Mokshagna Anurag Kankati" 
+                      className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+
+                    {/* Colored Sketch on Hover */}
+                    <img 
+                      src={profileImgHover} 
+                      alt="Mokshagna Anurag Kankati Colored" 
+                      className="absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105 z-10"
+                    />
+                  </motion.div>
+
+                  <h3 className="text-2xl font-black uppercase mb-1 font-display text-[var(--color-industrial-dark)]">MOKSHAGNA ANURAG KANKATI</h3>
                   
                   <div className="h-6 relative overflow-hidden mb-1 w-full flex items-center">
                     <AnimatePresence mode="wait">
