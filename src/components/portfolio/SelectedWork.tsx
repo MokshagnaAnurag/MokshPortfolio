@@ -113,7 +113,7 @@ const featuredProjects: ProjectItem[] = [
     problem: "Create a research-grade prototype for learning-enabled autonomous driving to test novel algorithms safely.",
     methodology: [
       "Developed a scalable ROS2 software stack.",
-      "Integrated 3D LiDAR for environment scanning.",
+      "Integrated 2D LiDAR for environment scanning.",
       "Designed closed-loop trajectory planners."
     ],
     challenges: [
@@ -126,7 +126,7 @@ const featuredProjects: ProjectItem[] = [
       "✓ Validated simulation environment"
     ],
     architecture: [
-      "3D LiDAR",
+      "2D LiDAR",
       "   │",
       "Perception Node",
       "   │",
