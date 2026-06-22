@@ -78,7 +78,7 @@ export function About() {
 
 <Reveal delay={0.2}>
   <p className="mb-8 text-gray-300 border-l-4 border-[var(--color-industrial-blue)] pl-4 bg-[var(--color-industrial-white)]/5 py-3 pr-3">
-    Beyond academics, I actively contribute to open-source initiatives through SwechaAP, participate in hackathons and research projects, and continuously explore emerging technologies in autonomous systems, embedded AI, and space robotics.
+    Beyond academics, I actively participate in open-source initiatives, hackathons, and research projects while continuously exploring emerging technologies in autonomous systems, embedded systems, physical AI and robotics. I am driven by the challenge of building reliable and scalable systems that bridge the gap between software intelligence and real-world deployment.
   </p>
 </Reveal>
 
