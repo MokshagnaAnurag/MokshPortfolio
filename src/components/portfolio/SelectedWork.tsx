@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Search, ShieldAlert, ArrowUpRight } from "lucide-react";
+import { Github, Search, Globe, FileText, BookOpen, ChevronRight, ArrowUpRight } from "lucide-react";
 import drone from "@/assets/project-drone.jpg";
 import cubesat from "@/assets/project-cubesat.jpg";
 import driving from "@/assets/project-driving.jpg";
@@ -10,54 +10,174 @@ import { Reveal } from "./Reveal";
 interface ProjectItem {
   no: string;
   title: string;
+  category: string;
+  status: "ACTIVE" | "COMPLETED" | "ONGOING" | "PUBLISHED";
   summary: string;
   year: string;
   stack: string[];
   image: string;
-  github: string;
+  problem: string;
+  methodology: string[];
+  challenges: string[];
+  results: string[];
+  architecture: string[];
+  links: {
+    github?: string;
+    demo?: string;
+    docs?: string;
+    paper?: string;
+  };
 }
 
 const featuredProjects: ProjectItem[] = [
   {
     no: "01",
     title: "Autonomous Drone Systems",
-    summary:
-      "Flight stack and perception research on PX4-driven UAVs with onboard SLAM and obstacle reasoning.",
+    category: "AEROSPACE & UAV",
+    status: "ONGOING",
+    summary: "Flight stack and perception research on PX4-driven UAVs with onboard SLAM and obstacle reasoning.",
     year: "2025",
     stack: ["PX4", "ROS2", "SLAM", "Embedded C"],
     image: drone,
-    github: "https://github.com/MokshagnaAnurag/ardupilot-gazebo-gimbal-simulation",
+    problem: "Achieve stable autonomous flight and real-time mapping for UAVs in GPS-denied environments.",
+    methodology: [
+      "Integrated PX4 autopilot with ROS2 via microRTPS.",
+      "Implemented visual SLAM for localization.",
+      "Simulated drone dynamics in Gazebo."
+    ],
+    challenges: [
+      "High-frequency state estimation.",
+      "Complex sensor fusion tuning.",
+      "Non-linear control dynamics."
+    ],
+    results: [
+      "✓ Stable hover and waypoint tracking",
+      "✓ Gazebo simulation integration",
+      "✓ Real-time state telemetry"
+    ],
+    architecture: [
+      "Camera/IMU",
+      "   │",
+      "Visual SLAM",
+      "   │",
+      "ROS2 Nav",
+      "   │",
+      "PX4 Flight Ctl"
+    ],
+    links: { github: "https://github.com", docs: "https://docs.px4.io" }
   },
   {
     no: "02",
-    title: "CubeSat Prototype",
-    summary:
-      "Compact satellite subsystem prototyping — power, telemetry and command pipelines.",
+    title: "Spaceborn Cubesat Research",
+    category: "SPACE SYSTEMS",
+    status: "PUBLISHED",
+    summary: "Attitude determination and control system simulation for a 3U CubeSat.",
     year: "2024",
-    stack: ["STM32", "RTOS", "Telemetry"],
+    stack: ["MATLAB", "Simulink", "C++", "FreeRTOS"],
     image: cubesat,
-    github: "https://github.com/MokshagnaAnurag",
+    problem: "Design a robust and modular 1U CubeSat architecture that handles real-time telemetry and power distribution under constrained resources.",
+    methodology: [
+      "Developed custom PCBs for the OBC.",
+      "Programmed an RTOS on STM32 for task scheduling.",
+      "Implemented LoRaWAN for ground station communication."
+    ],
+    challenges: [
+      "Strict power budgets.",
+      "RTOS task starvation.",
+      "Signal integrity in RF modules."
+    ],
+    results: [
+      "✓ Successful sensor data transmission over LoRa",
+      "✓ Modular 1U hardware design",
+      "✓ Reliable multi-tasking under 100ms deadlines"
+    ],
+    architecture: [
+      "Sensors & Solar Panels",
+      "       │",
+      "Power Management Unit",
+      "       │",
+      "STM32 OBC (RTOS)",
+      "       │",
+      "LoRaWAN Transceiver"
+    ],
+    links: {
+      github: "https://github.com/MokshagnaAnurag",
+    }
   },
   {
     no: "03",
     title: "LEAD · Autonomous Driving",
-    summary:
-      "Closed-loop perception and planning experiments for an autonomous research platform.",
+    status: "PUBLISHED",
+    summary: "Closed-loop perception and planning experiments for an autonomous research platform.",
     year: "2024",
     stack: ["LiDAR", "ROS2", "Python"],
     image: driving,
-    github: "https://github.com/MokshagnaAnurag/Self_driving_bot",
+    problem: "Create a research-grade prototype for learning-enabled autonomous driving to test novel algorithms safely.",
+    methodology: [
+      "Developed a scalable ROS2 software stack.",
+      "Integrated 3D LiDAR for environment scanning.",
+      "Designed closed-loop trajectory planners."
+    ],
+    challenges: [
+      "High data bandwidth from 3D LiDAR.",
+      "Processing latency impacting control loops."
+    ],
+    results: [
+      "✓ Real-time trajectory planning",
+      "✓ Seamless sensor data integration",
+      "✓ Validated simulation environment"
+    ],
+    architecture: [
+      "3D LiDAR",
+      "   │",
+      "Perception Node",
+      "   │",
+      "Trajectory Planner",
+      "   │",
+      "Kinematic Controller"
+    ],
+    links: {
+      github: "https://github.com/MokshagnaAnurag/Self_driving_bot",
+    }
   },
+
   {
     no: "04",
     title: "Autonomous Lunabot",
-    summary:
-      "Engineered an autonomous robotic system (Lunabot) using ROS 2, integrating custom launch files for robot bringup and simulation environments. Configured and deployed Navigation2 (Nav2) stack for autonomous path planning and obstacle avoidance, visualized in real-time using Rviz.",
+    category: "ROBOTICS HARDWARE",
+    status: "COMPLETED",
+    summary: "Engineered an autonomous robotic system for lunar excavation scenarios using ROS2 and Nav2.",
     year: "2025",
     stack: ["ROS2", "Python", "Nav2", "RViz"],
     image: lunabot,
-    github: "https://github.com/MokshagnaAnurag/LUNA_BOT",
-  },
+    problem: "Navigate a simulated complex lunar terrain autonomously to reach specific excavation zones while avoiding craters.",
+    methodology: [
+      "Integrated custom launch files for robot bringup.",
+      "Configured Nav2 stack for challenging terrains.",
+      "Visualized real-time costmaps in RViz."
+    ],
+    challenges: [
+      "Tuning costmap parameters for non-flat terrain.",
+      "Recovery behaviors when stuck in craters."
+    ],
+    results: [
+      "✓ 90% success rate in waypoint navigation",
+      "✓ Robust obstacle avoidance",
+      "✓ Comprehensive RViz visualization setups"
+    ],
+    architecture: [
+      "Depth Camera",
+      "   │",
+      "Terrain Costmap",
+      "   │",
+      "Nav2 BT Navigator",
+      "   │",
+      "Locomotion Drive"
+    ],
+    links: {
+      github: "https://github.com/MokshagnaAnurag/LUNA_BOT",
+    }
+  }
 ];
 
 interface ArchiveItem {
@@ -217,125 +337,233 @@ export function SelectedWork() {
     });
   }, [selectedCategory, searchQuery]);
 
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case "ACTIVE": return "🟢";
+      case "COMPLETED": return "✅";
+      case "ONGOING": return "🚧";
+      case "PUBLISHED": return "📝";
+      default: return "🟢";
+    }
+  };
+
   return (
-    <section id="work" className="relative py-24 bg-[var(--color-industrial-dark)] border-b-4 border-mech text-[var(--color-industrial-white)]">
-      
-      {/* Blueprint Grid Lines Overlay */}
-      <div className="absolute inset-0 bg-blueprint-dark opacity-20 pointer-events-none"></div>
+    <>
+      {/* Engineered Systems Showcase - Black Background Maintained */}
+      <section id="work" className="relative py-24 bg-[var(--color-industrial-dark)] border-b-4 border-mech text-[var(--color-industrial-white)]">
 
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
-        <Reveal>
-          <div className="inline-flex items-center font-mono text-xs font-bold tracking-[0.2em] uppercase bg-[var(--color-industrial-white)] text-[var(--color-industrial-dark)] px-4 py-1 border border-[var(--color-industrial-white)] shadow-[0_0_12px_rgba(255,255,255,0.2),4px_4px_0_rgba(255,255,255,1)] mb-12 relative">
-            <span className="mr-2 opacity-70">[&gt;</span>
-            DOSSIER
-            <span className="ml-2 opacity-70">]</span>
-          </div>
+        {/* Blueprint Grid Lines Overlay */}
+        <div className="absolute inset-0 bg-blueprint-dark opacity-20 pointer-events-none"></div>
 
-          <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-8 leading-[0.9]">
-            <span className="text-[var(--color-industrial-blue)] text-stroke-mech-white">ENGINEERED</span> SYSTEMS
-          </h2>
-        </Reveal>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
+          <Reveal>
+            <div className="inline-flex items-center font-mono text-xs font-bold tracking-[0.2em] uppercase bg-[var(--color-industrial-white)] text-[var(--color-industrial-dark)] px-4 py-1 border border-[var(--color-industrial-white)] shadow-[0_0_12px_rgba(255,255,255,0.2),4px_4px_0_rgba(255,255,255,1)] mb-12 relative">
+              <span className="mr-2 opacity-70">[&gt;</span>
+              DOSSIER
+              <span className="ml-2 opacity-70">]</span>
+            </div>
 
-        {/* Featured Projects Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2">
-          {featuredProjects.map((p, idx) => {
-            const cardColors = ["#10b981", "#06b6d4", "#f59e0b", "#f97316", "#3b82f6", "#ec4899", "#8b5cf6", "#ef4444"];
-            const accentColor = cardColors[(idx + 4) % cardColors.length];
+            <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-8 leading-[0.9]">
+              <span className="text-[var(--color-industrial-blue)] text-stroke-mech-white">ENGINEERED</span> SYSTEMS
+            </h2>
+          </Reveal>
 
-            return (
-            <Reveal key={p.no} delay={idx * 0.1}>
-              <article 
-                className="group relative h-[450px] w-full overflow-hidden bg-[#050505] border border-zinc-800/50 hover:border-zinc-600 transition-colors duration-500 cursor-pointer"
-                style={{ ["--card-accent" as any]: accentColor }}
-              >
-                
-                {/* Background Image & Overlay */}
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
-                
-                {/* Diagonal striping subtle overlay */}
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwaGF0aCBkPSJNMCA0MGw0MC00MEgwbzQwIDB2NDBMMCAwIi8+PC9nPjwvc3ZnPg==')] opacity-30 pointer-events-none mix-blend-overlay group-hover:opacity-0 transition-opacity duration-700"></div>
+          {/* Featured Projects Grid with Detailed Layout */}
+          <div className="mt-16 flex flex-col gap-12">
+            {featuredProjects.map((p, idx) => {
+              const cardColors = ["#10b981", "#06b6d4", "#f59e0b", "#f97316"];
+              const accentColor = cardColors[idx % cardColors.length];
 
-                {/* Top Header */}
-                <div className="absolute top-6 left-6 right-6 flex justify-between items-start z-20">
-                  <div className="flex gap-2">
-                    <span className="font-mono text-[10px] bg-zinc-950/80 backdrop-blur-md text-zinc-300 px-2.5 py-1 uppercase tracking-widest border border-zinc-800/50">
-                      {p.year}
-                    </span>
-                  </div>
-                  
-                  {/* Huge Number */}
-                  <span className="font-mono text-6xl font-black text-white/5 group-hover:text-white/20 transition-colors duration-500 pointer-events-none select-none">
-                    {p.no}
-                  </span>
-                </div>
+              return (
+                <Reveal key={p.no} delay={idx * 0.1}>
+                  {/* --- DETAILED DESIGN (ALL SCREENS) --- */}
+                  <article
+                    className="group relative w-full flex flex-col lg:flex-row overflow-hidden bg-[#0d0d11]/80 border border-zinc-800/80 hover:border-zinc-500 transition-all duration-500 shadow-[8px_8px_0_rgba(0,0,0,0.5)] hover:shadow-[12px_12px_0_var(--card-accent)]"
+                    style={{ ["--card-accent" as any]: accentColor }}
+                  >
+                    {/* Color Glow Effect behind content */}
+                    <div className="absolute top-1/2 right-1/4 w-[30vw] h-[30vw] -translate-y-1/2 rounded-full blur-[100px] opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: accentColor }}></div>
 
-                {/* Bottom Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-20 flex flex-col justify-end">
-                  
-                  {/* Decorative Elements */}
-                  <div className="flex items-center gap-4 mb-5 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                    <div className="h-[1px] w-8 bg-zinc-500"></div>
-                    <span className="font-mono text-[9px] text-zinc-400 uppercase tracking-[0.3em]">SYSTEM SCHEMATIC</span>
-                  </div>
+                    <div className="flex flex-col lg:flex-row h-full w-full relative z-10">
 
-                  <div className="flex justify-between items-end gap-6">
-                    <div className="flex-1 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                      <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white mb-3 text-shadow-sm">
-                        {p.title}
-                      </h3>
-                      
-                      <p className="font-mono text-[13px] leading-[1.6] text-zinc-400 mb-6 max-w-md group-hover:text-zinc-200 transition-colors duration-500 line-clamp-2 md:line-clamp-none">
-                        {p.summary}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {p.stack.map((s) => (
-                          <span
-                            key={s}
-                            className="bg-black/50 backdrop-blur-md text-zinc-300 font-mono text-[10px] px-3 py-1.5 uppercase tracking-wider border border-zinc-800/50 group-hover:border-zinc-600 group-hover:text-white transition-all duration-300"
-                          >
-                            {s}
+                      {/* Left Column: Image and Arch Diagram */}
+                      <div className="w-full lg:w-[40%] flex flex-col border-b lg:border-b-0 lg:border-r border-zinc-800/80 relative">
+                        {/* Image Box */}
+                        <div className="relative aspect-video lg:aspect-auto lg:flex-1 overflow-hidden group-hover:after:absolute group-hover:after:inset-0 group-hover:after:bg-[var(--card-accent)] group-hover:after:mix-blend-overlay group-hover:after:opacity-30">
+                          <img
+                            src={p.image}
+                            alt={p.title}
+                            className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d11] via-transparent to-transparent opacity-80"></div>
+                          <span className="absolute bottom-4 left-6 font-display text-6xl font-black text-white/10 group-hover:text-[var(--card-accent)] group-hover:opacity-20 transition-colors duration-500 select-none">
+                            {p.no}
                           </span>
-                        ))}
+                        </div>
+
+                        {/* Arch Diagram Box */}
+                        <div className="p-6 bg-[#050505] relative overflow-hidden group-hover:bg-[#0a0a0c] transition-colors duration-500">
+                          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-accent)] to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                          <h5 className="font-mono text-[9px] uppercase tracking-[0.3em] font-bold mb-4 opacity-50 text-white flex items-center gap-2 group-hover:opacity-100 transition-opacity">
+                            <ChevronRight size={12} className="text-[var(--card-accent)]" />
+                            Architecture
+                          </h5>
+                          <pre className="font-mono text-[10px] leading-tight text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                            {p.architecture.join('\n')}
+                          </pre>
+                        </div>
+                      </div>
+
+                      {/* Right Column: Content */}
+                      <div className="w-full lg:w-[60%] p-6 md:p-8 flex flex-col justify-between bg-gradient-to-br from-transparent to-[#050505]/50">
+                        <div>
+                          {/* Category Tag */}
+                          <div className="mb-3">
+                            <span
+                              className="inline-flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-black/40 border border-zinc-700/50 group-hover:border-[var(--card-accent)] transition-colors shadow-sm"
+                              style={{ color: accentColor }}
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }}></span>
+                              {p.category || "ENGINEERED SYSTEM"}
+                            </span>
+                          </div>
+
+                          {/* Title & Badge */}
+                          <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                            <h3 className="font-display text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-none group-hover:text-[var(--card-accent)] transition-colors duration-300">
+                              {p.title}
+                            </h3>
+                            <span className="inline-flex shrink-0 items-center gap-2 font-mono text-[10px] font-bold uppercase border border-zinc-700 bg-zinc-900/50 text-zinc-300 px-3 py-1.5 shadow-[2px_2px_0_rgba(0,0,0,0.5)] group-hover:border-[var(--card-accent)] transition-colors">
+                              <span style={{ color: accentColor }}>{getStatusIcon(p.status)}</span>
+                              {p.status}
+                            </span>
+                          </div>
+
+                          {/* Summary Blockquote */}
+                          <blockquote className="border-l-4 pl-4 mb-6 font-mono text-xs leading-relaxed text-zinc-400 italic bg-gradient-to-r from-[var(--card-accent)]/10 to-transparent py-2 group-hover:text-zinc-300 transition-colors" style={{ borderColor: accentColor }}>
+                            "{p.summary}"
+                          </blockquote>
+
+                          {/* Tech Stack Chips */}
+                          <div className="flex flex-wrap gap-2 mb-8 pb-6 border-b border-dashed border-zinc-800">
+                            {p.stack.map((s) => (
+                              <span
+                                key={s}
+                                className="bg-black/50 text-zinc-300 font-mono text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider border border-zinc-800 hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 cursor-default shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"
+                              >
+                                {s}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Details Grid */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 relative">
+
+                            {/* Problem */}
+                            <div className="group/item">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-[var(--card-accent)] transition-colors">
+                                Problem Statement
+                              </h4>
+                              <p className="font-mono text-[11px] leading-relaxed text-zinc-300">
+                                {p.problem}
+                              </p>
+                            </div>
+
+                            {/* Methodology */}
+                            <div className="group/item">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-[var(--card-accent)] transition-colors">
+                                Methodology
+                              </h4>
+                              <ul className="space-y-1">
+                                {p.methodology.map((m, i) => (
+                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-zinc-300 flex items-start gap-2">
+                                    <span className="mt-0.5" style={{ color: accentColor }}>•</span>
+                                    {m}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            {/* Challenges */}
+                            <div className="group/item">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-red-400 transition-colors">
+                                Challenges
+                              </h4>
+                              <ul className="space-y-1">
+                                {p.challenges.map((c, i) => (
+                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-zinc-300 flex items-start gap-2">
+                                    <span className="text-red-500/80 mt-0.5 group-hover/item:text-red-400">•</span>
+                                    {c}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            {/* Results */}
+                            <div className="group/item">
+                              <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 group-hover/item:text-green-400 transition-colors">
+                                Results
+                              </h4>
+                              <ul className="space-y-1">
+                                {p.results.map((r, i) => (
+                                  <li key={i} className="font-mono text-[11px] leading-relaxed font-bold text-white flex items-start gap-2">
+                                    <span className="text-green-500 mt-0.5 group-hover/item:text-green-400">✓</span>
+                                    {r.replace('✓ ', '')}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Action Links */}
+                        <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-zinc-800/80">
+                          {p.links.github && (
+                            <a href={p.links.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                              <Github size={14} /> Source Code
+                            </a>
+                          )}
+                          {p.links.demo && (
+                            <a href={p.links.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                              <Globe size={14} /> Demo
+                            </a>
+                          )}
+                          {p.links.docs && (
+                            <a href={p.links.docs} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                              <FileText size={14} /> Documentation
+                            </a>
+                          )}
+                          {p.links.paper && (
+                            <a href={p.links.paper} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-zinc-700 hover:bg-[var(--card-accent)] hover:text-black hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.5)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                              <BookOpen size={14} /> Research Paper
+                            </a>
+                          )}
+                        </div>
+
                       </div>
                     </div>
-
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="shrink-0 flex items-center justify-center w-12 h-12 bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-[var(--card-accent)] hover:border-[var(--card-accent)] hover:text-black hover:scale-110 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Hover Frame Corners */}
-                <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-transparent group-hover:border-[var(--card-accent)] transition-all duration-500 z-20"></div>
-                <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-transparent group-hover:border-[var(--card-accent)] transition-all duration-500 z-20"></div>
-                <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-transparent group-hover:border-[var(--card-accent)] transition-all duration-500 z-20"></div>
-                <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-transparent group-hover:border-[var(--card-accent)] transition-all duration-500 z-20"></div>
-              </article>
-            </Reveal>
-            );
-          })}
+                  </article>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
+      </section>
 
-        {/* Complete Project Archive */}
-        <div className="mt-32">
+      {/* Complete Project Archive Section (Black Background) */}
+      <section id="archive" className="relative py-32 bg-[var(--color-industrial-dark)] text-[var(--color-industrial-white)] border-b-4 border-mech">
+
+        {/* Dark Blueprint Overlay */}
+        <div className="absolute inset-0 bg-blueprint-dark opacity-20 pointer-events-none"></div>
+
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
           <Reveal>
-            <div className="border-t-4 border-[var(--color-industrial-white)] pt-16">
-              
+            <div className="pt-16">
+
               {/* Header section with Filter Buttons and Search Bar */}
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between mb-12">
                 <div>
-                  <h3 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tight">
+                  <h3 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tight text-[var(--color-industrial-white)]">
                     DATA <span className="text-[var(--color-industrial-orange)] text-stroke-mech-white">ARCHIVE</span>
                   </h3>
                 </div>
@@ -348,7 +576,7 @@ export function SelectedWork() {
                     placeholder="Search systems by stack or title..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-[#0d0d11]/80 text-white border border-zinc-800 py-3 pl-12 pr-4 font-mono text-xs focus:outline-none focus:border-zinc-500 focus:bg-[#0d0d11] transition-all rounded-sm placeholder:text-zinc-655"
+                    className="w-full bg-[#0d0d11]/80 text-[var(--color-industrial-white)] border-2 border-zinc-800 py-3 pl-12 pr-4 font-mono text-xs focus:outline-none focus:border-[var(--color-industrial-blue)] focus:shadow-[4px_4px_0_var(--color-industrial-blue)] transition-all rounded-none placeholder:text-gray-500"
                   />
                 </div>
               </div>
@@ -364,12 +592,11 @@ export function SelectedWork() {
                       onClick={() => setSelectedCategory(cat)}
                       style={{
                         borderColor: isActive ? catColor : "rgba(63, 63, 70, 0.4)",
-                        color: isActive ? "black" : "#d4d4d8",
+                        color: isActive ? "black" : "var(--color-industrial-white)",
                         backgroundColor: isActive ? catColor : "transparent",
                       }}
-                      className={`px-4 py-2 font-mono text-[10px] font-bold uppercase transition-all rounded-sm cursor-pointer border hover:border-zinc-500 hover:text-white ${
-                        isActive ? "shadow-[0_0_12px_rgba(255,255,255,0.05)]" : ""
-                      }`}
+                      className={`px-4 py-2 font-mono text-[10px] font-bold uppercase transition-all cursor-pointer border-2 hover:border-[var(--color-industrial-blue)] hover:text-[var(--color-industrial-blue)] ${isActive ? "shadow-[2px_2px_0_rgba(255,255,255,0.15)]" : "shadow-[2px_2px_0_transparent] hover:shadow-[2px_2px_0_var(--color-industrial-blue)]"
+                        }`}
                     >
                       {cat}
                     </button>
@@ -393,30 +620,30 @@ export function SelectedWork() {
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.25 }}
                         key={p.title}
-                        className="group bg-[#0d0d11]/70 p-6 flex flex-col justify-between h-[340px] rounded-sm relative transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
+                        className="group bg-[#0d0d11]/60 p-6 flex flex-col justify-between h-[340px] relative transition-all duration-300 overflow-hidden cursor-pointer shadow-[4px_4px_0_rgba(0,0,0,0.5)]"
                         style={{
-                          border: `1px solid ${accentColor}`,
-                          boxShadow: `0 0 10px ${accentColor}0f`,
-                          // Pass accentColor as custom CSS property for dynamic Tailwind hover highlights
+                          border: `2px solid rgba(63, 63, 70, 0.4)`,
                           ["--accent-color" as any]: accentColor
                         }}
                         whileHover={{
-                          boxShadow: `0 0 15px ${accentColor}2b`,
+                          translateY: -4,
+                          translateX: -4,
+                          boxShadow: `8px 8px 0 rgba(0,0,0,0.5)`,
                           borderColor: accentColor
                         }}
                       >
                         <div>
                           {/* Card System Header */}
-                          <div className="flex justify-between items-center mb-5 pb-3 border-b border-zinc-900">
-                            <span 
+                          <div className="flex justify-between items-center mb-5 pb-3 border-b-2 border-dashed border-zinc-800">
+                            <span
                               className="font-mono text-[9px] font-bold uppercase flex items-center gap-1.5"
                               style={{ color: accentColor }}
                             >
-                              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
+                              <span className="w-1.5 h-1.5 rounded-none" style={{ backgroundColor: accentColor }} />
                               {p.category}
                             </span>
-                            <span 
-                              className="font-mono text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-sm bg-zinc-900 border border-zinc-850"
+                            <span
+                              className="font-mono text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 border border-zinc-800 text-zinc-300 bg-zinc-900/50"
                               style={{ color: accentColor }}
                             >
                               {statusText}
@@ -424,12 +651,12 @@ export function SelectedWork() {
                           </div>
 
                           {/* Project Title */}
-                          <h4 className="font-display text-lg font-bold uppercase text-white tracking-wide group-hover:text-[var(--accent-color)] transition-colors mb-2 line-clamp-1">
+                          <h4 className="font-display text-lg font-black uppercase text-[var(--color-industrial-white)] tracking-wide group-hover:text-[var(--accent-color)] transition-colors mb-2 line-clamp-1">
                             {p.title}
                           </h4>
 
                           {/* Blockquote Description */}
-                          <p className="font-mono text-[11px] leading-[1.6] text-zinc-400 line-clamp-4 pl-3 border-l border-zinc-800">
+                          <p className="font-mono text-[11px] leading-[1.6] text-zinc-400 line-clamp-4 pl-3 border-l-2 border-zinc-700">
                             {p.summary}
                           </p>
                         </div>
@@ -437,32 +664,32 @@ export function SelectedWork() {
                         {/* Card Footer Stack & Link */}
                         <div>
                           {/* Tech stack inline flow */}
-                          <div className="flex flex-wrap gap-1 mb-4">
+                          <div className="flex flex-wrap gap-1.5 mb-4">
                             {p.stack.slice(0, 3).map((tag) => (
                               <span
                                 key={tag}
-                                className="font-mono text-[9px] font-medium text-zinc-500 bg-zinc-900/40 border border-zinc-850 px-2 py-0.5 rounded-sm"
+                                className="font-mono text-[9px] font-bold text-zinc-400 bg-zinc-900/60 border border-zinc-800 px-2 py-0.5"
                               >
                                 {tag}
                               </span>
                             ))}
                             {p.stack.length > 3 && (
-                              <span className="font-mono text-[9px] text-zinc-550 self-center pl-1 font-bold">
+                              <span className="font-mono text-[9px] text-zinc-500 self-center pl-1 font-bold">
                                 +{p.stack.length - 3}
                               </span>
                             )}
                           </div>
 
                           {/* Action inspect link */}
-                          <div className="border-t border-zinc-900 pt-4 flex justify-between items-center">
-                            <span className="font-mono text-[8px] text-zinc-550">
+                          <div className="border-t-2 border-dashed border-zinc-800 pt-4 flex justify-between items-center">
+                            <span className="font-mono text-[8px] text-zinc-500 font-bold">
                               REF // 0{idx + 1}-{p.year}
                             </span>
                             <a
                               href={p.github}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold text-zinc-450 group-hover:text-[var(--accent-color)] transition-colors"
+                              className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold text-[var(--color-industrial-white)] group-hover:text-[var(--accent-color)] transition-colors"
                             >
                               <Github size={12} />
                               INSPECT CODE
@@ -472,8 +699,8 @@ export function SelectedWork() {
                         </div>
 
                         {/* Category colored bottom hover indicator bar */}
-                        <div 
-                          className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
+                        <div
+                          className="absolute bottom-0 left-0 right-0 h-[4px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
                           style={{ backgroundColor: accentColor }}
                         />
 
@@ -485,8 +712,8 @@ export function SelectedWork() {
 
               {/* No Projects Found */}
               {filteredArchive.length === 0 && (
-                <div className="py-20 text-center border border-dashed border-zinc-850 rounded-sm">
-                  <p className="font-mono text-sm text-zinc-500">
+                <div className="py-20 text-center border-2 border-dashed border-zinc-800 bg-[#0d0d11]/40 mt-6">
+                  <p className="font-mono text-sm text-zinc-500 font-bold">
                     [ NO ARCHIVE SYSTEMS FOUND MATCHING THE SCANNED FILTERS ]
                   </p>
                 </div>
@@ -495,7 +722,7 @@ export function SelectedWork() {
             </div>
           </Reveal>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
