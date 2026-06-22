@@ -21,10 +21,11 @@ const interests = [
 ];
 
 const roles = [
-  "Embedded Systems Engineer",
+  "Embedded Systems",
   "Robotics & Autonomy",
-  "Firmware Developer",
-  "IoT Systems Architect",
+  "UAV Systems",
+  "IoT Systems ",
+  "Physical AI ",
 ];
 
 export function About() {
