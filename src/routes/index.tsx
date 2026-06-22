@@ -39,13 +39,13 @@ function Index() {
       <Navbar />
       <main>
         <ToonhubHero />
-        <SelectedWork />
+        <About />
+        <SelectedWork />      // Projects
+        <Publications />
         <Experience />
         <Education />
-        <Publications />
-        <Blogs />
-        <About />
         <Skills />
+        <Blogs />
         <Contact />
       </main>
       <Footer />
