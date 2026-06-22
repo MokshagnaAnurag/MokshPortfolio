@@ -38,11 +38,11 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
-    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8V4H8" stroke="%230a0a0a" stroke-width="2"/><path d="M20 8V4H16" stroke="%230a0a0a" stroke-width="2"/><path d="M4 16V20H8" stroke="%230a0a0a" stroke-width="2"/><path d="M20 16V20H16" stroke="%230a0a0a" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="%23FF5500"/></svg>') 12 12, crosshair;
+    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="1" fill="%230a0a0a" stroke="%23FF5500" stroke-width="1.5"/><path d="M9 3v3m3-3v3m3-3v3M9 18v3m3-3v3m3-3v3M3 9h3m-3 3h3m-3 3h3m15-6h-3m3 3h-3m3 3h-3" stroke="%23FF5500" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="%23FF5500"/></svg>') 12 12, crosshair;
   }
   
   a, button, [role="button"], input, select, textarea, .cursor-pointer {
-    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8V4H8" stroke="%2300FF41" stroke-width="2"/><path d="M20 8V4H16" stroke="%2300FF41" stroke-width="2"/><path d="M4 16V20H8" stroke="%2300FF41" stroke-width="2"/><path d="M20 16V20H16" stroke="%2300FF41" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="%23FF5500"/><circle cx="12" cy="12" r="6" stroke="%230a0a0a" stroke-width="1" stroke-dasharray="2 2"/></svg>') 12 12, pointer !important;
+    cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="14" height="14" rx="1" fill="%230a0a0a" stroke="%2300FF41" stroke-width="2"/><path d="M10 3v4m4-4v4m4-4v4M10 21v4m4-4v4m4-4v4M3 10h4m-4 4h4m-4 4h4m17-8h-4m4 4h-4m4 4h-4" stroke="%2300FF41" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="%23FF5500"/><circle cx="14" cy="14" r="5" stroke="%2300FF41" stroke-width="1" stroke-dasharray="2 2"/></svg>') 14 14, pointer !important;
   }
 }
 
@@ -115,6 +115,25 @@
     animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
     color: var(--color-industrial-orange);
   }
+
+  /* Custom Section Cursors */
+  .cursor-orange, .cursor-orange * { cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="1" fill="%230a0a0a" stroke="%23ff5722" stroke-width="1.5"/><path d="M9 3v3m3-3v3m3-3v3M9 18v3m3-3v3m3-3v3M3 9h3m-3 3h3m-3 3h3m15-6h-3m3 3h-3m3 3h-3" stroke="%23ff5722" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="%23ff5722"/></svg>') 12 12, crosshair !important; }
+  .cursor-orange a, .cursor-orange button, .cursor-orange [role="button"], .cursor-orange input, .cursor-orange select, .cursor-orange textarea, .cursor-orange .cursor-pointer, .cursor-orange a *, .cursor-orange button * { cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="14" height="14" rx="1" fill="%230a0a0a" stroke="%2300ff41" stroke-width="2"/><path d="M10 3v4m4-4v4m4-4v4M10 21v4m4-4v4m4-4v4M3 10h4m-4 4h4m-4 4h4m17-8h-4m4 4h-4m4 4h-4" stroke="%2300ff41" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="%23ff5722"/><circle cx="14" cy="14" r="5" stroke="%2300ff41" stroke-width="1" stroke-dasharray="2 2"/></svg>') 14 14, pointer !important; }
+
+  .cursor-blue, .cursor-blue * { cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="1" fill="%230a0a0a" stroke="%230055ff" stroke-width="1.5"/><path d="M9 3v3m3-3v3m3-3v3M9 18v3m3-3v3m3-3v3M3 9h3m-3 3h3m-3 3h3m15-6h-3m3 3h-3m3 3h-3" stroke="%230055ff" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="%230055ff"/></svg>') 12 12, crosshair !important; }
+  .cursor-blue a, .cursor-blue button, .cursor-blue [role="button"], .cursor-blue input, .cursor-blue select, .cursor-blue textarea, .cursor-blue .cursor-pointer, .cursor-blue a *, .cursor-blue button * { cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="14" height="14" rx="1" fill="%230a0a0a" stroke="%23ff00ff" stroke-width="2"/><path d="M10 3v4m4-4v4m4-4v4M10 21v4m4-4v4m4-4v4M3 10h4m-4 4h4m-4 4h4m17-8h-4m4 4h-4m4 4h-4" stroke="%23ff00ff" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="%230055ff"/><circle cx="14" cy="14" r="5" stroke="%23ff00ff" stroke-width="1" stroke-dasharray="2 2"/></svg>') 14 14, pointer !important; }
+
+  .cursor-magenta, .cursor-magenta * { cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="1" fill="%230a0a0a" stroke="%23ff00ff" stroke-width="1.5"/><path d="M9 3v3m3-3v3m3-3v3M9 18v3m3-3v3m3-3v3M3 9h3m-3 3h3m-3 3h3m15-6h-3m3 3h-3m3 3h-3" stroke="%23ff00ff" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="%23ff00ff"/></svg>') 12 12, crosshair !important; }
+  .cursor-magenta a, .cursor-magenta button, .cursor-magenta [role="button"], .cursor-magenta input, .cursor-magenta select, .cursor-magenta textarea, .cursor-magenta .cursor-pointer, .cursor-magenta a *, .cursor-magenta button * { cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="14" height="14" rx="1" fill="%230a0a0a" stroke="%2300ffff" stroke-width="2"/><path d="M10 3v4m4-4v4m4-4v4M10 21v4m4-4v4m4-4v4M3 10h4m-4 4h4m-4 4h4m17-8h-4m4 4h-4m4 4h-4" stroke="%2300ffff" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="%23ff00ff"/><circle cx="14" cy="14" r="5" stroke="%2300ffff" stroke-width="1" stroke-dasharray="2 2"/></svg>') 14 14, pointer !important; }
+
+  .cursor-yellow, .cursor-yellow * { cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="1" fill="%230a0a0a" stroke="%23ffcc00" stroke-width="1.5"/><path d="M9 3v3m3-3v3m3-3v3M9 18v3m3-3v3m3-3v3M3 9h3m-3 3h3m-3 3h3m15-6h-3m3 3h-3m3 3h-3" stroke="%23ffcc00" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="%23ffcc00"/></svg>') 12 12, crosshair !important; }
+  .cursor-yellow a, .cursor-yellow button, .cursor-yellow [role="button"], .cursor-yellow input, .cursor-yellow select, .cursor-yellow textarea, .cursor-yellow .cursor-pointer, .cursor-yellow a *, .cursor-yellow button * { cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="14" height="14" rx="1" fill="%230a0a0a" stroke="%23ff5722" stroke-width="2"/><path d="M10 3v4m4-4v4m4-4v4M10 21v4m4-4v4m4-4v4M3 10h4m-4 4h4m-4 4h4m17-8h-4m4 4h-4m4 4h-4" stroke="%23ff5722" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="%23ffcc00"/><circle cx="14" cy="14" r="5" stroke="%23ff5722" stroke-width="1" stroke-dasharray="2 2"/></svg>') 14 14, pointer !important; }
+
+  .cursor-cyan, .cursor-cyan * { cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="1" fill="%230a0a0a" stroke="%2300ffff" stroke-width="1.5"/><path d="M9 3v3m3-3v3m3-3v3M9 18v3m3-3v3m3-3v3M3 9h3m-3 3h3m-3 3h3m15-6h-3m3 3h-3m3 3h-3" stroke="%2300ffff" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="%2300ffff"/></svg>') 12 12, crosshair !important; }
+  .cursor-cyan a, .cursor-cyan button, .cursor-cyan [role="button"], .cursor-cyan input, .cursor-cyan select, .cursor-cyan textarea, .cursor-cyan .cursor-pointer, .cursor-cyan a *, .cursor-cyan button * { cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="14" height="14" rx="1" fill="%230a0a0a" stroke="%230055ff" stroke-width="2"/><path d="M10 3v4m4-4v4m4-4v4M10 21v4m4-4v4m4-4v4M3 10h4m-4 4h4m-4 4h4m17-8h-4m4 4h-4m4 4h-4" stroke="%230055ff" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="%2300ffff"/><circle cx="14" cy="14" r="5" stroke="%230055ff" stroke-width="1" stroke-dasharray="2 2"/></svg>') 14 14, pointer !important; }
+
+  .cursor-green, .cursor-green * { cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="1" fill="%230a0a0a" stroke="%2300ff41" stroke-width="1.5"/><path d="M9 3v3m3-3v3m3-3v3M9 18v3m3-3v3m3-3v3M3 9h3m-3 3h3m-3 3h3m15-6h-3m3 3h-3m3 3h-3" stroke="%2300ff41" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="%2300ff41"/></svg>') 12 12, crosshair !important; }
+  .cursor-green a, .cursor-green button, .cursor-green [role="button"], .cursor-green input, .cursor-green select, .cursor-green textarea, .cursor-green .cursor-pointer, .cursor-green a *, .cursor-green button * { cursor: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="14" height="14" rx="1" fill="%230a0a0a" stroke="%23ffcc00" stroke-width="2"/><path d="M10 3v4m4-4v4m4-4v4M10 21v4m4-4v4m4-4v4M3 10h4m-4 4h4m-4 4h4m17-8h-4m4 4h-4m4 4h-4" stroke="%23ffcc00" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="%2300ff41"/><circle cx="14" cy="14" r="5" stroke="%23ffcc00" stroke-width="1" stroke-dasharray="2 2"/></svg>') 14 14, pointer !important; }
 }
 
 @keyframes glitch-anim {
@@ -216,4 +235,26 @@
   animation: rgbTextGradient 4s linear infinite;
   display: inline-block;
   -webkit-text-stroke: 0 !important;
+}
+
+/* Typing Effect for Boot Sequence */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--color-industrial-blue) }
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid var(--color-industrial-blue);
+  animation: 
+    typing 2s steps(40, end),
+    blink-caret .75s step-end infinite;
+  display: inline-flex;
+  max-width: fit-content;
 }
