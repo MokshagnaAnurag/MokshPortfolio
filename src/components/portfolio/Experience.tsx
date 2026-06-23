@@ -155,12 +155,12 @@ export function Experience() {
             <div className="flex items-end justify-between mb-2">
               <div className="flex items-end gap-6">
                 <h2 className="font-display font-black uppercase tracking-tighter text-[clamp(2.5rem,6vw,5rem)] leading-[0.85] text-black drop-shadow-[4px_4px_0_#ffd700]">
-                  WORK<br/>RECORD
+                  WORK<br/>EXPERIENCE
                 </h2>
               </div>
               <div className="text-right hidden md:block border-l-[4px] border-red-600 pl-4 bg-zinc-100 p-2 shadow-[4px_4px_0_#000]">
                 <p className="font-mono text-[0.6rem] font-black tracking-widest uppercase text-black">
-                  VOL. IV, NO. {items.length} &nbsp;·&nbsp; EDITION
+                  VOL. IV, NO. {items.length} &nbsp;·&nbsp; WORK EDITION
                 </p>
                 <p className="font-mono text-[0.6rem] font-black tracking-widest uppercase text-black">
                   HARDWARE · ROBOTICS · SYSTEMS
