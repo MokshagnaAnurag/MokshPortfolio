@@ -41,6 +41,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
+        <div className="mt-4 p-4 bg-red-950 text-red-200 text-xs text-left overflow-auto rounded max-h-64 whitespace-pre-wrap font-mono border border-red-800">
+          <strong>{error.name}: {error.message}</strong>
+          <br />
+          {error.stack}
+        </div>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -74,7 +79,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <SecurityWrapper>
+        <Outlet />
+      </SecurityWrapper>
     </QueryClientProvider>
   );
 }
