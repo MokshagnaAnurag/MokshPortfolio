@@ -11,7 +11,7 @@ const educationItems = [
     degree: "B.Tech — Electronics & Communication",
     period: "2022 – 2026",
     location: "AP, India",
-    idNo: "STU-95-ECE",
+    idNo: "STU-73-ECE",
     imageSrc: mvgrImg,
   },
   {
@@ -19,7 +19,7 @@ const educationItems = [
     degree: "Class 12 — PCM",
     period: "2020 – 2022",
     location: "AP,India",
-    idNo: "STU-86-PCM",
+    idNo: "STU-05-PCM",
     imageSrc: apexImg,
   },
   {
@@ -27,7 +27,7 @@ const educationItems = [
     degree: "Secondary School Education",
     period: "2014 – 2020",
     location: "AP,India",
-    idNo: "STU-10-SEC",
+    idNo: "STU-23-SEC",
     imageSrc: fortcityImg,
   },
 ];
