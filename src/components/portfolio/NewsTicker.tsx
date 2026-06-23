@@ -6,7 +6,7 @@ export function NewsTicker() {
     <div className="bg-red-600 text-white border-y-[4px] border-black py-2 overflow-hidden flex items-center font-mono text-[10px] md:text-xs font-black uppercase tracking-[0.2em] relative z-20">
       <div className="bg-yellow-400 text-black px-4 py-2 border-r-[4px] border-black z-10 flex items-center gap-2 absolute left-0 top-0 bottom-0 shadow-[4px_0_0_#000] transform skew-x-12 -ml-2">
          <Radio size={16} className="animate-pulse transform -skew-x-12" /> 
-         <span className="transform -skew-x-12 hidden md:inline">PIT STOP RADIO</span>
+         <span className="transform -skew-x-12 hidden md:inline"></span>
          <span className="transform -skew-x-12 md:hidden">RADIO</span>
       </div>
       
