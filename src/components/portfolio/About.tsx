@@ -104,7 +104,7 @@ export function About() {
                 <div className="md:hidden w-full h-[3px] bg-yellow-400"></div>
 
                 <div className="flex flex-col items-center md:items-start group w-full md:w-auto transform skew-x-3">
-                  <span className="font-display text-5xl md:text-6xl font-black text-white group-hover:text-zinc-100 transition-colors">02</span>
+                  <span className="font-display text-5xl md:text-6xl font-black text-white group-hover:text-zinc-100 transition-colors">03</span>
                   <span className="font-mono text-[10px] md:text-xs text-zinc-400 tracking-[0.2em] uppercase mt-2 group-hover:text-white transition-colors">Publications</span>
                 </div>
 
