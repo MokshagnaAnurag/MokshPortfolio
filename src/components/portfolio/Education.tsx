@@ -34,17 +34,17 @@ const items = [
 
 export function Education() {
   return (
-    <section id="education" className="relative py-24 bg-zinc-100 border-b-[8px] border-black overflow-hidden font-sans">
+    <section id="education" className="relative py-24 bg-black border-b-[8px] border-zinc-900 overflow-hidden font-sans">
 
       <div className="mx-auto max-w-[1200px] px-6 relative z-10">
 
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-black flex justify-center items-center gap-3">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white flex justify-center items-center gap-3">
               <GraduationCap className="text-red-600" size={40} />
               Academic <span className="text-red-600">Records</span>
             </h2>
-            <p className="font-mono text-xs uppercase tracking-widest text-zinc-500 mt-2 font-bold">
+            <p className="font-mono text-xs uppercase tracking-widest text-zinc-400 mt-2 font-bold">
               Official Student Credentials
             </p>
           </div>
@@ -57,7 +57,7 @@ export function Education() {
               <Reveal key={it.institution} delay={i * 0.1}>
 
                 {/* ID CARD */}
-                <div className="group relative w-[360px] bg-white rounded-lg shadow-[10px_10px_0_#000] border-[3px] border-black overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-[15px_15px_0_#ef4444] flex flex-col">
+                <div className="group relative w-[360px] bg-white rounded-lg shadow-[10px_10px_0_#3b82f6] border-[3px] border-zinc-800 overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-[15px_15px_0_#ef4444] flex flex-col">
 
                   {/* ID Header / Lanyard Attachment Area */}
                   <div className="w-full bg-blue-900 text-white flex justify-between items-center px-4 py-2 border-b-[3px] border-black relative">
