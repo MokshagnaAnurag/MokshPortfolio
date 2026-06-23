@@ -27,6 +27,8 @@ const roles = [
   "IoT Systems Architect",
 ];
 
+import { NewsTicker } from "./NewsTicker";
+
 export function About() {
   const [roleIndex, setRoleIndex] = useState(0);
 
@@ -38,7 +40,7 @@ export function About() {
   }, []);
 
   return (
-    <section id="about" className="relative py-24 border-b-8 border-dashed border-yellow-400 bg-zinc-950">
+    <section id="about" className="relative pt-24 pb-32 border-b-[8px] border-dashed border-yellow-400 bg-zinc-950">
 
       {/* Track Overlay */}
       <div className="absolute inset-0 bg-blueprint-dark opacity-20 pointer-events-none"></div>
@@ -130,7 +132,7 @@ export function About() {
                 tabIndex={0}
               >
                 <div className="absolute top-0 left-6 bg-yellow-400 text-black font-mono text-[0.8rem] font-black px-4 py-1 border-[3px] border-black shadow-[4px_4px_0_#ff0000] tracking-widest z-20 transform -skew-x-12">
-                  <span className="block transform skew-x-12">&gt; ID_CARD.EXE </span>
+                  <span className="block transform skew-x-12">&gt; RACER_PROFILE.95</span>
                 </div>
 
                 <div className="border-[4px] border-black shadow-[12px_12px_0_#ff0000] bg-zinc-100 p-6 md:p-8 relative mt-4">
@@ -142,7 +144,7 @@ export function About() {
                   >
                     {/* Red Tag on Image */}
                     <div className="absolute top-2.5 left-2.5 bg-red-600 text-white font-mono text-[0.75rem] font-black px-3 py-1 border-[2px] border-black z-40 uppercase shadow-[2px_2px_0_#ffd700] transform -skew-x-12">
-                      <span className="block transform skew-x-12">READY TO WORK</span>
+                      <span className="block transform skew-x-12">READY TO RACE</span>
                     </div>
 
                     {/* Base Black & White Sketch */}
@@ -203,6 +205,10 @@ export function About() {
             </Reveal>
           </div>
         </div>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 w-full z-20">
+        <NewsTicker />
       </div>
     </section>
   );
