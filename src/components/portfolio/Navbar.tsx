@@ -28,7 +28,7 @@ export function Navbar() {
           <div className="pointer-events-auto flex items-center">
             <a href="#top" className="bg-red-600 border-[3px] border-black shadow-[4px_4px_0px_#000] px-4 py-2 font-display font-black text-sm md:text-base tracking-widest uppercase text-white hover:bg-yellow-400 hover:text-red-700 transition-colors flex items-center gap-3 transform -skew-x-12">
               <div className="w-2 h-2 bg-yellow-400 border border-black animate-pulse transform skew-x-12"></div>
-              <span className="italic">M.ANURAG <span className="text-yellow-400 font-bold ml-1">95</span></span>
+              <span className="italic">KM.ANURAG <span className="text-yellow-400 font-bold ml-1">01</span></span>
             </a>
           </div>
 
