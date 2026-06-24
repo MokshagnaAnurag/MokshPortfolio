@@ -23,12 +23,19 @@ export const Route = createFileRoute("/")({
         content:
           "Editorial portfolio of Mokshagna Anurag Kankati — embedded systems, autonomy, aerospace and AI-driven engineering.",
       },
+      { name: "keywords", content: "Embedded Systems, Robotics, Aerospace, Portfolio, Software Engineering, Autonomous Systems" },
       { property: "og:title", content: "Mokshagna Anurag Kankati — Engineering Portfolio" },
       {
         property: "og:description",
         content:
           "Robotics, aerospace and embedded intelligence — a quiet, editorial portfolio.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://moksh-portfolio-kappa.vercel.app/" },
+      { property: "og:image", content: "https://moksh-portfolio-kappa.vercel.app/og-image.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Mokshagna Anurag Kankati — Engineering Portfolio" },
+      { name: "twitter:description", content: "Robotics, aerospace and embedded intelligence." },
     ],
   }),
 });
@@ -37,9 +44,13 @@ function Index() {
   return (
     <div className="noise relative min-h-dvh bg-background text-foreground">
       <ScrollProgress />
-      <Navbar />
+      <div data-theme="mcqueen" className="cursor-orange">
+        <Navbar />
+        <main>
+          <ToonhubHero />
+        </main>
+      </div>
       <main>
-        <div className="cursor-orange"><ToonhubHero /></div>
         <div className="cursor-blue">
           <About />
         </div>
