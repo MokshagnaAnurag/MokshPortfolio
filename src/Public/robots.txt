@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://moksh-portfolio-kappa.vercel.app/sitemap.xml
