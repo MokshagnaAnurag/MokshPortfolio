@@ -100,13 +100,6 @@ const certifications = [
     date: "Oct 2024",
     id: "196z74v0",
   },
-
-   {
-    name: "Linux",
-    issuer: "TCM Security",
-    date: "Aug 2024",
-    id: "cert_vj1v5ctr",
-  },
   
   {
     name: "Introduction to MATLAB & Simulink",
