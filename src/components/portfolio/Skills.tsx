@@ -24,7 +24,7 @@ const groups = [
   },
   {
     title: "Hardware Design",
-    items: ["PCB Design (KiCad, Eagle)", "Circuit Analysis", "Oscilloscope", "3D Printing", "SolidWorks", "Fusion 360"],
+    items: ["PCB Design (KiCad)", "Circuit Analysis", "Oscilloscope", "3D Printing", "SolidWorks", "Fusion 360"],
     color: "var(--color-industrial-orange)"
   },
   {
@@ -69,14 +69,9 @@ const achievements = [
     host: "AP State Hackathon on Drones",
     detail: "Proposed cutting-edge drone-based disaster management solutions.",
   },
+  
   {
     no: "05",
-    award: "Top 10 National Finalist",
-    host: "Serve Smart Hackathon (IIT BHU)",
-    detail: "Recognized for developing a smart city infrastructure project.",
-  },
-  {
-    no: "06",
     award: "Finalist",
     host: "Hack IITK (C3i Hub, IIT Kanpur)",
     detail: "Advanced to finals for a cybersecurity-driven IoT prototype.",
@@ -84,18 +79,15 @@ const achievements = [
 ];
 
 const certifications = [
-  {
-    name: "Tata Cybersecurity Analyst Job Simulation",
-    issuer: "Forage",
-    date: "Aug 2025",
-    id: "yAKtKExm65kpwQiMb",
-  },
+
   {
     name: "Introduction To Industry 4.0 And Industrial IoT",
     issuer: "NPTEL",
     date: "May 2025",
     id: "NPTEL25CS43S660400772",
   },
+
+  
   {
     name: "Natural Language Processing (NLP)",
     issuer: "IIT Kharagpur",
@@ -108,50 +100,75 @@ const certifications = [
     date: "Oct 2024",
     id: "196z74v0",
   },
+
+   {
+    name: "Linux",
+    issuer: "TCM Security",
+    date: "Aug 2024",
+    id: "cert_vj1v5ctr",
+  },
+  
   {
     name: "Introduction to MATLAB & Simulink",
     issuer: "NIELIT",
     date: "Aug 2024",
     id: "OLC 21145",
   },
+  {
+    name: "Cloud Computing",
+    issuer: "NPTEL",
+    date: "April 2024",
+    id: "NPTEL24CS17S470300801",
+  },
 ];
 
 const capabilityFeatures = [
   {
-    title: "Embedded Intelligence",
+    title: "Embedded Systems",
     icon: Cpu,
-    description: "Designing firmware and hardware integration for STM32, ESP32, and Cortex-M systems with real-time constraints (FreeRTOS).",
-    model: "MDL-01"
+    description:
+      "Developing embedded applications using STM32, ESP32, Arduino, and Raspberry Pi, including sensor interfacing, communication protocols, and real-time data acquisition.",
+    model: "MDL-01",
   },
+
   {
-    title: "Autonomous Navigation",
+    title: "Autonomous Robotics",
     icon: Bot,
-    description: "End-to-end robotics using ROS 2, Nav2, SLAM and sensor fusion — from LIDAR mapping to autonomous path planning.",
-    model: "MDL-02"
+    description:
+      "Building autonomous robotic systems using ROS 2, Nav2, SLAM, LiDAR, IMU sensor fusion, and Gazebo for mapping, localization, and navigation.",
+    model: "MDL-02",
   },
+
   {
-    title: "Wireless & IoT",
+    title: "IoT & Wireless Systems",
     icon: Radio,
-    description: "End-to-end IoT solutions over LoRa, Zigbee, MQTT and edge-to-server telemetry with AWS IoT Core and Firebase.",
-    model: "MDL-03"
+    description:
+      "Designing IoT solutions leveraging MQTT, LoRaWAN, Wi-Fi, RFID, and cloud-connected telemetry systems for smart monitoring applications.",
+    model: "MDL-03",
   },
+
   {
-    title: "Space & CubeSats",
+    title: "Space Technologies",
     icon: Satellite,
-    description: "OBC design and integration for a 1U CubeSat — LoRaWAN telemetry, multi-sensor arrays, and RP2040-based control systems.",
-    model: "MDL-04"
+    description:
+      "Contributed to CubeSat subsystem development, including onboard computing, telemetry, LoRaWAN communication, and sensor integration at IIT Tirupati I-Hub.",
+    model: "MDL-04",
   },
+
   {
-    title: "Hardware Design",
+    title: "Physical AI",
     icon: Activity,
-    description: "PCB design (KiCad), circuit analysis, soldering (SMD/THT), and rapid prototyping using SolidWorks and 3D printing.",
-    model: "MDL-05"
+    description:
+      "Exploring embodied intelligence by integrating perception, planning, simulation, and control for autonomous robots, UAVs, and real-world robotic systems.",
+    model: "MDL-05",
   },
+
   {
-    title: "AI / ML Applications",
+    title: "Machine Learning",
     icon: BrainCircuit,
-    description: "Applying computer vision and deep learning (YOLO, PyTorch) to real-world robotics and edge-inference devices.",
-    model: "MDL-06"
+    description:
+      "Applying machine learning techniques using TensorFlow, PyTorch, OpenCV, and YOLO for perception, prediction, and intelligent decision-making in robotic applications.",
+    model: "MDL-06",
   },
 ];
 
