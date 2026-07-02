@@ -19,9 +19,9 @@ interface ExperienceItem {
 const items: ExperienceItem[] = [
    {
     id: "exp-1", orgShort: "Zebu Intelligent Systems", orgFull: "Zebu Intelligent Systems",
-    role: "UAV Intern", year: "2026",
+    role: "UAV Engineering Intern", year: "2026",
     period: "July 2026 – Prsent", location: "Hyderabad, Telangana, India",
-    bullets: ["Working on Defense Drones."]
+    bullets: ["Working on UAV Systems"]
   },
   {
     id: "exp-2", orgShort: "Spaceborn", orgFull: "Spaceborn",
