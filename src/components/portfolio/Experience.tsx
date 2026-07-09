@@ -22,16 +22,16 @@ const items: ExperienceItem[] = [
     role: "UAV Engineering Intern", year: "2026",
     period: "July 2026 – Prsent", location: "Hyderabad, Telangana, India",
     bullets: [
-      "Integrated and tested CubeOrange flight controllers on S500 and FPV UAV platforms."
-"Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight."
-"Calibrated, flight-tested, and validated UAV systems for real-world deployment."
+      "Integrated and tested CubeOrange flight controllers on S500 and FPV UAV platforms.",
+      "Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight.",
+      "Calibrated, flight-tested, and validated UAV systems for real-world deployment.",
 ]
   },
   {
     id: "exp-2", orgShort: "Spaceborn", orgFull: "Spaceborn",
     role: "Robotics & Simulation Intern", year: "2026",
     period: "May 2026 – June 2026", location: "Remote",
-    bullets: ["Working on autonomous drone and robotic systems design, physics-based simulations, and control optimization."]
+    bullets: ["Worked on autonomous drone and robotic systems design, physics-based simulations, and control optimization."]
   },
   {
     id: "exp-3", orgShort: "IIT Tirupati NIF", orgFull: "IIT Tirupati Navavishkar I-Hub Foundation",
