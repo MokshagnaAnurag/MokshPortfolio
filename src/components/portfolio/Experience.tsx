@@ -21,7 +21,11 @@ const items: ExperienceItem[] = [
     id: "exp-1", orgShort: "Zebu Intelligent Systems", orgFull: "Zebu Intelligent Systems",
     role: "UAV Engineering Intern", year: "2026",
     period: "July 2026 – Prsent", location: "Hyderabad, Telangana, India",
-    bullets: ["Working on UAV Systems"]
+    bullets: [
+      "Integrated and tested CubeOrange flight controllers on S500 and FPV UAV platforms."
+"Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight."
+"Calibrated, flight-tested, and validated UAV systems for real-world deployment."
+]
   },
   {
     id: "exp-2", orgShort: "Spaceborn", orgFull: "Spaceborn",
