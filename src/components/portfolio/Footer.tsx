@@ -64,9 +64,9 @@ export function Footer() {
           <div className="mt-2 font-mono text-[0.75rem] text-[var(--color-industrial-white)] opacity-70 relative z-10">
             © {new Date().getFullYear()} — ALL RIGHTS RESERVED
           </div>
-          <div className="mt-4 font-display font-black italic text-[0.7rem] text-[var(--color-industrial-white)] opacity-50 relative z-10 tracking-[0.2em] uppercase">
-            KEEP SHIPPING.
-          </div>
+         <div className="mt-4 font-display font-black italic text-[0.7rem] text-[var(--color-industrial-white)] opacity-50 relative z-10 tracking-[0.2em] uppercase">
+  BUILD. TEST. ITERATE.
+</div>
 
           {/* BUY ME A COFFEE Bumper Sticker (Right side) */}
           <motion.div 
