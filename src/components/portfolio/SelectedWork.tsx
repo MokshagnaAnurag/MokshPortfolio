@@ -274,14 +274,6 @@ const archiveProjects: ArchiveItem[] = [
     github: "https://github.com/MokshagnaAnurag/amr_robot",
   },
   {
-    title: "IoV Navigation Systems",
-    summary: "Connected-vehicle routing models that adapt to network conditions and shared telemetry.",
-    year: "2023",
-    category: "Autonomous Systems",
-    stack: ["V2X", "Graph", "Edge AI"],
-    github: "https://github.com/MokshagnaAnurag",
-  },
-  {
     title: "Voice AI · Telugu",
     summary: "Low-resource speech research building toward a natural Telugu voice interface.",
     year: "2023",
