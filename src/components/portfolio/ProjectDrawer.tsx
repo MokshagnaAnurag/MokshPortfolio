@@ -12,7 +12,7 @@ export const allProjects = [
     summary: "Extracted alphanumeric data from cadastral maps using OpenCV and EasyOCR, achieving 93%+ accuracy and reducing manual effort by 70%. Exported structured results to CSV.",
     year: "2025",
     stack: ["Python", "OpenCV", "EasyOCR", "GUI"],
-    github: "https://github.com/MokshagnaAnurag"
+    github: "https://github.com/MokshagnaAnurag/OCR"
   },
   {
     title: "Self-Balancing Robot",
@@ -33,7 +33,7 @@ export const allProjects = [
     summary: "DeepLabV3+ with ResNet-50 backbone for road scene understanding. Converted to ONNX and deployed on NVIDIA Jetson Nano with 30 FPS inference.",
     year: "2025",
     stack: ["Python", "PyTorch", "Computer Vision"],
-    github: "https://github.com/MokshagnaAnurag"
+    github: "https://github.com/MokshagnaAnurag/SEMANTIC-SEGMENTATION-IN-AUTONOMOUS-VEHICLES"
   },
   {
     title: "Self-Driving Robot with RPLIDAR A1",
