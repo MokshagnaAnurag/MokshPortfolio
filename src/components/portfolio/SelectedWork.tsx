@@ -212,6 +212,15 @@ const archiveProjects: ArchiveItem[] = [
     github: "https://github.com/MokshagnaAnurag/Line_following_robot",
   },
   {
+    title: "AeroMocap ROS",
+    summary: "An inside-out multi-agent motion capture system for drones, built with OpenCV and React. Features real-time 3D triangulation, trajectory planning, and PID control via a serial-connected ESP32.",
+    year: "2026",
+    category: "Robotics",
+    stack: ["Python", "OpenCV", "React", "ESP32", "Three.js"],
+    github: "https://github.com/MokshagnaAnurag/AeroMocap-ROS",
+},
+
+  {
     title: "Smart Traffic Management System",
     summary: "Developed an AI-powered traffic light system using Raspberry Pi and OpenCV to optimize real-time traffic flow. Implemented vehicle detection and priority-based traffic control, reducing congestion by 30%.",
     year: "2025",
