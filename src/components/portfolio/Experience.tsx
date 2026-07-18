@@ -17,32 +17,40 @@ interface ExperienceItem {
 }
 
 const items: ExperienceItem[] = [
-   {
-    id: "exp-1", orgShort: "Zebu Intelligent Systems", orgFull: "Zebu Intelligent Systems",
-    role: "UAV Engineering Intern", year: "2026",
-    period: "July 2026 – Prsent", location: "Hyderabad, Telangana, India",
-    bullets: [
-      "Integrated and tested CubeOrange flight controllers on S500 and FPV UAV platforms.",
-      "Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight.",
-      "Calibrated, flight-tested, and validated UAV systems for real-world deployment.",
-]
-  },
+ {
+  id: "exp-1",
+  orgShort: "Zebu Intelligent Systems",
+  orgFull: "Zebu Intelligent Systems  Pvt. Ltd.",
+  role: "UAV Engineering Intern",
+  year: "2026",
+  period: "Jul 2026 – Present",
+  location: "Hyderabad, Telangana, India",
+  bullets: [
+    "Integrated and validated CubeOrange flight controllers on S500 and FPV UAV platforms.",
+    "Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight operations.",
+    "Performed sensor calibration, flight testing, and system validation for real-world UAV deployment."
+  ]
+},
   {
     id: "exp-2", orgShort: "Spaceborn", orgFull: "Spaceborn",
     role: "Robotics & Simulation Intern", year: "2026",
     period: "May 2026 – June 2026", location: "Remote",
     bullets: ["Worked on autonomous drone and robotic systems design, physics-based simulations, and control optimization."]
   },
-  {
-    id: "exp-3", orgShort: "IIT Tirupati NIF", orgFull: "IIT Tirupati Navavishkar I-Hub Foundation",
-    role: "Project Intern", year: "2025",
-    period: "Jun 2025 – May 2026", location: "Tirupati, AP",
-    bullets: [
-      "Design and develop a CubeSat prototype with a modular 1U architecture.",
-      "Implement and validate onboard subsystems: RP2040-based OBC, power management, LoRaWAN modules.",
-      "Integrate multi-sensor arrays with a ground station interface for real-time telemetry.",
-    ]
-  },
+ {
+  id: "exp-3",
+  orgShort: "IIT Tirupati NIF",
+  orgFull: "IIT Tirupati Navavishkar I-Hub Foundation",
+  role: "Project Intern",
+  year: "2025",
+  period: "Jun 2025 – Apr 2026",
+  location: "Tirupati, Andhra Pradesh",
+  bullets: [
+    "Designed a modular 1U CubeSat architecture for subsystem integration and testing.",
+    "Developed RP2040-based onboard computer, power management, and LoRaWAN communication modules.",
+    "Built telemetry and ground-station software for monitoring spacecraft health and communication."
+  ]
+},
   {
     id: "exp-4", orgShort: "CES, MVGR", orgFull: "Center For Embedded Systems, MVGR",
     role: "Student Member", year: "2024",
@@ -53,24 +61,37 @@ const items: ExperienceItem[] = [
     ],
     skills: "PID Control, STM32, Arduino"
   },
-  {
-    id: "exp-5", orgShort: "Daloft Aerospace", orgFull: "Daloft Aerospace Pvt. Ltd.",
-    role: "Intern", year: "2025",
-    period: "Aug 2025 – Nov 2025", location: "Chennai / Remote",
-    bullets: ["Working on autonomous drone systems using ROS 2, PX4, and ArduPilot for real-time simulation and control."]
-  },
-  {
-    id: "exp-6", orgShort: "CS³ Lab", orgFull: "CS³: Cloud & Smart System Services Lab",
-    role: "Project Intern", year: "2025",
-    period: "Jul 2025 – Sep 2025", location: "Mangaluru / Remote",
-    bullets: [
-      "Advanced the prototype autonomous vehicle system within an IoV framework.",
-      "Implemented real-time trajectory mapping using sensor fusion in ROS 2.",
-      "Integrated V2I communication for dynamic route updates and cooperative driving.",
-      "Worked with NAV2 and SLAM Toolbox for robust navigation in diverse environments.",
-    ],
-    note: "Under Dr. Sourav Kanti Addya and Mr. Rajeev K K."
-  },
+ {
+  id: "exp-5",
+  orgShort: "Daloft Aerospace",
+  orgFull: "Daloft Aerospace Pvt. Ltd.",
+  role: "Intern",
+  year: "2025",
+  period: "Aug 2025 – Nov 2025",
+  location: "Chennai / Remote",
+  bullets: [
+    "Developed autonomous drone simulation workflows using ROS 2, PX4, and ArduPilot.",
+    "Built and validated simulation environments in Gazebo and RViz for mission planning and testing.",
+    "Implemented Visual SLAM using RTAB-Map for localization and autonomous navigation in simulation environments."
+  ]
+},
+ {
+  id: "exp-6",
+  orgShort: "NITK",
+  orgFull: "National Institute of Technology Karnataka",
+  role: "Summer Research Intern",
+  year: "2025",
+  period: "May 2025 – Jul 2025",
+  location: "Mangaluru, Karnataka",
+  bullets: [
+    "Designed and developed a low-cost Autonomous Mobile Robot (AMR) using ROS 2 Humble, Raspberry Pi 4B, and RP-LiDAR A1.",
+    "Implemented LiDAR-based mapping and localization using Cartographer SLAM for indoor autonomous navigation.",
+    "Integrated Navigation2 (Nav2) for waypoint navigation, obstacle avoidance, and autonomous path execution.",
+    "Explored Vehicle-to-Infrastructure (V2I) communication concepts within an Internet of Vehicles (IoV) research framework."
+  ],
+  note: "Under Dr. Sourav Kanti Addya and Mr. Rajeev K. K.",
+  skills: "ROS 2, Cartographer SLAM, Nav2, Raspberry Pi, RP-LiDAR A1"
+},
   {
     id: "exp-7", orgShort: "UnlockDiscounts", orgFull: "UnlockDiscounts",
     role: "Research Intern", year: "2025",
@@ -78,25 +99,13 @@ const items: ExperienceItem[] = [
     bullets: ["Designed and developed research posters and technical presentations to visually communicate project findings."]
   },
   {
-    id: "exp-8", orgShort: "NITK", orgFull: "National Institute of Technology Karnataka",
-    role: "Summer Intern", year: "2025",
-    period: "May 2025 – Jul 2025", location: "Mangaluru, KA",
-    bullets: [
-      "Contributed to LEAD: A Prototype for Learning-Enabled Autonomous Driving.",
-      "Implemented autonomous navigation algorithms in ROS 2 for real-time trajectory planning.",
-      "Integrated simulation environments and sensor data for performance evaluation.",
-    ],
-    note: "Under Dr. Sourav Kanti Addya and Mr. Rajeev K K.",
-    skills: "ROS 2, Autonomous Systems, Sensor Fusion"
-  },
-  {
-    id: "exp-9", orgShort: "Indux Solar", orgFull: "Indux Solar",
+    id: "exp-8", orgShort: "Indux Solar", orgFull: "Indux Solar",
     role: "AI Intern", year: "2025",
     period: "May 2025 – Jun 2025", location: "Remote",
     bullets: ["Applied machine learning models to solar data and optimized edge-intelligence frameworks."]
   },
   {
-    id: "exp-10", orgShort: "CCSR", orgFull: "Center for Cyber Security Studies & Research",
+    id: "exp-9", orgShort: "CCSR", orgFull: "Center for Cyber Security Studies & Research",
     role: "Intern", year: "2024",
     period: "Sep 2024 – Dec 2024", location: "Remote",
     bullets: [
@@ -105,7 +114,7 @@ const items: ExperienceItem[] = [
     ]
   },
   {
-    id: "exp-11", orgShort: "ShadowFox", orgFull: "ShadowFox",
+    id: "exp-10", orgShort: "ShadowFox", orgFull: "ShadowFox",
     role: "Cybersecurity Intern", year: "2024",
     period: "Sep 2024 – Oct 2024", location: "Remote",
     bullets: [
@@ -116,7 +125,7 @@ const items: ExperienceItem[] = [
     skills: "Penetration Testing, Metasploit, Nmap, Wireshark"
   },
   {
-    id: "exp-12", orgShort: "SwechaAP", orgFull: "SwechaAP",
+    id: "exp-11", orgShort: "SwechaAP", orgFull: "SwechaAP",
     role: "Member", year: "2023",
     period: "Oct 2023 – Present", location: "Vijayawada, AP",
     bullets: [
