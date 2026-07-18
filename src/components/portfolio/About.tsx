@@ -64,7 +64,7 @@ export function About() {
               <p className="mb-6">
                 <span className="bg-red-600 text-white font-mono font-black px-4 py-1 border-[3px] border-black shadow-[4px_4px_0_#ffd700] inline-block mb-4 leading-relaxed transform -skew-x-12">
                   <span className="transform skew-x-12 block text-sm">
-                    &gt; Building reliable autonomous systems from hardware to software.
+                    &gt; Building reliable Software and Hardware.
                   </span>
                 </span>
                 <br />
