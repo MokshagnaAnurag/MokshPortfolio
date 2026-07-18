@@ -67,7 +67,7 @@ const featuredProjects: ProjectItem[] = [
   },
   {
     no: "02",
-    title: "CubeSat 1U,
+    title: "CubeSat 1U",
     category: "SPACE SYSTEMS",
     status: "PUBLISHED",
     summary:
