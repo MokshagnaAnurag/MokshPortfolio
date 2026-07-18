@@ -25,7 +25,7 @@ const roles = [
   "Embedded Systems Engineer",
   "Robotics Engineer",
   "Autonomous Systems Engineer",
-  "UAV Software Engineer",
+  "UAV Engineer",
 ];
 
 export function About() {
