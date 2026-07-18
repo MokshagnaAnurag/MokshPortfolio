@@ -1,6 +1,14 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Search, Globe, FileText, BookOpen, ChevronRight, ArrowUpRight } from "lucide-react";
+import {
+  Github,
+  Search,
+  Globe,
+  FileText,
+  BookOpen,
+  ChevronRight,
+  ArrowUpRight,
+} from "lucide-react";
 import drone from "@/assets/project-drone.jpg";
 import cubesat from "@/assets/project-cubesat.jpg";
 import driving from "@/assets/project-driving.jpg";
@@ -31,29 +39,32 @@ interface ProjectItem {
 
 const featuredProjects: ProjectItem[] = [
   {
-  no: "01",
-  title: "Autonomous Drone Systems",
-  category: "AEROSPACE & UAV",
-  status: "ONGOING",
-  summary: "Designed and validated autonomous UAV simulation workflows using PX4, ROS 2, and ArduPilot.",
-  year: "2026",
-  stack: ["PX4", "ROS 2", "ArduPilot", "Gazebo"],
-  problem: "Develop a UAV simulation platform capable of autonomous flight in GPS-denied environments.",
-  methodology: [
-    "Integrated PX4 with ROS 2 for autonomous flight control.",
-    "Implemented Visual SLAM using RTAB-Map for localization.",
-    "Built simulation environments in Gazebo for testing mission scenarios."
-  ],
-  challenges: [
-    "Flight controller configuration.",
-    "Visual SLAM localization.",
-    "Simulation parameter tuning."
-  ],
-  results: [
-    "✓ Stable waypoint navigation",
-    "✓ Successful Gazebo integration",
-    "✓ Real-time telemetry monitoring"
-  ],
+    no: "01",
+    title: "Autonomous Drone Systems",
+    category: "AEROSPACE & UAV",
+    status: "ONGOING",
+    summary:
+      "Designed and validated autonomous UAV simulation workflows using PX4, ROS 2, and ArduPilot.",
+    year: "2026",
+    stack: ["PX4", "ROS 2", "ArduPilot", "Gazebo"],
+    image: drone,
+    problem:
+      "Develop a UAV simulation platform capable of autonomous flight in GPS-denied environments.",
+    methodology: [
+      "Integrated PX4 with ROS 2 for autonomous flight control.",
+      "Implemented Visual SLAM using RTAB-Map for localization.",
+      "Built simulation environments in Gazebo for testing mission scenarios.",
+    ],
+    challenges: [
+      "Flight controller configuration.",
+      "Visual SLAM localization.",
+      "Simulation parameter tuning.",
+    ],
+    results: [
+      "✓ Stable waypoint navigation",
+      "✓ Successful Gazebo integration",
+      "✓ Real-time telemetry monitoring",
+    ],
     architecture: [
       "Camera/IMU",
       "   │",
@@ -61,9 +72,9 @@ const featuredProjects: ProjectItem[] = [
       "   │",
       "ROS2 Nav",
       "   │",
-      "PX4 Flight Ctl"
+      "PX4 Flight Ctl",
     ],
-    links: { docs: "https://docs.px4.io" }
+    links: { docs: "https://docs.px4.io" },
   },
   {
     no: "02",
@@ -71,27 +82,26 @@ const featuredProjects: ProjectItem[] = [
     category: "SPACE SYSTEMS",
     status: "PUBLISHED",
     summary:
-"Designed and developed a modular 1U CubeSat platform with onboard computer, telemetry, and communication subsystems.",
-
+      "Designed and developed a modular 1U CubeSat platform with onboard computer, telemetry, and communication subsystems.",
     year: "2025-26",
-    stack:
-["RP2040","LoRaWAN","Embedded Systems","Telemetry", "Python"]
+    stack: ["RP2040", "LoRaWAN", "Embedded Systems", "Telemetry", "Python"],
     image: cubesat,
-    problem: "Design a robust and modular 1U CubeSat architecture that handles real-time telemetry and power distribution under constrained resources.",
+    problem:
+      "Design a robust and modular 1U CubeSat architecture that handles real-time telemetry and power distribution under constrained resources.",
     methodology: [
       "Developed custom PCBs for the OBC.",
       "Programmed an RTOS on STM32 for task scheduling.",
-      "Implemented LoRaWAN for ground station communication."
+      "Implemented LoRaWAN for ground station communication.",
     ],
     challenges: [
       "Strict power budgets.",
       "RTOS task starvation.",
-      "Signal integrity in RF modules."
+      "Signal integrity in RF modules.",
     ],
     results: [
       "✓ Successful sensor data transmission over LoRa",
       "✓ Modular 1U hardware design",
-      "✓ Reliable multi-tasking under 100ms deadlines"
+      "✓ Reliable multi-tasking under 100ms deadlines",
     ],
     architecture: [
       "Sensors & Solar Panels",
@@ -100,47 +110,37 @@ const featuredProjects: ProjectItem[] = [
       "       │",
       "STM32 OBC (RTOS)",
       "       │",
-      "LoRaWAN Transceiver"
+      "LoRaWAN Transceiver",
     ],
-    links: {}
+    links: {},
   },
-title: "Low-Cost Autonomous Mobile Robot",
-
-summary:
-"Developed a low-cost Autonomous Mobile Robot using ROS 2, Cartographer SLAM, Navigation2, Raspberry Pi 4B, and RP-LiDAR A1.",
-
-stack:
-[
-"ROS 2",
-"Cartographer",
-"Nav2",
-"RP-LiDAR",
-"Raspberry Pi"
-],
-
-problem:
-"Develop an indoor autonomous mobile robot capable of mapping, localization, and autonomous navigation.",
-
-methodology:
-[
-"Built the robot using Raspberry Pi 4B and RP-LiDAR A1.",
-"Implemented LiDAR-based mapping using Cartographer SLAM.",
-"Integrated Navigation2 for autonomous waypoint navigation and obstacle avoidance."
-],
-
-challenges:
-[
-"LiDAR calibration.",
-"Map quality optimization.",
-"Navigation parameter tuning."
-],
-
-results:
-[
-"✓ Autonomous indoor navigation",
-"✓ Successful map generation",
-"✓ Reliable obstacle avoidance"
-]
+  {
+    no: "03",
+    title: "Low-Cost Autonomous Mobile Robot",
+    category: "ROBOTICS & AMR",
+    status: "COMPLETED",
+    summary:
+      "Developed a low-cost Autonomous Mobile Robot using ROS 2, Cartographer SLAM, Navigation2, Raspberry Pi 4B, and RP-LiDAR A1.",
+    year: "2025",
+    stack: ["ROS 2", "Cartographer", "Nav2", "RP-LiDAR", "Raspberry Pi"],
+    image: driving,
+    problem:
+      "Develop an indoor autonomous mobile robot capable of mapping, localization, and autonomous navigation.",
+    methodology: [
+      "Built the robot using Raspberry Pi 4B and RP-LiDAR A1.",
+      "Implemented LiDAR-based mapping using Cartographer SLAM.",
+      "Integrated Navigation2 for autonomous waypoint navigation and obstacle avoidance.",
+    ],
+    challenges: [
+      "LiDAR calibration.",
+      "Map quality optimization.",
+      "Navigation parameter tuning.",
+    ],
+    results: [
+      "✓ Autonomous indoor navigation",
+      "✓ Successful map generation",
+      "✓ Reliable obstacle avoidance",
+    ],
     architecture: [
       "2D LiDAR",
       "   │",
@@ -148,36 +148,37 @@ results:
       "   │",
       "Trajectory Planner",
       "   │",
-      "Kinematic Controller"
+      "Kinematic Controller",
     ],
     links: {
       github: "https://github.com/MokshagnaAnurag/Self_driving_bot",
-    }
+    },
   },
-
   {
     no: "04",
     title: "Autonomous Lunabot",
     category: "ROBOTICS HARDWARE",
     status: "COMPLETED",
-    summary: "Developed an autonomous lunar rover simulation using ROS 2 and Navigation2.",
+    summary:
+      "Developed an autonomous lunar rover simulation using ROS 2 and Navigation2.",
     year: "2025-26",
     stack: ["ROS2", "Python", "Nav2", "RViz"],
     image: lunabot,
-    problem: "Navigate a simulated complex lunar terrain autonomously to reach specific excavation zones while avoiding craters.",
+    problem:
+      "Navigate a simulated complex lunar terrain autonomously to reach specific excavation zones while avoiding craters.",
     methodology: [
       "Integrated custom launch files for robot bringup.",
       "Configured Nav2 stack for challenging terrains.",
-      "Visualized real-time costmaps in RViz."
+      "Visualized real-time costmaps in RViz.",
     ],
     challenges: [
       "Tuning costmap parameters for non-flat terrain.",
-      "Recovery behaviors when stuck in craters."
+      "Recovery behaviors when stuck in craters.",
     ],
     results: [
       "✓ 90% success rate in waypoint navigation",
       "✓ Robust obstacle avoidance",
-      "✓ Comprehensive RViz visualization setups"
+      "✓ Comprehensive RViz visualization setups",
     ],
     architecture: [
       "Depth Camera",
@@ -186,12 +187,12 @@ results:
       "   │",
       "Nav2 BT Navigator",
       "   │",
-      "Locomotion Drive"
+      "Locomotion Drive",
     ],
     links: {
       github: "https://github.com/MokshagnaAnurag/LUNA_BOT",
-    }
-  }
+    },
+  },
 ];
 
 interface ArchiveItem {
@@ -206,7 +207,8 @@ interface ArchiveItem {
 const archiveProjects: ArchiveItem[] = [
   {
     title: "Self-Driving Robot with RPLIDAR C1",
-    summary: "Engineered an autonomous navigation system leveraging ROS and Python. Integrated LiDAR-based SLAM for precise obstacle detection and implemented real-time path planning algorithms for seamless movement.",
+    summary:
+      "Engineered an autonomous navigation system leveraging ROS and Python. Integrated LiDAR-based SLAM for precise obstacle detection and implemented real-time path planning algorithms for seamless movement.",
     year: "2025",
     category: "Robotics",
     stack: ["ROS", "Python", "LiDAR", "SLAM"],
@@ -214,14 +216,16 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "Self-Balancing Robot",
-    summary: "Built a two-wheeled self-balancing robot using the MPU6050 sensor for tilt detection and implemented PID control for stability. Tuned PID parameters for real-time response and smooth balancing on various surfaces.",
+    summary:
+      "Built a two-wheeled self-balancing robot using the MPU6050 sensor for tilt detection and implemented PID control for stability. Tuned PID parameters for real-time response and smooth balancing on various surfaces.",
     year: "2024",
     category: "Robotics",
     stack: ["Arduino", "MPU6050", "PID Control"],
   },
   {
     title: "Line Following Robot",
-    summary: "Designed and built an autonomous line-following robot leveraging infrared (IR) sensor arrays and PID algorithms for rapid, real-time path tracking.",
+    summary:
+      "Designed and built an autonomous line-following robot leveraging infrared (IR) sensor arrays and PID algorithms for rapid, real-time path tracking.",
     year: "2024",
     category: "Robotics",
     stack: ["Arduino", "IR Sensors", "PID Control", "Robotics"],
@@ -229,30 +233,33 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "AeroMocap ROS",
-    summary: "An inside-out multi-agent motion capture system for drones, built with OpenCV and React. Features real-time 3D triangulation, trajectory planning, and PID control via a serial-connected ESP32.",
+    summary:
+      "An inside-out multi-agent motion capture system for drones, built with OpenCV and React. Features real-time 3D triangulation, trajectory planning, and PID control via a serial-connected ESP32.",
     year: "2026",
     category: "Robotics",
     stack: ["Python", "OpenCV", "React", "ESP32", "Three.js"],
     github: "https://github.com/MokshagnaAnurag/AeroMocap-ROS",
-},
-
+  },
   {
     title: "Smart Traffic Management System",
-    summary: "Developed an AI-powered traffic light system using Raspberry Pi and OpenCV to optimize real-time traffic flow. Implemented vehicle detection and priority-based traffic control, reducing congestion by 30%.",
+    summary:
+      "Developed an AI-powered traffic light system using Raspberry Pi and OpenCV to optimize real-time traffic flow. Implemented vehicle detection and priority-based traffic control, reducing congestion by 30%.",
     year: "2025",
     category: "AI & Vision",
     stack: ["IoT", "Raspberry Pi", "OpenCV"],
   },
   {
     title: "Cybercrime Reporting Chatbot",
-    summary: "Developed intent recognition and sentiment analysis using Scikit-learn to classify user inputs and extract report insights. Launched a Gradio-based interface to enhance accessibility and streamline crime reporting workflows.",
+    summary:
+      "Developed intent recognition and sentiment analysis using Scikit-learn to classify user inputs and extract report insights. Launched a Gradio-based interface to enhance accessibility and streamline crime reporting workflows.",
     year: "2024",
     category: "AI & Vision",
     stack: ["Python", "AI", "Gradio", "NLP"],
   },
   {
     title: "Automatic Vehicle Number Plate Detection",
-    summary: "Built a real-time license plate recognition system using OpenCV, achieving over 95% detection accuracy. Optimized image preprocessing for consistent performance in varying lighting and weather conditions.",
+    summary:
+      "Built a real-time license plate recognition system using OpenCV, achieving over 95% detection accuracy. Optimized image preprocessing for consistent performance in varying lighting and weather conditions.",
     year: "2024",
     category: "AI & Vision",
     stack: ["Python", "OpenCV"],
@@ -260,7 +267,8 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "Phishing Link Scanner",
-    summary: "Developed a scanner analyzing 200+ URLs for phishing risks, integrating VirusTotal API for comprehensive security analysis. Incorporated user-friendly outputs with intuitive, color-coded feedback for enhanced usability.",
+    summary:
+      "Developed a scanner analyzing 200+ URLs for phishing risks, integrating VirusTotal API for comprehensive security analysis. Incorporated user-friendly outputs with intuitive, color-coded feedback for enhanced usability.",
     year: "2024",
     category: "Cybersecurity",
     stack: ["Python", "VirusTotal API"],
@@ -268,23 +276,33 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "Voice Gender Recognition Using MATLAB",
-    summary: "Designed a voice-based gender classification system using MATLAB. Extracted features like pitch, formants, and MFCCs to train and evaluate machine learning classifiers for accurate gender prediction.",
+    summary:
+      "Designed a voice-based gender classification system using MATLAB. Extracted features like pitch, formants, and MFCCs to train and evaluate machine learning classifiers for accurate gender prediction.",
     year: "2024",
     category: "AI & Vision",
     stack: ["MATLAB", "MFCC", "Audio Processing", "Machine Learning"],
-    github: "https://github.com/MokshagnaAnurag/Voice-Gender-Recognition-Using-Matlab",
+    github:
+      "https://github.com/MokshagnaAnurag/Voice-Gender-Recognition-Using-Matlab",
   },
   {
     title: "Semantic Segmentation in Autonomous Vehicles",
-    summary: "Implemented semantic segmentation models using deep learning to classify each pixel in driving scenes. Utilized datasets like Cityscapes and frameworks such as TensorFlow/Keras to enhance perception systems in self-driving applications.",
+    summary:
+      "Implemented semantic segmentation models using deep learning to classify each pixel in driving scenes. Utilized datasets like Cityscapes and frameworks such as TensorFlow/Keras to enhance perception systems in self-driving applications.",
     year: "2024",
     category: "Autonomous Systems",
-    stack: ["Deep Learning", "TensorFlow", "Semantic Segmentation", "Autonomous Driving"],
-    github: "https://github.com/MokshagnaAnurag/SEMANTIC-SEGMENTATION-IN-AUTONOMOUS-VEHICLES",
+    stack: [
+      "Deep Learning",
+      "TensorFlow",
+      "Semantic Segmentation",
+      "Autonomous Driving",
+    ],
+    github:
+      "https://github.com/MokshagnaAnurag/SEMANTIC-SEGMENTATION-IN-AUTONOMOUS-VEHICLES",
   },
   {
     title: "Map Text Extractor (OCR)",
-    summary: "A Python tool for extracting region numbers and place names from topographic maps using OCR. Features multi-stage image processing, CSV export, and visualizations for detected text.",
+    summary:
+      "A Python tool for extracting region numbers and place names from topographic maps using OCR. Features multi-stage image processing, CSV export, and visualizations for detected text.",
     year: "2025",
     category: "AI & Vision",
     stack: ["Python", "OpenCV", "EasyOCR", "Image Processing", "CSV"],
@@ -292,7 +310,8 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "AMR (Autonomous Mobile Robot) Package",
-    summary: "A professional-grade ROS2 package for an Autonomous Mobile Robot, designed in Fusion 360 & SolidWorks. Features 4WD, integrated LiDAR, full URDF, Gazebo simulation, and modular CAD design.",
+    summary:
+      "A professional-grade ROS2 package for an Autonomous Mobile Robot, designed in Fusion 360 & SolidWorks. Features 4WD, integrated LiDAR, full URDF, Gazebo simulation, and modular CAD design.",
     year: "2025",
     category: "Robotics",
     stack: ["ROS2", "Gazebo", "Fusion 360", "SolidWorks", "URDF", "LiDAR"],
@@ -300,7 +319,8 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "Voice AI · Telugu",
-    summary: "Low-resource speech research building toward a natural Telugu voice interface.",
+    summary:
+      "Low-resource speech research building toward a natural Telugu voice interface.",
     year: "2023",
     category: "AI & Vision",
     stack: ["NLP", "ASR", "PyTorch"],
@@ -308,30 +328,48 @@ const archiveProjects: ArchiveItem[] = [
   },
   {
     title: "Steganography in Images (LSB)",
-    summary: "Implemented Least Significant Bit (LSB) steganography in Python to encode and decode hidden messages within image pixels securely without visual distortion.",
+    summary:
+      "Implemented Least Significant Bit (LSB) steganography in Python to encode and decode hidden messages within image pixels securely without visual distortion.",
     year: "2024",
     category: "Cybersecurity",
     stack: ["Python", "Image Processing", "Steganography", "Cryptography"],
-    github: "https://github.com/MokshagnaAnurag/Steganography-in-Images-LSB",
+    github:
+      "https://github.com/MokshagnaAnurag/Steganography-in-Images-LSB",
   },
 ];
 
 const getCategoryColor = (cat: string) => {
   switch (cat) {
-    case "Robotics": return "#10b981"; // Emerald
-    case "Autonomous Systems": return "#06b6d4"; // Cyan
-    case "AI & Vision": return "#f59e0b"; // Amber Yellow
-    case "Cybersecurity": return "#f97316"; // Crimson Orange
-    default: return "#a1a1aa";
+    case "Robotics":
+      return "#10b981";
+    case "Autonomous Systems":
+      return "#06b6d4";
+    case "AI & Vision":
+      return "#f59e0b";
+    case "Cybersecurity":
+      return "#f97316";
+    default:
+      return "#a1a1aa";
   }
 };
 
 const getSystemStatus = (idx: number) => {
-  const statuses = ["STATUS: ACTIVE", "SYSTEM: OK", "FEED: NOMINAL", "LINK: SECURE"];
+  const statuses = [
+    "STATUS: ACTIVE",
+    "SYSTEM: OK",
+    "FEED: NOMINAL",
+    "LINK: SECURE",
+  ];
   return statuses[idx % statuses.length];
 };
 
-const categories = ["All", "Robotics", "Autonomous Systems", "AI & Vision", "Cybersecurity"];
+const categories = [
+  "All",
+  "Robotics",
+  "Autonomous Systems",
+  "AI & Vision",
+  "Cybersecurity",
+];
 
 export function SelectedWork() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -344,26 +382,35 @@ export function SelectedWork() {
       const matchesSearch =
         proj.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         proj.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        proj.stack.some((s) => s.toLowerCase().includes(searchQuery.toLowerCase()));
+        proj.stack.some((s) =>
+          s.toLowerCase().includes(searchQuery.toLowerCase())
+        );
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchQuery]);
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case "ACTIVE": return "🟢";
-      case "COMPLETED": return "✅";
-      case "ONGOING": return "🚧";
-      case "PUBLISHED": return "📝";
-      default: return "🟢";
+      case "ACTIVE":
+        return "🟢";
+      case "COMPLETED":
+        return "✅";
+      case "ONGOING":
+        return "🚧";
+      case "PUBLISHED":
+        return "📝";
+      default:
+        return "🟢";
     }
   };
 
   return (
     <>
       {/* Engineered Systems Showcase - White Background */}
-      <section id="work" className="relative py-24 bg-[var(--color-industrial-white)] border-b-4 border-mech text-[var(--color-industrial-dark)]">
-
+      <section
+        id="work"
+        className="relative py-24 bg-[var(--color-industrial-white)] border-b-4 border-mech text-[var(--color-industrial-dark)]"
+      >
         {/* Blueprint Grid Lines Overlay */}
         <div className="absolute inset-0 bg-blueprint opacity-10 pointer-events-none"></div>
 
@@ -376,7 +423,10 @@ export function SelectedWork() {
             </div>
 
             <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-8 leading-[0.9] text-[var(--color-industrial-dark)]">
-              <span className="text-[var(--color-industrial-blue)] text-stroke-mech-2">ENGINEERED</span> SYSTEMS
+              <span className="text-[var(--color-industrial-blue)] text-stroke-mech-2">
+                ENGINEERED
+              </span>{" "}
+              SYSTEMS
             </h2>
           </Reveal>
 
@@ -388,13 +438,15 @@ export function SelectedWork() {
 
               return (
                 <Reveal key={p.no} delay={idx * 0.1}>
-                  {/* --- DETAILED DESIGN (ALL SCREENS) --- */}
                   <article
                     className="group relative w-full flex flex-col lg:flex-row overflow-hidden bg-white border border-black/10 hover:border-black transition-all duration-500 shadow-[8px_8px_0_rgba(0,0,0,0.15)] hover:shadow-[12px_12px_0_var(--card-accent)]"
                     style={{ ["--card-accent" as any]: accentColor }}
                   >
-                    {/* Color Glow Effect behind content */}
-                    <div className="absolute top-1/2 right-1/4 w-[30vw] h-[30vw] -translate-y-1/2 rounded-full blur-[100px] opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: accentColor }}></div>
+                    {/* Color Glow Effect */}
+                    <div
+                      className="absolute top-1/2 right-1/4 w-[30vw] h-[30vw] -translate-y-1/2 rounded-full blur-[100px] opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"
+                      style={{ backgroundColor: accentColor }}
+                    ></div>
 
                     <div className="flex flex-col lg:flex-row h-full w-full relative z-10">
 
@@ -417,11 +469,14 @@ export function SelectedWork() {
                         <div className="p-6 bg-gray-50 relative overflow-hidden group-hover:bg-gray-100 transition-colors duration-500">
                           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-accent)] to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
                           <h5 className="font-mono text-[9px] uppercase tracking-[0.3em] font-bold mb-4 opacity-60 text-black flex items-center gap-2 group-hover:opacity-100 transition-opacity">
-                            <ChevronRight size={12} className="text-[var(--card-accent)]" />
+                            <ChevronRight
+                              size={12}
+                              className="text-[var(--card-accent)]"
+                            />
                             Architecture
                           </h5>
                           <pre className="font-mono text-[10px] leading-tight text-gray-500 group-hover:text-black transition-colors">
-                            {p.architecture.join('\n')}
+                            {p.architecture.join("\n")}
                           </pre>
                         </div>
                       </div>
@@ -435,7 +490,10 @@ export function SelectedWork() {
                               className="inline-flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 bg-gray-50 border border-gray-200 group-hover:border-[var(--card-accent)] transition-colors shadow-sm text-black"
                               style={{ color: accentColor }}
                             >
-                              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }}></span>
+                              <span
+                                className="w-1.5 h-1.5 rounded-full"
+                                style={{ backgroundColor: accentColor }}
+                              ></span>
                               {p.category || "ENGINEERED SYSTEM"}
                             </span>
                           </div>
@@ -446,14 +504,19 @@ export function SelectedWork() {
                               {p.title}
                             </h3>
                             <span className="inline-flex shrink-0 items-center gap-2 font-mono text-[10px] font-bold uppercase border border-gray-300 bg-gray-50 text-gray-700 px-3 py-1.5 shadow-[2px_2px_0_rgba(0,0,0,0.1)] group-hover:border-[var(--card-accent)] transition-colors">
-                              <span style={{ color: accentColor }}>{getStatusIcon(p.status)}</span>
+                              <span style={{ color: accentColor }}>
+                                {getStatusIcon(p.status)}
+                              </span>
                               {p.status}
                             </span>
                           </div>
 
                           {/* Summary Blockquote */}
-                          <blockquote className="border-l-4 pl-4 mb-6 font-mono text-xs leading-relaxed text-gray-600 italic bg-gradient-to-r from-[var(--card-accent)]/10 to-transparent py-2 group-hover:text-black transition-colors" style={{ borderColor: accentColor }}>
-                            "{p.summary}"
+                          <blockquote
+                            className="border-l-4 pl-4 mb-6 font-mono text-xs leading-relaxed text-gray-600 italic bg-gradient-to-r from-[var(--card-accent)]/10 to-transparent py-2 group-hover:text-black transition-colors"
+                            style={{ borderColor: accentColor }}
+                          >
+                            &ldquo;{p.summary}&rdquo;
                           </blockquote>
 
                           {/* Tech Stack Chips */}
@@ -470,7 +533,6 @@ export function SelectedWork() {
 
                           {/* Details Grid */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 relative">
-
                             {/* Problem */}
                             <div className="group/item">
                               <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 group-hover/item:text-[var(--card-accent)] transition-colors">
@@ -488,8 +550,16 @@ export function SelectedWork() {
                               </h4>
                               <ul className="space-y-1">
                                 {p.methodology.map((m, i) => (
-                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-gray-700 flex items-start gap-2">
-                                    <span className="mt-0.5" style={{ color: accentColor }}>•</span>
+                                  <li
+                                    key={i}
+                                    className="font-mono text-[11px] leading-relaxed text-gray-700 flex items-start gap-2"
+                                  >
+                                    <span
+                                      className="mt-0.5"
+                                      style={{ color: accentColor }}
+                                    >
+                                      •
+                                    </span>
                                     {m}
                                   </li>
                                 ))}
@@ -503,8 +573,13 @@ export function SelectedWork() {
                               </h4>
                               <ul className="space-y-1">
                                 {p.challenges.map((c, i) => (
-                                  <li key={i} className="font-mono text-[11px] leading-relaxed text-gray-700 flex items-start gap-2">
-                                    <span className="text-red-500 mt-0.5">•</span>
+                                  <li
+                                    key={i}
+                                    className="font-mono text-[11px] leading-relaxed text-gray-700 flex items-start gap-2"
+                                  >
+                                    <span className="text-red-500 mt-0.5">
+                                      •
+                                    </span>
                                     {c}
                                   </li>
                                 ))}
@@ -518,9 +593,14 @@ export function SelectedWork() {
                               </h4>
                               <ul className="space-y-1">
                                 {p.results.map((r, i) => (
-                                  <li key={i} className="font-mono text-[11px] leading-relaxed font-bold text-black flex items-start gap-2">
-                                    <span className="text-green-600 mt-0.5 group-hover/item:text-green-500">✓</span>
-                                    {r.replace('✓ ', '')}
+                                  <li
+                                    key={i}
+                                    className="font-mono text-[11px] leading-relaxed font-bold text-black flex items-start gap-2"
+                                  >
+                                    <span className="text-green-600 mt-0.5">
+                                      ✓
+                                    </span>
+                                    {r.replace("✓ ", "")}
                                   </li>
                                 ))}
                               </ul>
@@ -531,27 +611,46 @@ export function SelectedWork() {
                         {/* Action Links */}
                         <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-gray-200">
                           {p.links.github && (
-                            <a href={p.links.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a
+                              href={p.links.github}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                            >
                               <Github size={14} /> Source Code
                             </a>
                           )}
                           {p.links.demo && (
-                            <a href={p.links.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a
+                              href={p.links.demo}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                            >
                               <Globe size={14} /> Demo
                             </a>
                           )}
                           {p.links.docs && (
-                            <a href={p.links.docs} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a
+                              href={p.links.docs}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                            >
                               <FileText size={14} /> Documentation
                             </a>
                           )}
                           {p.links.paper && (
-                            <a href={p.links.paper} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                            <a
+                              href={p.links.paper}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase px-4 py-2 border border-black/20 text-black hover:bg-[var(--card-accent)] hover:text-white hover:border-[var(--card-accent)] transition-all duration-300 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                            >
                               <BookOpen size={14} /> Research Paper
                             </a>
                           )}
                         </div>
-
                       </div>
                     </div>
                   </article>
@@ -563,20 +662,24 @@ export function SelectedWork() {
       </section>
 
       {/* Complete Project Archive Section (Black Background) */}
-      <section id="archive" className="relative py-32 bg-[var(--color-industrial-dark)] text-[var(--color-industrial-white)] border-b-4 border-mech">
-
+      <section
+        id="archive"
+        className="relative py-32 bg-[var(--color-industrial-dark)] text-[var(--color-industrial-white)] border-b-4 border-mech"
+      >
         {/* Dark Blueprint Overlay */}
         <div className="absolute inset-0 bg-blueprint-dark opacity-20 pointer-events-none"></div>
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
           <Reveal>
             <div className="pt-16">
-
               {/* Header section with Filter Buttons and Search Bar */}
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between mb-12">
                 <div>
                   <h3 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tight text-[var(--color-industrial-white)]">
-                    DATA <span className="text-[var(--color-industrial-orange)] text-stroke-mech-white">ARCHIVE</span>
+                    DATA{" "}
+                    <span className="text-[var(--color-industrial-orange)] text-stroke-mech-white">
+                      ARCHIVE
+                    </span>
                   </h3>
                 </div>
 
@@ -603,12 +706,19 @@ export function SelectedWork() {
                       key={cat}
                       onClick={() => setSelectedCategory(cat)}
                       style={{
-                        borderColor: isActive ? catColor : "rgba(63, 63, 70, 0.4)",
-                        color: isActive ? "black" : "var(--color-industrial-white)",
+                        borderColor: isActive
+                          ? catColor
+                          : "rgba(63, 63, 70, 0.4)",
+                        color: isActive
+                          ? "black"
+                          : "var(--color-industrial-white)",
                         backgroundColor: isActive ? catColor : "transparent",
                       }}
-                      className={`px-4 py-2 font-mono text-[10px] font-bold uppercase transition-all cursor-pointer border-2 hover:border-[var(--color-industrial-blue)] hover:text-[var(--color-industrial-blue)] ${isActive ? "shadow-[2px_2px_0_rgba(255,255,255,0.15)]" : "shadow-[2px_2px_0_transparent] hover:shadow-[2px_2px_0_var(--color-industrial-blue)]"
-                        }`}
+                      className={`px-4 py-2 font-mono text-[10px] font-bold uppercase transition-all cursor-pointer border-2 hover:border-[var(--color-industrial-blue)] hover:text-[var(--color-industrial-blue)] ${
+                        isActive
+                          ? "shadow-[2px_2px_0_rgba(255,255,255,0.15)]"
+                          : "shadow-[2px_2px_0_transparent] hover:shadow-[2px_2px_0_var(--color-industrial-blue)]"
+                      }`}
                     >
                       {cat}
                     </button>
@@ -620,7 +730,16 @@ export function SelectedWork() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <AnimatePresence mode="popLayout">
                   {filteredArchive.map((p, idx) => {
-                    const cardColors = ["#10b981", "#06b6d4", "#f59e0b", "#f97316", "#3b82f6", "#ec4899", "#8b5cf6", "#ef4444"];
+                    const cardColors = [
+                      "#10b981",
+                      "#06b6d4",
+                      "#f59e0b",
+                      "#f97316",
+                      "#3b82f6",
+                      "#ec4899",
+                      "#8b5cf6",
+                      "#ef4444",
+                    ];
                     const accentColor = cardColors[idx % cardColors.length];
                     const statusText = getSystemStatus(idx);
 
@@ -635,13 +754,13 @@ export function SelectedWork() {
                         className="group bg-[#0d0d11]/60 p-6 flex flex-col justify-between h-[340px] relative transition-all duration-300 overflow-hidden cursor-pointer shadow-[4px_4px_0_rgba(0,0,0,0.5)]"
                         style={{
                           border: `2px solid rgba(63, 63, 70, 0.4)`,
-                          ["--accent-color" as any]: accentColor
+                          ["--accent-color" as any]: accentColor,
                         }}
                         whileHover={{
                           translateY: -4,
                           translateX: -4,
                           boxShadow: `8px 8px 0 rgba(0,0,0,0.5)`,
-                          borderColor: accentColor
+                          borderColor: accentColor,
                         }}
                       >
                         <div>
@@ -651,7 +770,10 @@ export function SelectedWork() {
                               className="font-mono text-[9px] font-bold uppercase flex items-center gap-1.5"
                               style={{ color: accentColor }}
                             >
-                              <span className="w-1.5 h-1.5 rounded-none" style={{ backgroundColor: accentColor }} />
+                              <span
+                                className="w-1.5 h-1.5 rounded-none"
+                                style={{ backgroundColor: accentColor }}
+                              />
                               {p.category}
                             </span>
                             <span
@@ -667,7 +789,7 @@ export function SelectedWork() {
                             {p.title}
                           </h4>
 
-                          {/* Blockquote Description */}
+                          {/* Description */}
                           <p className="font-mono text-[11px] leading-[1.6] text-zinc-400 line-clamp-4 pl-3 border-l-2 border-zinc-700">
                             {p.summary}
                           </p>
@@ -722,7 +844,6 @@ export function SelectedWork() {
                           className="absolute bottom-0 left-0 right-0 h-[4px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
                           style={{ backgroundColor: accentColor }}
                         />
-
                       </motion.article>
                     );
                   })}
@@ -737,7 +858,6 @@ export function SelectedWork() {
                   </p>
                 </div>
               )}
-
             </div>
           </Reveal>
         </div>
