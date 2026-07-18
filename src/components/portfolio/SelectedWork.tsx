@@ -31,30 +31,29 @@ interface ProjectItem {
 
 const featuredProjects: ProjectItem[] = [
   {
-    no: "01",
-    title: "Autonomous Drone Systems",
-    category: "AEROSPACE & UAV",
-    status: "ONGOING",
-    summary: "Flight stack and perception research on PX4-driven UAVs with onboard SLAM and obstacle reasoning.",
-    year: "2025",
-    stack: ["PX4", "ROS2", "SLAM", "Embedded C"],
-    image: drone,
-    problem: "Achieve stable autonomous flight and real-time mapping for UAVs in GPS-denied environments.",
-    methodology: [
-      "Integrated PX4 autopilot with ROS2 via microRTPS.",
-      "Implemented visual SLAM for localization.",
-      "Simulated drone dynamics in Gazebo."
-    ],
-    challenges: [
-      "High-frequency state estimation.",
-      "Complex sensor fusion tuning.",
-      "Non-linear control dynamics."
-    ],
-    results: [
-      "✓ Stable hover and waypoint tracking",
-      "✓ Gazebo simulation integration",
-      "✓ Real-time state telemetry"
-    ],
+  no: "01",
+  title: "Autonomous Drone Systems",
+  category: "AEROSPACE & UAV",
+  status: "ONGOING",
+  summary: "Designed and validated autonomous UAV simulation workflows using PX4, ROS 2, and ArduPilot.",
+  year: "2026",
+  stack: ["PX4", "ROS 2", "ArduPilot", "Gazebo"],
+  problem: "Develop a UAV simulation platform capable of autonomous flight in GPS-denied environments.",
+  methodology: [
+    "Integrated PX4 with ROS 2 for autonomous flight control.",
+    "Implemented Visual SLAM using RTAB-Map for localization.",
+    "Built simulation environments in Gazebo for testing mission scenarios."
+  ],
+  challenges: [
+    "Flight controller configuration.",
+    "Visual SLAM localization.",
+    "Simulation parameter tuning."
+  ],
+  results: [
+    "✓ Stable waypoint navigation",
+    "✓ Successful Gazebo integration",
+    "✓ Real-time telemetry monitoring"
+  ],
     architecture: [
       "Camera/IMU",
       "   │",
@@ -68,12 +67,15 @@ const featuredProjects: ProjectItem[] = [
   },
   {
     no: "02",
-    title: "Spaceborn Cubesat Research",
+    title: "CubeSat 1U,
     category: "SPACE SYSTEMS",
     status: "PUBLISHED",
-    summary: "Attitude determination and control system simulation for a 3U CubeSat.",
-    year: "2024",
-    stack: ["MATLAB", "Simulink", "C++", "FreeRTOS"],
+    summary:
+"Designed and developed a modular 1U CubeSat platform with onboard computer, telemetry, and communication subsystems.",
+
+    year: "2025-26",
+    stack:
+["RP2040","LoRaWAN","Embedded Systems","Telemetry", "Python"]
     image: cubesat,
     problem: "Design a robust and modular 1U CubeSat architecture that handles real-time telemetry and power distribution under constrained resources.",
     methodology: [
@@ -102,29 +104,43 @@ const featuredProjects: ProjectItem[] = [
     ],
     links: {}
   },
-  {
-    no: "03",
-    title: "LEAD · Autonomous Driving",
-    status: "PUBLISHED",
-    summary: "Closed-loop perception and planning experiments for an autonomous research platform.",
-    year: "2024",
-    stack: ["LiDAR", "ROS2", "Python"],
-    image: driving,
-    problem: "Create a research-grade prototype for learning-enabled autonomous driving to test novel algorithms safely.",
-    methodology: [
-      "Developed a scalable ROS2 software stack.",
-      "Integrated 2D LiDAR for environment scanning.",
-      "Designed closed-loop trajectory planners."
-    ],
-    challenges: [
-      "High data bandwidth from 3D LiDAR.",
-      "Processing latency impacting control loops."
-    ],
-    results: [
-      "✓ Real-time trajectory planning",
-      "✓ Seamless sensor data integration",
-      "✓ Validated simulation environment"
-    ],
+title: "Low-Cost Autonomous Mobile Robot",
+
+summary:
+"Developed a low-cost Autonomous Mobile Robot using ROS 2, Cartographer SLAM, Navigation2, Raspberry Pi 4B, and RP-LiDAR A1.",
+
+stack:
+[
+"ROS 2",
+"Cartographer",
+"Nav2",
+"RP-LiDAR",
+"Raspberry Pi"
+],
+
+problem:
+"Develop an indoor autonomous mobile robot capable of mapping, localization, and autonomous navigation.",
+
+methodology:
+[
+"Built the robot using Raspberry Pi 4B and RP-LiDAR A1.",
+"Implemented LiDAR-based mapping using Cartographer SLAM.",
+"Integrated Navigation2 for autonomous waypoint navigation and obstacle avoidance."
+],
+
+challenges:
+[
+"LiDAR calibration.",
+"Map quality optimization.",
+"Navigation parameter tuning."
+],
+
+results:
+[
+"✓ Autonomous indoor navigation",
+"✓ Successful map generation",
+"✓ Reliable obstacle avoidance"
+]
     architecture: [
       "2D LiDAR",
       "   │",
@@ -144,8 +160,8 @@ const featuredProjects: ProjectItem[] = [
     title: "Autonomous Lunabot",
     category: "ROBOTICS HARDWARE",
     status: "COMPLETED",
-    summary: "Engineered an autonomous robotic system for lunar excavation scenarios using ROS2 and Nav2.",
-    year: "2025",
+    summary: "Developed an autonomous lunar rover simulation using ROS 2 and Navigation2.",
+    year: "2025-26",
     stack: ["ROS2", "Python", "Nav2", "RViz"],
     image: lunabot,
     problem: "Navigate a simulated complex lunar terrain autonomously to reach specific excavation zones while avoiding craters.",
