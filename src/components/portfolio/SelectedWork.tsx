@@ -13,6 +13,7 @@ import drone from "@/assets/project-drone.jpg";
 import cubesat from "@/assets/project-cubesat.jpg";
 import driving from "@/assets/project-driving.jpg";
 import lunabot from "@/assets/project-lunabot.png";
+import quadruped from "@/assets/project-quadruped.png";
 import { Reveal } from "./Reveal";
 
 interface ProjectItem {
@@ -40,41 +41,41 @@ interface ProjectItem {
 const featuredProjects: ProjectItem[] = [
   {
     no: "01",
-    title: "Autonomous Drone Systems",
-    category: "AEROSPACE & UAV",
+    title: "Tactical Quadruped Robot",
+    category: "ROBOTICS HARDWARE",
     status: "ONGOING",
     summary:
-      "Designed and validated autonomous UAV simulation workflows using PX4, ROS 2, and ArduPilot.",
+      "Designed and developed a highly agile tactical quadruped robot capable of traversing complex terrains with dynamic balancing and robust locomotion.",
     year: "2026",
-    stack: ["PX4", "ROS 2", "ArduPilot", "Gazebo"],
-    image: drone,
+    stack: ["ROS 2", "C++", "Python", "Gazebo", "Hardware Design"],
+    image: quadruped,
     problem:
-      "Develop a UAV simulation platform capable of autonomous flight in GPS-denied environments.",
+      "Develop a robust quadrupedal platform capable of autonomous navigation and dynamic locomotion in unstructured environments.",
     methodology: [
-      "Integrated PX4 with ROS 2 for autonomous flight control.",
-      "Implemented Visual SLAM using RTAB-Map for localization.",
-      "Built simulation environments in Gazebo for testing mission scenarios.",
+      "Designed mechanical chassis and selected high-torque actuators.",
+      "Implemented whole-body control and gait generation algorithms.",
+      "Integrated ROS 2 for high-level planning and perception.",
     ],
     challenges: [
-      "Flight controller configuration.",
-      "Visual SLAM localization.",
-      "Simulation parameter tuning.",
+      "Complex kinematics and dynamics modeling.",
+      "Real-time control loop constraints.",
+      "Sim-to-real transfer of locomotion policies.",
     ],
     results: [
-      "✓ Stable waypoint navigation",
-      "✓ Successful Gazebo integration",
-      "✓ Real-time telemetry monitoring",
+      "✓ Stable dynamic walking and trotting",
+      "✓ Successful sim-to-real deployment",
+      "✓ Robust terrain adaptation",
     ],
     architecture: [
-      "Camera/IMU",
+      "Perception",
       "   │",
-      "Visual SLAM",
+      "High-level Planner",
       "   │",
-      "ROS2 Nav",
+      "MPC & Gait Control",
       "   │",
-      "PX4 Flight Ctl",
+      "Actuators",
     ],
-    links: { docs: "https://docs.px4.io" },
+    links: { github: "https://github.com/MokshagnaAnurag/Tactical-Quadruped-Robot" },
   },
   {
     no: "02",
@@ -205,6 +206,16 @@ interface ArchiveItem {
 }
 
 const archiveProjects: ArchiveItem[] = [
+  {
+    title: "Autonomous Drone Systems",
+    summary:
+      "Designed and validated autonomous UAV simulation workflows using PX4, ROS 2, and ArduPilot. Simulated in Gazebo with LiDAR-camera sensor fusion for obstacle avoidance.",
+    year: "2026",
+    category: "Autonomous Systems",
+    stack: ["PX4", "ROS 2", "ArduPilot", "Gazebo"],
+    github: "https://github.com/MokshagnaAnurag/ardupilot-gazebo-gimbal-simulation",
+  },
+
   {
     title: "Self-Driving Robot with RPLIDAR C1",
     summary:
