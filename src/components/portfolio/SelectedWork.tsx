@@ -156,7 +156,69 @@ const featuredProjects: ProjectItem[] = [
     },
   },
   {
-    no: "04",
+  no: "04",
+  title: "Standalone Self-Balancing Robot ROS 2 & Webots Simulator",
+  category: "ROBOTICS & CONTROL SYSTEMS",
+  status: "COMPLETED",
+  summary:
+    "Developed a standalone two-wheeled self-balancing robot simulator using ROS 2 Humble and Webots, featuring real-time PID tuning, Pokémon-themed telemetry dashboard, WebSocket communication, teleoperation, and an interactive battle arena for control-system visualization.",
+  year: "2026",
+  stack: [
+    "ROS 2 Humble",
+    "Webots",
+    "Python",
+    "PID Control",
+    "URDF",
+    "Flask",
+    "Socket.IO",
+    "IMU"
+  ],
+  image: balancingBot, // add project image
+
+  problem:
+    "Develop a realistic self-balancing robot simulator capable of real-time stabilization, live PID tuning, telemetry visualization, and interactive testing within a gamified robotics environment.",
+
+  methodology: [
+    "Designed a custom URDF robot with IMU, LiDAR, camera, and differential drive wheels.",
+    "Implemented closed-loop PID balancing using ROS 2.",
+    "Built a Flask-SocketIO dashboard for live telemetry and parameter tuning.",
+    "Integrated keyboard and web-based teleoperation.",
+    "Created a Pokémon-inspired battle arena that applies random disturbance forces to evaluate controller robustness."
+  ],
+
+  challenges: [
+    "Maintaining stable balancing under continuous disturbance forces.",
+    "Real-time synchronization between ROS 2, Webots, and WebSocket telemetry.",
+    "Dynamic PID tuning without restarting the controller.",
+    "Achieving responsive low-latency dashboard updates."
+  ],
+
+  results: [
+    "✓ Stable self-balancing using closed-loop PID control",
+    "✓ Live PID tuning without simulation restart",
+    "✓ Real-time telemetry dashboard",
+    "✓ Interactive disturbance testing using battle mode",
+    "✓ Integrated Webots + ROS 2 simulation environment"
+  ],
+
+  architecture: [
+    "IMU + LiDAR + Camera",
+    "        │",
+    "ROS 2 Controller",
+    "        │",
+    "PID Balance Algorithm",
+    "        │",
+    "Wheel Motors",
+    "        │",
+    "Flask / Socket.IO Dashboard"
+  ],
+
+  links: {
+    github: "https://github.com/MokshagnaAnurag/PokeBalance-Bot.git"
+  }
+},
+  {
+    no: "05",
     title: "Autonomous Lunabot",
     category: "ROBOTICS HARDWARE",
     status: "COMPLETED",
