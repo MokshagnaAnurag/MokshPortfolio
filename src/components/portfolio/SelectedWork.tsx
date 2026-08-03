@@ -14,6 +14,7 @@ import cubesat from "@/assets/project-cubesat.jpg";
 import driving from "@/assets/project-driving.jpg";
 import lunabot from "@/assets/project-lunabot.png";
 import quadruped from "@/assets/project-quadruped.png";
+import balancingBot from "@/assets/project-balancing.jpg"; // FIX: added missing import (add this image file to src/assets/)
 import { Reveal } from "./Reveal";
 
 interface ProjectItem {
@@ -173,7 +174,7 @@ const featuredProjects: ProjectItem[] = [
     "Socket.IO",
     "IMU"
   ],
-  image: balancingBot, // add project image
+  image: balancingBot,
 
   problem:
     "Develop a realistic self-balancing robot simulator capable of real-time stabilization, live PID tuning, telemetry visualization, and interactive testing within a gamified robotics environment.",
