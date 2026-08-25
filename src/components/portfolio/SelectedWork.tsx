@@ -15,7 +15,6 @@ import driving from "@/assets/project-driving.jpg";
 import lunabot from "@/assets/project-lunabot.png";
 import quadruped from "@/assets/project-quadruped.png";
 import balancingBot from "@/assets/project-balancing.jpg"; // FIX: added missing import (add this image file to src/assets/)
-import swarmDrones from "@/assets/project-swarm.jpg"; // NEW: Swarm Drones image
 import { Reveal } from "./Reveal";
 
 interface ProjectItem {
@@ -258,46 +257,6 @@ const featuredProjects: ProjectItem[] = [
       github: "https://github.com/MokshagnaAnurag/LUNA_BOT",
     },
   },
-  {
-    no: "06",
-    title: "Text-Formation Drone Swarm",
-    category: "ROBOTICS & SIMULATION",
-    status: "COMPLETED",
-    summary:
-      "Developed an interactive drone swarm simulation that dynamically arranges quadcopters mid-air to spell user-input text using ArduPilot SITL and QGroundControl.",
-    year: "2026",
-    stack: ["ArduPilot", "Python", "QGroundControl", "MAVLink", "K-Means"],
-    image: swarmDrones,
-    problem:
-      "Coordinate a large, variable number of autonomous drones to form readable text patterns in the sky without mid-air collisions.",
-    methodology: [
-      "Generated target GPS coordinates by rendering TrueType text into skeletons and clustering pixels.",
-      "Assigned optimal drone-to-target paths using the Hungarian algorithm to minimize crossing trajectories.",
-      "Managed multiple ArduCopter SITL instances and MAVProxy telemetry forwarding to a single QGC instance.",
-    ],
-    challenges: [
-      "Preventing mid-air collisions among dozens of tightly grouped drones.",
-      "Efficiently mapping varying text sizes to a dynamic drone count.",
-      "Synchronizing heavy MAVLink streams for real-time visualization.",
-    ],
-    results: [
-      "✓ Auto-computes required drone count based on text complexity",
-      "✓ Successful live visualization of 40+ drones in QGC",
-      "✓ Zero-collision staggered takeoffs and altitude layering",
-    ],
-    architecture: [
-      "Text Input & Skeletonization",
-      "             │",
-      "Hungarian Path Assignment",
-      "             │",
-      "MAVProxy Telemetry Router",
-      "             │",
-      "N × ArduCopter SITL Instances",
-    ],
-    links: {
-      github: "https://github.com/MokshagnaAnurag/Swarm_Drones",
-    },
-  },
 ];
 
 interface ArchiveItem {
@@ -310,6 +269,15 @@ interface ArchiveItem {
 }
 
 const archiveProjects: ArchiveItem[] = [
+  {
+    title: "Text-Formation Drone Swarm",
+    summary:
+      "Created an interactive simulation using ArduPilot SITL and QGroundControl that orchestrates dozens of drones to dynamically spell text in the sky. Features K-means target generation, Hungarian path assignments, and robust collision avoidance.",
+    year: "2026",
+    category: "Autonomous Systems",
+    stack: ["ArduPilot SITL", "Python", "MAVLink", "QGroundControl"],
+    github: "https://github.com/MokshagnaAnurag/Swarm_Drones",
+  },
   {
     title: "Autonomous Drone Systems",
     summary:
