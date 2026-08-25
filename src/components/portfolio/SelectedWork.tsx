@@ -15,6 +15,7 @@ import driving from "@/assets/project-driving.jpg";
 import lunabot from "@/assets/project-lunabot.png";
 import quadruped from "@/assets/project-quadruped.png";
 import balancingBot from "@/assets/project-balancing.jpg"; // FIX: added missing import (add this image file to src/assets/)
+import swarmDrones from "@/assets/project-swarm.jpg"; // NEW: Swarm Drones image
 import { Reveal } from "./Reveal";
 
 interface ProjectItem {
@@ -157,67 +158,67 @@ const featuredProjects: ProjectItem[] = [
     },
   },
   {
-  no: "04",
-  title: "Standalone Self-Balancing Robot ROS 2 & Webots Simulator",
-  category: "ROBOTICS & CONTROL SYSTEMS",
-  status: "COMPLETED",
-  summary:
-    "Developed a standalone two-wheeled self-balancing robot simulator using ROS 2 Humble and Webots, featuring real-time PID tuning, Pokémon-themed telemetry dashboard, WebSocket communication, teleoperation, and an interactive battle arena for control-system visualization.",
-  year: "2026",
-  stack: [
-    "ROS 2 Humble",
-    "Webots",
-    "Python",
-    "PID Control",
-    "URDF",
-    "Flask",
-    "Socket.IO",
-    "IMU"
-  ],
-  image: balancingBot,
+    no: "04",
+    title: "Standalone Self-Balancing Robot ROS 2 & Webots Simulator",
+    category: "ROBOTICS & CONTROL SYSTEMS",
+    status: "COMPLETED",
+    summary:
+      "Developed a standalone two-wheeled self-balancing robot simulator using ROS 2 Humble and Webots, featuring real-time PID tuning, Pokémon-themed telemetry dashboard, WebSocket communication, teleoperation, and an interactive battle arena for control-system visualization.",
+    year: "2026",
+    stack: [
+      "ROS 2 Humble",
+      "Webots",
+      "Python",
+      "PID Control",
+      "URDF",
+      "Flask",
+      "Socket.IO",
+      "IMU"
+    ],
+    image: balancingBot,
 
-  problem:
-    "Develop a realistic self-balancing robot simulator capable of real-time stabilization, live PID tuning, telemetry visualization, and interactive testing within a gamified robotics environment.",
+    problem:
+      "Develop a realistic self-balancing robot simulator capable of real-time stabilization, live PID tuning, telemetry visualization, and interactive testing within a gamified robotics environment.",
 
-  methodology: [
-    "Designed a custom URDF robot with IMU, LiDAR, camera, and differential drive wheels.",
-    "Implemented closed-loop PID balancing using ROS 2.",
-    "Built a Flask-SocketIO dashboard for live telemetry and parameter tuning.",
-    "Integrated keyboard and web-based teleoperation.",
-    "Created a Pokémon-inspired battle arena that applies random disturbance forces to evaluate controller robustness."
-  ],
+    methodology: [
+      "Designed a custom URDF robot with IMU, LiDAR, camera, and differential drive wheels.",
+      "Implemented closed-loop PID balancing using ROS 2.",
+      "Built a Flask-SocketIO dashboard for live telemetry and parameter tuning.",
+      "Integrated keyboard and web-based teleoperation.",
+      "Created a Pokémon-inspired battle arena that applies random disturbance forces to evaluate controller robustness."
+    ],
 
-  challenges: [
-    "Maintaining stable balancing under continuous disturbance forces.",
-    "Real-time synchronization between ROS 2, Webots, and WebSocket telemetry.",
-    "Dynamic PID tuning without restarting the controller.",
-    "Achieving responsive low-latency dashboard updates."
-  ],
+    challenges: [
+      "Maintaining stable balancing under continuous disturbance forces.",
+      "Real-time synchronization between ROS 2, Webots, and WebSocket telemetry.",
+      "Dynamic PID tuning without restarting the controller.",
+      "Achieving responsive low-latency dashboard updates."
+    ],
 
-  results: [
-    "✓ Stable self-balancing using closed-loop PID control",
-    "✓ Live PID tuning without simulation restart",
-    "✓ Real-time telemetry dashboard",
-    "✓ Interactive disturbance testing using battle mode",
-    "✓ Integrated Webots + ROS 2 simulation environment"
-  ],
+    results: [
+      "✓ Stable self-balancing using closed-loop PID control",
+      "✓ Live PID tuning without simulation restart",
+      "✓ Real-time telemetry dashboard",
+      "✓ Interactive disturbance testing using battle mode",
+      "✓ Integrated Webots + ROS 2 simulation environment"
+    ],
 
-  architecture: [
-    "IMU + LiDAR + Camera",
-    "        │",
-    "ROS 2 Controller",
-    "        │",
-    "PID Balance Algorithm",
-    "        │",
-    "Wheel Motors",
-    "        │",
-    "Flask / Socket.IO Dashboard"
-  ],
+    architecture: [
+      "IMU + LiDAR + Camera",
+      "        │",
+      "ROS 2 Controller",
+      "        │",
+      "PID Balance Algorithm",
+      "        │",
+      "Wheel Motors",
+      "        │",
+      "Flask / Socket.IO Dashboard"
+    ],
 
-  links: {
-    github: "https://github.com/MokshagnaAnurag/PokeBalance-Bot.git"
-  }
-},
+    links: {
+      github: "https://github.com/MokshagnaAnurag/PokeBalance-Bot.git"
+    }
+  },
   {
     no: "05",
     title: "Autonomous Lunabot",
@@ -257,6 +258,46 @@ const featuredProjects: ProjectItem[] = [
       github: "https://github.com/MokshagnaAnurag/LUNA_BOT",
     },
   },
+  {
+    no: "06",
+    title: "Text-Formation Drone Swarm",
+    category: "ROBOTICS & SIMULATION",
+    status: "COMPLETED",
+    summary:
+      "Developed an interactive drone swarm simulation that dynamically arranges quadcopters mid-air to spell user-input text using ArduPilot SITL and QGroundControl.",
+    year: "2026",
+    stack: ["ArduPilot", "Python", "QGroundControl", "MAVLink", "K-Means"],
+    image: swarmDrones,
+    problem:
+      "Coordinate a large, variable number of autonomous drones to form readable text patterns in the sky without mid-air collisions.",
+    methodology: [
+      "Generated target GPS coordinates by rendering TrueType text into skeletons and clustering pixels.",
+      "Assigned optimal drone-to-target paths using the Hungarian algorithm to minimize crossing trajectories.",
+      "Managed multiple ArduCopter SITL instances and MAVProxy telemetry forwarding to a single QGC instance.",
+    ],
+    challenges: [
+      "Preventing mid-air collisions among dozens of tightly grouped drones.",
+      "Efficiently mapping varying text sizes to a dynamic drone count.",
+      "Synchronizing heavy MAVLink streams for real-time visualization.",
+    ],
+    results: [
+      "✓ Auto-computes required drone count based on text complexity",
+      "✓ Successful live visualization of 40+ drones in QGC",
+      "✓ Zero-collision staggered takeoffs and altitude layering",
+    ],
+    architecture: [
+      "Text Input & Skeletonization",
+      "             │",
+      "Hungarian Path Assignment",
+      "             │",
+      "MAVProxy Telemetry Router",
+      "             │",
+      "N × ArduCopter SITL Instances",
+    ],
+    links: {
+      github: "https://github.com/MokshagnaAnurag/Swarm_Drones",
+    },
+  },
 ];
 
 interface ArchiveItem {
@@ -278,7 +319,6 @@ const archiveProjects: ArchiveItem[] = [
     stack: ["PX4", "ROS 2", "ArduPilot", "Gazebo"],
     github: "https://github.com/MokshagnaAnurag/ardupilot-gazebo-gimbal-simulation",
   },
-
   {
     title: "Self-Driving Robot with RPLIDAR C1",
     summary:
