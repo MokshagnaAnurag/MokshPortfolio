@@ -288,6 +288,15 @@ const archiveProjects: ArchiveItem[] = [
     github: "https://github.com/MokshagnaAnurag/ardupilot-gazebo-gimbal-simulation",
   },
   {
+    title: "Obstacle Avoidance Drone — PX4",
+    summary:
+      "Fully autonomous drone navigation stack using ROS 2 Humble, PX4 SITL, and Gazebo Harmonic. Features 2.5D occupancy grid mapping via Bresenham ray-tracing, A* global path planning, and EKF2 sensor fusion for drift-free localization.",
+    year: "2026",
+    category: "Autonomous Systems",
+    stack: ["PX4 SITL", "ROS 2", "Gazebo Harmonic", "A* Planner"],
+    github: "https://github.com/MokshagnaAnurag/obstacle-avoidance-drone-px4",
+  },
+  {
     title: "Self-Driving Robot with RPLIDAR C1",
     summary:
       "Engineered an autonomous navigation system leveraging ROS and Python. Integrated LiDAR-based SLAM for precise obstacle detection and implemented real-time path planning algorithms for seamless movement.",
