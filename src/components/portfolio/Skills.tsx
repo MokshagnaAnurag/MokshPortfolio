@@ -8,8 +8,135 @@ import {
   BrainCircuit,
   Award,
   ShieldCheck,
+  CircuitBoard,
+  Waves,
+  Printer,
+  PenTool,
+  Box,
+  Plane,
+  Rocket,
+  Compass,
+  Map,
+  Network,
+  Server,
+  ScanLine,
+  Orbit,
+  Cog,
+  Boxes,
+  Eye,
+  Globe,
+  Navigation,
+  Move3d,
+  Gauge,
+  Cable,
+  Wifi,
+  Antenna,
+  Cloud,
+  FunctionSquare,
+  Workflow,
 } from "lucide-react";
+// Real brand marks for the skills that have one (falls back to a lucide
+// icon above for anything without an official simple-icons/fontawesome mark).
+import {
+  SiPython,
+  SiCplusplus,
+  SiJavascript,
+  SiHtml5,
+  SiOpencv,
+  SiTensorflow,
+  SiPytorch,
+  SiStmicroelectronics,
+  SiEspressif,
+  SiArduino,
+  SiRaspberrypi,
+  SiArm,
+  SiKicad,
+  SiAutodesk,
+  SiRos,
+  SiZigbee,
+  SiBluetooth,
+  SiMqtt,
+  SiFirebase,
+  SiSupabase,
+  SiMysql,
+  SiDocker,
+  SiLinux,
+  SiNvidia,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 import { Reveal } from "./Reveal";
+
+// Maps a skill's exact label to the icon component used to render its chip.
+// Anything not listed here (or without a real brand mark) falls back to Cpu.
+const skillIcons = {
+  "C/C++": SiCplusplus,
+  Python: SiPython,
+  MATLAB: FunctionSquare,
+  JavaScript: SiJavascript,
+  "HTML/CSS": SiHtml5,
+  OpenCV: SiOpencv,
+  TensorFlow: SiTensorflow,
+  PyTorch: SiPytorch,
+
+  STM32: SiStmicroelectronics,
+  ESP32: SiEspressif,
+  Arduino: SiArduino,
+  "Raspberry Pi": SiRaspberrypi,
+  PIC: CircuitBoard,
+  "ARM Cortex-M": SiArm,
+  FreeRTOS: Workflow,
+
+  "PCB Design (KiCad)": SiKicad,
+  "Circuit Analysis": CircuitBoard,
+  Oscilloscope: Waves,
+  "3D Printing": Printer,
+  SolidWorks: PenTool,
+  "Fusion 360": SiAutodesk,
+
+  "ROS/ROS2": SiRos,
+  "Pixhawk 6C": CircuitBoard,
+  "Pixhawk 2.4.8": CircuitBoard,
+  "Cube Orange": Box,
+  ArduPilot: Plane,
+  PX4: Rocket,
+  "QGroundControl (QGC)": Compass,
+  "Mission Planner": Map,
+  MAVLink: Network,
+  MAVProxy: Server,
+  RPLIDAR: ScanLine,
+  "IMU/Gyro": Orbit,
+  "Motor Control": Cog,
+  URDF: Boxes,
+  RViz: Eye,
+  Gazebo: Globe,
+  SLAM: Map,
+  Nav2: Navigation,
+  MoveIt: Move3d,
+  "PID Control": Gauge,
+  "NVIDIA Isaac Sim": SiNvidia,
+  Webots: Bot,
+  MuJoCo: Boxes,
+
+  UART: Cable,
+  SPI: Cable,
+  I2C: Cable,
+  "CAN Bus": Network,
+  LoRaWAN: Radio,
+  Zigbee: SiZigbee,
+  "Wi-Fi": Wifi,
+  BLE: SiBluetooth,
+  RFID: Antenna,
+  MQTT: SiMqtt,
+  WebSocket: Network,
+
+  "AWS IoT Core": FaAws,
+  "Google Firebase": SiFirebase,
+  ThingSpeak: Cloud,
+  Supabase: SiSupabase,
+  MySQL: SiMysql,
+  Docker: SiDocker,
+  Linux: SiLinux,
+};
 
 // Reorganized so every skill appears exactly once, grouped by what it's
 // actually used for (ROS/ROS2 moved out of "Frameworks" into Robotics,
@@ -251,16 +378,39 @@ export function Skills() {
                       {String(i + 1).padStart(2, "0")} / {g.title}
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      {g.items.map((it) => (
-                        <span
-                          key={it}
-                          className="font-mono text-[0.75rem] font-bold text-[var(--color-industrial-dark)] bg-gray-200 px-2 py-1 uppercase"
-                        >
-                          {it}
-                        </span>
-                      ))}
-                    </div>
+                    <motion.div
+                      className="flex flex-wrap gap-2"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.3 }}
+                      variants={{
+                        visible: { transition: { staggerChildren: 0.035 } },
+                      }}
+                    >
+                      {g.items.map((it) => {
+                        const Icon = skillIcons[it] || Cpu;
+                        return (
+                          <motion.span
+                            key={it}
+                            variants={{
+                              hidden: { opacity: 0, y: 6, scale: 0.9 },
+                              visible: { opacity: 1, y: 0, scale: 1 },
+                            }}
+                            whileHover={{
+                              scale: 1.08,
+                              y: -2,
+                              backgroundColor: g.color,
+                              color: "#0a0a0a",
+                            }}
+                            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                            className="inline-flex items-center gap-1.5 font-mono text-[0.75rem] font-bold text-[var(--color-industrial-dark)] bg-gray-200 px-2 py-1 uppercase cursor-default"
+                          >
+                            <Icon size={13} strokeWidth={2} />
+                            {it}
+                          </motion.span>
+                        );
+                      })}
+                    </motion.div>
                   </div>
                 ))}
               </div>
