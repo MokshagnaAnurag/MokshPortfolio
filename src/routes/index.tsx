@@ -17,25 +17,28 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Mokshagna Anurag Kankati — Embedded Systems Engineer" },
+      { title: "Mokshagna Anurag Kankati — Robotics & Embedded Systems Engineer | Portfolio" },
       {
         name: "description",
         content:
-          "Editorial portfolio of Mokshagna Anurag Kankati — embedded systems, autonomy, aerospace and AI-driven engineering.",
+          "Portfolio of Mokshagna Anurag Kankati — Robotics Engineer specializing in ROS 2, autonomous mobile robots, UAV systems (PX4/ArduPilot), CubeSat development, embedded systems, and AI-driven autonomy. 15+ projects, 4 publications. Open for full-time roles and internships.",
       },
-      { name: "keywords", content: "Embedded Systems, Robotics, Aerospace, Portfolio, Software Engineering, Autonomous Systems" },
-      { property: "og:title", content: "Mokshagna Anurag Kankati — Engineering Portfolio" },
+      { name: "keywords", content: "Mokshagna Anurag Kankati, robotics engineer portfolio, embedded systems engineer India, ROS 2 developer, autonomous mobile robot, UAV engineer, PX4 ArduPilot, CubeSat engineer, SLAM navigation, Nav2, drone engineer India, hire robotics engineer, computer vision, MVGR College ECE" },
+      { property: "og:title", content: "Mokshagna Anurag Kankati — Robotics & Embedded Systems Engineer" },
       {
         property: "og:description",
         content:
-          "Robotics, aerospace and embedded intelligence — a quiet, editorial portfolio.",
+          "Robotics, autonomous systems, UAV engineering, CubeSat development, and embedded intelligence. 15+ projects, 4 publications. Open for roles.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://moksh-portfolio-kappa.vercel.app/" },
       { property: "og:image", content: "https://moksh-portfolio-kappa.vercel.app/og-image.jpg" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:site_name", content: "Mokshagna Anurag Kankati — Portfolio" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Mokshagna Anurag Kankati — Engineering Portfolio" },
-      { name: "twitter:description", content: "Robotics, aerospace and embedded intelligence." },
+      { name: "twitter:title", content: "Mokshagna Anurag Kankati — Robotics & Embedded Systems Engineer" },
+      { name: "twitter:description", content: "Robotics, autonomous systems, UAV engineering, and embedded intelligence. 15+ projects, 4 publications." },
+      { name: "twitter:image", content: "https://moksh-portfolio-kappa.vercel.app/og-image.jpg" },
     ],
   }),
 });
