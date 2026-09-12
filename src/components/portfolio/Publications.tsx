@@ -1,9 +1,20 @@
-import React from "react";
-import { ArrowUpRight, CheckCircle, Zap } from "lucide-react";
+import { ArrowUpRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 
-const publications = [
+interface Publication {
+  title: string;
+  authors?: string;
+  journal: string;
+  link: string;
+  doi: string;
+  date?: string;
+  abstract: string;
+  tags: string[];
+  accepted?: boolean;
+}
+
+const publications: Publication[] = [
   {
     title:
       "Correlating UV Index with Visible Light Intensity to Understand Solar Radiation Variation",
@@ -149,16 +160,16 @@ export function Publications() {
             <Reveal key={pub.doi} delay={i * 0.1}>
               <div className="mb-12 last:mb-0 relative">
                 {/* Accepted badge for accepted papers */}
-                {"accepted" in pub && pub.accepted && (
+                {pub.accepted && (
                   <div className="absolute -top-3 -right-2 z-20 flex items-center gap-1.5 bg-[var(--color-industrial-green)] text-[var(--color-industrial-dark)] font-mono text-[10px] font-black uppercase tracking-wider px-3 py-1 border-2 border-[var(--color-industrial-dark)] shadow-[3px_3px_0_var(--color-industrial-dark)]">
-                    <Zap size={11} />
+                    <CheckCircle size={11} />
                     ACCEPTED
                   </div>
                 )}
 
                 <div
                   className={`flex flex-col border-mech shadow-mech-lg clip-mech bg-[var(--color-industrial-bg)] ${
-                    "accepted" in pub && pub.accepted
+                    pub.accepted
                       ? "ring-2 ring-[var(--color-industrial-green)] ring-offset-2 ring-offset-[var(--color-industrial-white)]"
                       : ""
                   }`}
