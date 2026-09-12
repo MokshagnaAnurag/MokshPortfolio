@@ -32,7 +32,7 @@ const groups = [
   },
   {
     title: "Robotics & Automation",
-    items: ["ROS/ROS2", "Pixhawk 6C", "Pixhawk 2.4.8", "RPLIDAR", "IMU/Gyro", "Motor Control", "URDF", "RViz", "Gazebo", "SLAM", "Nav2", "MoveIt", "PID Control"],
+    items: ["ROS/ROS2", "Pixhawk 6C", "Pixhawk 2.4.8", "Cube Orange", "ArduPilot", "PX4", "QGroundControl (QGC)", "Mission Planner", "MAVLink", "MAVProxy", "RPLIDAR", "IMU/Gyro", "Motor Control", "URDF", "RViz", "Gazebo", "SLAM", "Nav2", "MoveIt", "PID Control", "NVIDIA Isaac Sim", "Webots", "MuJoCo"],
     color: "var(--color-industrial-cyan)",
   },
   {
