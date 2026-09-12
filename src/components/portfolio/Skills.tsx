@@ -51,7 +51,7 @@ const groups = [
       "ESP32",
       "Arduino",
       "Raspberry Pi",
-      "PIC",
+      "Nvidia Orin Nano",
       "ARM Cortex-M",
       "FreeRTOS",
     ],
@@ -93,9 +93,9 @@ const groups = [
   {
     title: "Robotics & Automation",
     items: [
-      "ROS/ROS2",
+      "ROS2",
       "RPLIDAR",
-      "IMU/Gyro",
+      "IMU",
       "Motor Control",
       "URDF",
       "RViz",
@@ -129,7 +129,7 @@ const groups = [
       "MQTT",
       "WebSocket",
     ],
-    color: "var(--color-industrial-blue)",
+    color: "var(--color-industrial-burgundy)",
   },
 
   // ============================================================
