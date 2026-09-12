@@ -129,7 +129,7 @@ const groups = [
       "MQTT",
       "WebSocket",
     ],
-    color: "var(--color-industrial-burgundy)",
+    color: "var(--color-industrial-red)",
   },
 
   // ============================================================
