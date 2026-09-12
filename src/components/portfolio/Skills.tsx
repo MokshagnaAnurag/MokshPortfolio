@@ -11,129 +11,38 @@ import {
 } from "lucide-react";
 import { Reveal } from "./Reveal";
 
+// Reorganized so every skill appears exactly once, grouped by what it's
+// actually used for (ROS/ROS2 moved out of "Frameworks" into Robotics,
+// OpenCV/TensorFlow/PyTorch grouped with the other software/AI tools).
 const groups = [
   {
-    title: "Firmware & Logic Frameworks",
-    items: [
-      "C/C++",
-      "Python",
-      "MATLAB",
-      "JavaScript",
-      "HTML/CSS",
-      "ROS/ROS2",
-      "OpenCV",
-      "TensorFlow",
-      "PyTorch",
-    ],
+    title: "Programming & AI Frameworks",
+    items: ["C/C++", "Python", "MATLAB", "JavaScript", "HTML/CSS", "OpenCV", "TensorFlow", "PyTorch"],
     color: "var(--color-industrial-yellow)",
   },
-
   {
     title: "Embedded & Microcontrollers",
-    items: [
-      "STM32",
-      "ESP32",
-      "Arduino",
-      "Raspberry Pi",
-      "PIC",
-      "ARM Cortex-M",
-      "FreeRTOS",
-    ],
+    items: ["STM32", "ESP32", "Arduino", "Raspberry Pi", "PIC", "ARM Cortex-M", "FreeRTOS"],
     color: "var(--color-industrial-green)",
   },
-
   {
     title: "Hardware Design",
-    items: [
-      "PCB Design (KiCad)",
-      "Circuit Analysis",
-      "Oscilloscope",
-      "3D Printing",
-      "SolidWorks",
-      "Fusion 360",
-    ],
+    items: ["PCB Design (KiCad)", "Circuit Analysis", "Oscilloscope", "3D Printing", "SolidWorks", "Fusion 360"],
     color: "var(--color-industrial-orange)",
   },
-
   {
     title: "Robotics & Automation",
-    items: [
-      "RPLIDAR",
-      "IMU/Gyro",
-      "Motor Control",
-      "URDF",
-      "RViz",
-      "Gazebo",
-      "SLAM",
-      "Nav2",
-      "MoveIt",
-      "PID Control",
-      "ROS/ROS2",
-    ],
+    items: ["ROS/ROS2", "Pixhawk 6C", "Pixhawk 2.4.8", "RPLIDAR", "IMU/Gyro", "Motor Control", "URDF", "RViz", "Gazebo", "SLAM", "Nav2", "MoveIt", "PID Control"],
     color: "var(--color-industrial-cyan)",
   },
-
-  {
-    title: "UAV & Autopilot Systems",
-    items: [
-      "ArduPilot",
-      "PX4",
-      "MAVLink",
-      "MAVProxy",
-      "QGroundControl (QGC)",
-      "Mission Planner",
-      "Cube Orange",
-      "UAV Telemetry",
-      "Flight Controller Integration",
-    ],
-    color: "var(--color-industrial-blue)",
-  },
-
-  {
-    title: "Robotics Simulation & Physical AI",
-    items: [
-      "NVIDIA Isaac Sim",
-      "Webots",
-      "MuJoCo",
-      "Gazebo",
-      "ROS/ROS2",
-      "URDF",
-      "SDF",
-      "Sensor Simulation",
-      "Robot Dynamics",
-    ],
-    color: "var(--color-industrial-magenta)",
-  },
-
   {
     title: "Communication Protocols & IoT",
-    items: [
-      "UART",
-      "SPI",
-      "I2C",
-      "CAN Bus",
-      "LoRaWAN",
-      "Zigbee",
-      "Wi-Fi",
-      "BLE",
-      "RFID",
-      "MQTT",
-      "WebSocket",
-    ],
+    items: ["UART", "SPI", "I2C", "CAN Bus", "LoRaWAN", "Zigbee", "Wi-Fi", "BLE", "RFID", "MQTT", "WebSocket"],
     color: "var(--color-industrial-blue)",
   },
-
   {
     title: "Telemetry & Edge Infrastructure",
-    items: [
-      "AWS IoT Core",
-      "Google Firebase",
-      "ThingSpeak",
-      "Supabase",
-      "MySQL",
-      "Docker",
-      "Linux",
-    ],
+    items: ["AWS IoT Core", "Google Firebase", "ThingSpeak", "Supabase", "MySQL", "Docker", "Linux"],
     color: "var(--color-industrial-magenta)",
   },
 ];
@@ -145,36 +54,29 @@ const achievements = [
     host: "Odoo Hackathon 2025",
     detail: "Selected from 15,000+ participating teams nationwide.",
   },
-
   {
     no: "02",
     award: "2nd Place & ₹1 Lakh Prize",
     host: "AVISHKAR Season-2 Hackathon",
     detail: "Awarded for an innovative IoT-based agricultural solution.",
   },
-
   {
     no: "03",
     award: "Rank 6 Nationwide",
     host: "SENSE Academia Scholarship",
-    detail:
-      "Awarded high national merit standing in the Embedded Systems Scholarship Examination.",
+    detail: "Awarded high national merit standing in the Embedded Systems Scholarship Examination.",
   },
-
   {
     no: "04",
     award: "Presented Drone Solutions",
     host: "AP State Hackathon on Drones",
-    detail:
-      "Proposed cutting-edge drone-based disaster management solutions.",
+    detail: "Proposed cutting-edge drone-based disaster management solutions.",
   },
-
   {
     no: "05",
     award: "Finalist",
     host: "Hack IITK (C3i Hub, IIT Kanpur)",
-    detail:
-      "Advanced to finals for a cybersecurity-driven IoT prototype.",
+    detail: "Advanced to finals for a cybersecurity-driven IoT prototype.",
   },
 ];
 
@@ -185,28 +87,24 @@ const certifications = [
     date: "May 2025",
     id: "NPTEL25CS43S660400772",
   },
-
   {
     name: "Natural Language Processing (NLP)",
     issuer: "IIT Kharagpur",
     date: "Jan 2025",
     id: "-",
   },
-
   {
     name: "Practical Ethical Hacking",
     issuer: "TCM Security",
     date: "Oct 2024",
     id: "196z74v0",
   },
-
   {
     name: "Introduction to MATLAB & Simulink",
     issuer: "NIELIT",
     date: "Aug 2024",
     id: "OLC 21145",
   },
-
   {
     name: "Cloud Computing",
     issuer: "NPTEL",
@@ -223,7 +121,6 @@ const capabilityFeatures = [
       "Developing embedded applications using STM32, ESP32, Arduino, and Raspberry Pi, including sensor interfacing, communication protocols, and real-time data acquisition.",
     model: "MDL-01",
   },
-
   {
     title: "Autonomous Robotics",
     icon: Bot,
@@ -231,7 +128,6 @@ const capabilityFeatures = [
       "Building autonomous robotic systems using ROS 2, Nav2, SLAM, LiDAR, IMU sensor fusion, and Gazebo for mapping, localization, and navigation.",
     model: "MDL-02",
   },
-
   {
     title: "IoT & Wireless Systems",
     icon: Radio,
@@ -239,7 +135,6 @@ const capabilityFeatures = [
       "Designing IoT solutions leveraging MQTT, LoRaWAN, Wi-Fi, RFID, and cloud-connected telemetry systems for smart monitoring applications.",
     model: "MDL-03",
   },
-
   {
     title: "Space Technologies",
     icon: Satellite,
@@ -247,7 +142,6 @@ const capabilityFeatures = [
       "Contributed to CubeSat subsystem development, including onboard computing, telemetry, LoRaWAN communication, and sensor integration at IIT Tirupati I-Hub.",
     model: "MDL-04",
   },
-
   {
     title: "Physical AI",
     icon: Activity,
@@ -255,7 +149,6 @@ const capabilityFeatures = [
       "Exploring embodied intelligence by integrating perception, planning, simulation, and control for autonomous robots, UAVs, and real-world robotic systems.",
     model: "MDL-05",
   },
-
   {
     title: "Machine Learning",
     icon: BrainCircuit,
@@ -268,15 +161,8 @@ const capabilityFeatures = [
 export function Skills() {
   return (
     <>
-      {/* ========================================================= */}
-      {/* 1. CAPABILITY MODULES SECTION */}
-      {/* ========================================================= */}
-
-      <section
-        id="capabilities"
-        className="relative py-24 bg-[var(--color-industrial-white)] border-b-4 border-mech overflow-hidden"
-      >
-        {/* Blueprint Light Overlay */}
+      {/* 1. Capability Modules Section (White Background) */}
+      <section id="capabilities" className="relative py-24 bg-[var(--color-industrial-white)] border-b-4 border-mech overflow-hidden">
         <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none"></div>
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
@@ -289,13 +175,10 @@ export function Skills() {
 
             <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase tracking-tighter mb-16 leading-[0.9] text-[var(--color-industrial-dark)]">
               CAPABILITY <br />
-              <span className="text-[var(--color-industrial-orange)] text-stroke-mech-2">
-                MODULES
-              </span>
+              <span className="text-[var(--color-industrial-orange)] text-stroke-mech-2">MODULES</span>
             </h2>
           </Reveal>
 
-          {/* Capabilities Grid */}
           <div className="mb-8">
             <Reveal delay={0.1}>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -327,15 +210,8 @@ export function Skills() {
         </div>
       </section>
 
-      {/* ========================================================= */}
-      {/* 2. TECHNICAL SKILLS SECTION */}
-      {/* ========================================================= */}
-
-      <section
-        id="skills"
-        className="relative py-24 bg-[var(--color-industrial-dark)] border-b-4 border-mech overflow-hidden"
-      >
-        {/* Blueprint Dark Overlay */}
+      {/* 2. Technical Skills Section (Dark Background) */}
+      <section id="skills" className="relative py-24 bg-[var(--color-industrial-dark)] border-b-4 border-mech overflow-hidden">
         <div className="absolute inset-0 bg-blueprint-dark opacity-40 pointer-events-none"></div>
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
@@ -343,12 +219,8 @@ export function Skills() {
             <Reveal>
               <div className="flex items-center gap-4 mb-10">
                 <h3 className="font-display text-3xl md:text-5xl font-black uppercase text-[var(--color-industrial-white)]">
-                  TECHNICAL{" "}
-                  <span className="text-[var(--color-industrial-yellow)]">
-                    SKILLS
-                  </span>
+                  TECHNICAL <span className="text-[var(--color-industrial-yellow)]">SKILLS</span>
                 </h3>
-
                 <div className="h-2 flex-1 bg-warning-stripes opacity-40"></div>
               </div>
             </Reveal>
@@ -358,14 +230,24 @@ export function Skills() {
                 {groups.map((g, i) => (
                   <div
                     key={g.title}
-                    className="skill-card-dynamic group p-6 border-mech transition-all duration-300 hover:-translate-y-1 shadow-mech-sm"
-                    style={
-                      {
-                        "--dynamic-hover": g.color,
-                      } as React.CSSProperties
-                    }
+                    className="group p-6 border-mech transition-all duration-300 hover:-translate-y-1 shadow-mech-sm bg-[var(--color-industrial-dark)]"
+                    style={{
+                      borderColor: "rgba(255,255,255,0.15)",
+                      transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = g.color;
+                      e.currentTarget.style.boxShadow = `0 0 24px 0 ${g.color}55, 4px 4px 0 0 rgba(10,10,10,0.5)`;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+                      e.currentTarget.style.boxShadow = "";
+                    }}
                   >
-                    <div className="font-mono text-[0.65rem] font-bold uppercase px-3 py-1 bg-[var(--color-industrial-dark)] text-[var(--color-industrial-white)] inline-block mb-6 shadow-[2px_2px_0_rgba(10,10,10,0.5)]">
+                    <div
+                      className="font-mono text-[0.65rem] font-bold uppercase px-3 py-1 text-[var(--color-industrial-dark)] inline-block mb-6 shadow-[2px_2px_0_rgba(10,10,10,0.5)] transition-colors duration-300"
+                      style={{ backgroundColor: g.color }}
+                    >
                       {String(i + 1).padStart(2, "0")} / {g.title}
                     </div>
 
@@ -387,30 +269,17 @@ export function Skills() {
         </div>
       </section>
 
-      {/* ========================================================= */}
-      {/* 3. HONORS & CERTIFICATIONS SECTION */}
-      {/* ========================================================= */}
-
-      <section
-        id="honors"
-        className="relative py-24 bg-[var(--color-industrial-white)] border-b-4 border-mech overflow-hidden"
-      >
-        {/* Blueprint Light Overlay */}
+      {/* 3. Honors and Certifications Section (White Background) */}
+      <section id="honors" className="relative py-24 bg-[var(--color-industrial-white)] border-b-4 border-mech overflow-hidden">
         <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none"></div>
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* ===================================================== */}
-            {/* ACHIEVEMENTS */}
-            {/* ===================================================== */}
-
+            {/* Achievements */}
             <div>
               <Reveal>
                 <h3 className="font-display text-3xl md:text-4xl font-black uppercase text-[var(--color-industrial-dark)] mb-10 text-left">
-                  HONORS &{" "}
-                  <span className="text-[var(--color-industrial-orange)] text-stroke-mech-2">
-                    AWARDS
-                  </span>
+                  HONORS & <span className="text-[var(--color-industrial-orange)] text-stroke-mech-2">AWARDS</span>
                 </h3>
               </Reveal>
 
@@ -429,7 +298,6 @@ export function Skills() {
                         <h4 className="font-display text-lg font-black text-[var(--color-industrial-dark)] uppercase mb-1 leading-tight transition-colors">
                           {a.award}
                         </h4>
-
                         {a.detail && (
                           <p className="font-mono text-xs text-gray-600 group-hover:text-[var(--color-industrial-dark)] transition-colors">
                             {a.detail}
@@ -448,16 +316,11 @@ export function Skills() {
               </Reveal>
             </div>
 
-            {/* ===================================================== */}
-            {/* CERTIFICATIONS */}
-            {/* ===================================================== */}
-
+            {/* Certifications */}
             <div>
               <Reveal>
                 <h3 className="font-display text-3xl md:text-4xl font-black uppercase text-[var(--color-industrial-dark)] mb-10 text-left">
-                  <span className="text-[var(--color-industrial-green)] text-stroke-mech-2">
-                    CERTIFICATIONS
-                  </span>
+                  <span className="text-[var(--color-industrial-green)] text-stroke-mech-2">CERTIFICATIONS</span>
                 </h3>
               </Reveal>
 
@@ -471,21 +334,17 @@ export function Skills() {
                       <div className="absolute top-6 right-6 text-gray-400 group-hover:text-[var(--color-industrial-green)] transition-colors">
                         <ShieldCheck size={20} />
                       </div>
-
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-[0.65rem] font-bold uppercase bg-[var(--color-industrial-dark)] text-[var(--color-industrial-yellow)] px-2 py-0.5">
                           {c.date}
                         </span>
-
                         <span className="font-mono text-[0.65rem] font-bold text-gray-500 uppercase tracking-widest group-hover:text-[var(--color-industrial-dark)]">
                           {c.issuer}
                         </span>
                       </div>
-
                       <h4 className="font-display text-lg font-black text-[var(--color-industrial-dark)] uppercase leading-tight pr-8">
                         {c.name}
                       </h4>
-
                       {c.id !== "-" && (
                         <p className="font-mono text-xs text-gray-500 mt-1 group-hover:text-[var(--color-industrial-dark)]">
                           CREDENTIAL_ID: {c.id}
