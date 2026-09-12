@@ -6,7 +6,6 @@ import {
   Satellite,
   Activity,
   BrainCircuit,
-  Award,
   ShieldCheck,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
@@ -23,9 +22,16 @@ import { Reveal } from "./Reveal";
 // 06 - Communication Protocols & IoT
 // 07 - Telemetry & Edge Infrastructure
 //
-// Each group has its own accent color.
-// Individual skill boxes inherit the group's accent color
-// when hovered.
+// Hovering a skill:
+// - Skill background becomes dark
+// - Skill text becomes white
+// - Skill gets category-colored border
+// - Skill gets category-colored glow
+//
+// Hovering a category:
+// - Category box gets category-colored border
+// - Category box gets category-colored glow
+// - Category heading text becomes white
 // ============================================================
 
 const groups = [
@@ -41,7 +47,7 @@ const groups = [
       "TensorFlow",
       "PyTorch",
     ],
-    color: "var(--color-industrial-yellow)",
+    color: "#FFD000",
   },
 
   {
@@ -55,7 +61,7 @@ const groups = [
       "ARM Cortex-M",
       "FreeRTOS",
     ],
-    color: "var(--color-industrial-green)",
+    color: "#00FF41",
   },
 
   {
@@ -68,12 +74,13 @@ const groups = [
       "SolidWorks",
       "Fusion 360",
     ],
-    color: "var(--color-industrial-orange)",
+    color: "#FF8A00",
   },
 
   // ============================================================
-  // UAV IS NOW A SEPARATE CATEGORY
+  // UAV / FLIGHT SYSTEMS
   // ============================================================
+
   {
     title: "UAV & Flight Systems",
     items: [
@@ -87,8 +94,12 @@ const groups = [
       "MAVLink",
       "MAVProxy",
     ],
-    color: "var(--color-industrial-cyan)",
+    color: "#00E5FF",
   },
+
+  // ============================================================
+  // ROBOTICS & AUTOMATION
+  // ============================================================
 
   {
     title: "Robotics & Automation",
@@ -108,12 +119,13 @@ const groups = [
       "Webots",
       "MuJoCo",
     ],
-    color: "var(--color-industrial-blue)",
+    color: "#008CFF",
   },
 
   // ============================================================
-  // COMMUNICATION PROTOCOLS RETAINED
+  // COMMUNICATION & IOT
   // ============================================================
+
   {
     title: "Communication Protocols & IoT",
     items: [
@@ -129,12 +141,17 @@ const groups = [
       "MQTT",
       "WebSocket",
     ],
-    color: "var(--color-industrial-red)",
+
+    // IMPORTANT:
+    // Direct HEX color is used instead of CSS variable
+    // to guarantee the red color works.
+    color: "#FF3131",
   },
 
   // ============================================================
-  // TELEMETRY & EDGE INFRASTRUCTURE RETAINED
+  // TELEMETRY & EDGE
   // ============================================================
+
   {
     title: "Telemetry & Edge Infrastructure",
     items: [
@@ -146,7 +163,7 @@ const groups = [
       "Docker",
       "Linux",
     ],
-    color: "var(--color-industrial-magenta)",
+    color: "#FF00D4",
   },
 ];
 
@@ -237,30 +254,60 @@ const certifications = [
 // ============================================================
 // CAPABILITY MODULES
 // ============================================================
+//
+// EXACTLY 6 BOXES
+//
+// 01 Embedded Systems
+// 02 Autonomous Robotics & Physical AI
+// 03 UAV & Flight Systems
+// 04 IoT & Wireless Systems
+// 05 Space Technologies
+// 06 Machine Learning
+//
+// Autonomous Robotics + Physical AI are merged because they
+// are closely related to autonomous perception, planning,
+// simulation, navigation and intelligent control.
+// ============================================================
 
 const capabilityFeatures = [
   {
     title: "Embedded Systems",
     icon: Cpu,
     description:
-      "Developing embedded applications using STM32, ESP32, Arduino, and Raspberry Pi, including sensor interfacing, communication protocols, and real-time data acquisition.",
+      "Developing embedded applications using STM32, ESP32, Arduino, Raspberry Pi, and Nvidia Orin Nano, including sensor interfacing, communication protocols, real-time data acquisition, and edge computing.",
     model: "MDL-01",
+    color: "#00FF41",
   },
 
   {
-    title: "Autonomous Robotics",
+    title: "Autonomous Robotics & Physical AI",
     icon: Bot,
     description:
-      "Building autonomous robotic systems using ROS 2, Nav2, SLAM, LiDAR, IMU sensor fusion, and Gazebo for mapping, localization, and navigation.",
+      "Building autonomous robotic systems using ROS 2, Nav2, SLAM, LiDAR, IMU sensor fusion, Gazebo, NVIDIA Isaac Sim, Webots, and MuJoCo for perception, planning, simulation, navigation, and intelligent control.",
     model: "MDL-02",
+    color: "#008CFF",
+  },
+
+  // ============================================================
+  // UAV CAPABILITY MODULE
+  // ============================================================
+
+  {
+    title: "UAV & Flight Systems",
+    icon: Activity,
+    description:
+      "Developing and working with autonomous UAV systems using Pixhawk, Cube Orange, ArduPilot, PX4, QGroundControl, Mission Planner, MAVLink, and MAVProxy for flight control, telemetry, mission planning, and autonomous operations.",
+    model: "MDL-03",
+    color: "#00E5FF",
   },
 
   {
     title: "IoT & Wireless Systems",
     icon: Radio,
     description:
-      "Designing IoT solutions leveraging MQTT, LoRaWAN, Wi-Fi, RFID, and cloud-connected telemetry systems for smart monitoring applications.",
-    model: "MDL-03",
+      "Designing connected IoT systems using MQTT, LoRaWAN, Wi-Fi, RFID, BLE, Zigbee, UART, SPI, I2C, CAN Bus, and cloud-connected telemetry for smart monitoring applications.",
+    model: "MDL-04",
+    color: "#FF3131",
   },
 
   {
@@ -268,23 +315,17 @@ const capabilityFeatures = [
     icon: Satellite,
     description:
       "Contributed to CubeSat subsystem development, including onboard computing, telemetry, LoRaWAN communication, and sensor integration at IIT Tirupati I-Hub.",
-    model: "MDL-04",
-  },
-
-  {
-    title: "Physical AI",
-    icon: Activity,
-    description:
-      "Exploring embodied intelligence by integrating perception, planning, simulation, and control for autonomous robots, UAVs, and real-world robotic systems.",
     model: "MDL-05",
+    color: "#FF8A00",
   },
 
   {
     title: "Machine Learning",
     icon: BrainCircuit,
     description:
-      "Applying machine learning techniques using TensorFlow, PyTorch, OpenCV, and YOLO for perception, prediction, and intelligent decision-making in robotic applications.",
+      "Applying machine learning techniques using TensorFlow, PyTorch, OpenCV, and YOLO for perception, prediction, computer vision, and intelligent decision-making in robotic and autonomous systems.",
     model: "MDL-06",
+    color: "#FF00D4",
   },
 ];
 
@@ -297,6 +338,7 @@ export function Skills() {
     <>
       {/* ======================================================
           1. CAPABILITY MODULES
+          EXACTLY 6 BOXES
           ====================================================== */}
 
       <section
@@ -328,21 +370,119 @@ export function Skills() {
                 {capabilityFeatures.map((feature, i) => (
                   <div
                     key={i}
-                    className="bg-[#111] border-mech p-8 flex flex-col transition-colors duration-200 group relative z-0 shadow-mech-md hover:-translate-y-1 hover:shadow-mech-lg hover:border-[var(--color-industrial-dark)] clip-mech"
+                    className="
+                      bg-[#111]
+                      border-mech
+                      p-8
+                      flex
+                      flex-col
+                      transition-all
+                      duration-300
+                      group
+                      relative
+                      z-0
+                      shadow-mech-md
+                      hover:-translate-y-1
+                      clip-mech
+                    "
+                    style={{
+                      borderColor: "rgba(255,255,255,0.15)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = feature.color;
+
+                      e.currentTarget.style.boxShadow = `
+                        0 0 28px 0 ${feature.color}55,
+                        6px 6px 0 0 rgba(10,10,10,0.5)
+                      `;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(255,255,255,0.15)";
+
+                      e.currentTarget.style.boxShadow = "";
+                    }}
                   >
-                    <div className="absolute top-4 right-4 font-mono text-[0.6rem] font-bold text-[var(--color-industrial-gray)] opacity-50 tracking-widest border border-dashed border-gray-600 px-2 py-0.5">
+                    {/* MODEL NUMBER */}
+
+                    <div
+                      className="
+                        absolute
+                        top-4
+                        right-4
+                        font-mono
+                        text-[0.6rem]
+                        font-bold
+                        tracking-widest
+                        opacity-50
+                        border
+                        border-dashed
+                        border-gray-600
+                        px-2
+                        py-0.5
+                        transition-colors
+                        duration-200
+                        group-hover:text-white
+                      "
+                    >
                       {feature.model}
                     </div>
 
-                    <div className="text-[var(--color-industrial-white)] group-hover:text-[var(--color-industrial-green)] mb-6 transition-colors shadow-[0_0_20px_rgba(0,255,65,0)] group-hover:shadow-[0_0_20px_rgba(0,255,65,0.3)] w-fit rounded-full">
-                      <feature.icon size={42} strokeWidth={1.5} />
+                    {/* ICON */}
+
+                    <div
+                      className="
+                        mb-6
+                        w-fit
+                        rounded-full
+                        text-[var(--color-industrial-white)]
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      <feature.icon
+                        size={42}
+                        strokeWidth={1.5}
+                        className="transition-all duration-300"
+                      />
                     </div>
 
-                    <h3 className="font-display text-2xl font-black uppercase mb-3 text-[var(--color-industrial-white)]">
+                    {/* TITLE */}
+
+                    <h3
+                      className="
+                        font-display
+                        text-2xl
+                        font-black
+                        uppercase
+                        mb-3
+                        text-[var(--color-industrial-white)]
+                        transition-colors
+                        duration-300
+                      "
+                    >
                       {feature.title}
                     </h3>
 
-                    <p className="font-mono text-sm leading-[1.7] text-[var(--color-industrial-green)] opacity-80 group-hover:opacity-100 transition-opacity flex-1 border-l-2 border-[var(--color-industrial-green)] pl-3">
+                    {/* DESCRIPTION */}
+
+                    <p
+                      className="
+                        font-mono
+                        text-sm
+                        leading-[1.7]
+                        opacity-80
+                        group-hover:opacity-100
+                        transition-opacity
+                        flex-1
+                        pl-3
+                        border-l-2
+                      "
+                      style={{
+                        color: feature.color,
+                        borderColor: feature.color,
+                      }}
+                    >
                       {feature.description}
                     </p>
                   </div>
@@ -395,8 +535,6 @@ export function Skills() {
                     "
                     style={{
                       borderColor: "rgba(255,255,255,0.15)",
-                      transition:
-                        "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.3s ease",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = g.color;
@@ -415,9 +553,6 @@ export function Skills() {
                   >
                     {/* ==================================================
                         CATEGORY HEADING
-                        
-                        When ANY skill inside this group is hovered,
-                        group-hover:text-white makes this heading white.
                         ================================================== */}
 
                     <div
@@ -444,16 +579,7 @@ export function Skills() {
                     </div>
 
                     {/* ==================================================
-                        INDIVIDUAL SKILL BOXES
-                        
-                        NORMAL:
-                        Gray background + dark text
-
-                        HOVER:
-                        Dark background
-                        White text
-                        Accent-color border
-                        Accent-color glow
+                        SKILL BOXES
                         ================================================== */}
 
                     <div className="flex flex-wrap gap-2">
@@ -481,14 +607,20 @@ export function Skills() {
                             e.currentTarget.style.borderColor = g.color;
 
                             e.currentTarget.style.boxShadow = `
-                              0 0 12px ${g.color}66
+                              0 0 12px ${g.color}88
                             `;
+
+                            e.currentTarget.style.color = "#FFFFFF";
+                            e.currentTarget.style.backgroundColor = "#111111";
                           }}
                           onMouseLeave={(e) => {
                             e.currentTarget.style.borderColor =
                               "transparent";
 
                             e.currentTarget.style.boxShadow = "none";
+
+                            e.currentTarget.style.color = "";
+                            e.currentTarget.style.backgroundColor = "";
                           }}
                         >
                           {it}
@@ -515,6 +647,7 @@ export function Skills() {
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
             {/* ==================================================
                 ACHIEVEMENTS
                 ================================================== */}
@@ -531,7 +664,7 @@ export function Skills() {
 
               <Reveal delay={0.1}>
                 <div className="flex flex-col border-mech shadow-mech-md bg-[var(--color-industrial-white)] clip-mech-alt relative z-10">
-                  {achievements.map((a, i) => (
+                  {achievements.map((a) => (
                     <div
                       key={a.no}
                       className="
@@ -639,6 +772,7 @@ export function Skills() {
                 </div>
               </Reveal>
             </div>
+
           </div>
         </div>
       </section>
