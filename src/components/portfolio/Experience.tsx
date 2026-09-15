@@ -17,20 +17,34 @@ interface ExperienceItem {
 }
 
 const items: ExperienceItem[] = [
- {
-  id: "exp-1",
-  orgShort: "Zebu Intelligent Systems",
-  orgFull: "Zebu Intelligent Systems  Pvt. Ltd.",
-  role: "UAV Engineering Intern",
-  year: "2026",
-  period: "Jul 2026 – Present",
-  location: "Hyderabad, Telangana, India",
-  bullets: [
-    "Integrated and validated CubeOrange flight controllers on S500 and FPV UAV platforms.",
-    "Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight operations.",
-    "Performed sensor calibration, flight testing, and system validation for real-world UAV deployment."
-  ]
-},
+  {
+    id: "exp-0",
+    orgShort: "Skyeris Aerotech",
+    orgFull: "Skyeris Aerotech",
+    role: "Robotics Software Intern",
+    year: "2026",
+    period: "Sep 2026 – Present",
+    location: "Hyderabad, Telangana, India",
+    bullets: [
+      "Developing robotics software and autonomous systems for UAV and aerial robotics applications.",
+      "Working on robotics simulation, control, navigation, and software integration workflows.",
+      "Contributing to software development and testing for real-world drone and robotic systems."
+    ]
+  },
+  {
+    id: "exp-1",
+    orgShort: "Zebu Intelligent Systems",
+    orgFull: "Zebu Intelligent Systems  Pvt. Ltd.",
+    role: "UAV Engineering Intern",
+    year: "2026",
+    period: "Jul 2026 – Present",
+    location: "Hyderabad, Telangana, India",
+    bullets: [
+      "Integrated and validated CubeOrange flight controllers on S500 and FPV UAV platforms.",
+      "Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight operations.",
+      "Performed sensor calibration, flight testing, and system validation for real-world UAV deployment."
+    ]
+  },
   {
     id: "exp-2", orgShort: "Spaceborn", orgFull: "Spaceborn",
     role: "Robotics & Simulation Intern", year: "2026",
