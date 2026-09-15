@@ -37,7 +37,7 @@ const items: ExperienceItem[] = [
     orgFull: "Zebu Intelligent Systems  Pvt. Ltd.",
     role: "UAV Engineering Intern",
     year: "2026",
-    period: "Jul 2026 – Present",
+    period: "Jul 2026 – Sep 2026",
     location: "Hyderabad, Telangana, India",
     bullets: [
       "Integrated and validated CubeOrange flight controllers on S500 and FPV UAV platforms.",
