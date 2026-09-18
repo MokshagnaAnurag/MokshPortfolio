@@ -189,28 +189,7 @@ export function About() {
               </div>
             </Reveal>
 
-            {/* ================= CORE EXPERTISE ================= */}
-            <Reveal delay={0.3}>
-              <div className="mt-8 pt-6">
-                <h4 className="font-mono text-xs uppercase tracking-widest text-zinc-400 font-bold mb-4 flex items-center gap-2">
-                  <span className="text-red-600 text-lg">⚙️</span>
-                  CORE EXPERTISE
-                </h4>
-
-                <div className="flex flex-wrap gap-2.5">
-                  {interests.map((interest, i) => (
-                    <span
-                      key={i}
-                      className="bg-zinc-100 text-black border-[3px] border-black font-mono text-xs font-bold px-3 py-1.5 transition-colors hover:bg-yellow-400 cursor-default shadow-[3px_3px_0_#ff0000] transform -skew-x-6"
-                    >
-                      <span className="block transform skew-x-6">
-                        {interest}
-                      </span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
+         
 
             {/* ================= CURRENT DIRECTION ================= */}
             <Reveal delay={0.35}>
