@@ -16,25 +16,12 @@ interface ExperienceItem {
   skills?: string;
 }
 
+
 const items: ExperienceItem[] = [
-  {
-    id: "exp-0",
-    orgShort: "Skyeris Aerotech",
-    orgFull: "Skyeris Aerotech",
-    role: "Robotics Software Intern",
-    year: "2026",
-    period: "Sep 2026 – Present",
-    location: "Hyderabad, Telangana, India",
-    bullets: [
-      "Developing robotics software and autonomous systems for UAV and aerial robotics applications.",
-      "Working on robotics simulation, control, navigation, and software integration workflows.",
-      "Contributing to software development and testing for real-world drone and robotic systems."
-    ]
-  },
   {
     id: "exp-1",
     orgShort: "Zebu Intelligent Systems",
-    orgFull: "Zebu Intelligent Systems  Pvt. Ltd.",
+    orgFull: "Zebu Intelligent Systems Pvt. Ltd.",
     role: "UAV Engineering Intern",
     year: "2026",
     period: "Jul 2026 – Sep 2026",
@@ -46,105 +33,139 @@ const items: ExperienceItem[] = [
     ]
   },
   {
-    id: "exp-2", orgShort: "Spaceborn", orgFull: "Spaceborn",
-    role: "Robotics & Simulation Intern", year: "2026",
-    period: "May 2026 – June 2026", location: "Remote",
-    bullets: ["Worked on autonomous drone and robotic systems design, physics-based simulations, and control optimization."]
-  },
- {
-  id: "exp-3",
-  orgShort: "IIT Tirupati NIF",
-  orgFull: "IIT Tirupati Navavishkar I-Hub Foundation",
-  role: "Project Intern",
-  year: "2025",
-  period: "Jun 2025 – Apr 2026",
-  location: "Tirupati, Andhra Pradesh",
-  bullets: [
-    "Designed a modular 1U CubeSat architecture for subsystem integration and testing.",
-    "Developed RP2040-based onboard computer, power management, and LoRaWAN communication modules.",
-    "Built telemetry and ground-station software for monitoring spacecraft health and communication."
-  ]
-},
-  {
-    id: "exp-4", orgShort: "CES, MVGR", orgFull: "Center For Embedded Systems, MVGR",
-    role: "Student Member", year: "2024",
-    period: "Jul 2024 – May 2026", location: "Vizianagaram, AP",
+    id: "exp-2",
+    orgShort: "Spaceborn",
+    orgFull: "Spaceborn",
+    role: "Robotics & Simulation Intern",
+    year: "2026",
+    period: "May 2026 – June 2026",
+    location: "Remote",
     bullets: [
-      "Designed PID-based control systems and wireless sensor networks using STM32 and Arduino.",
-      "Built functional embedded prototypes for robotics and industrial automation applications.",
-    ],
-    skills: "PID Control, STM32, Arduino"
-  },
- {
-  id: "exp-5",
-  orgShort: "Daloft Aerospace",
-  orgFull: "Daloft Aerospace Pvt. Ltd.",
-  role: "Intern",
-  year: "2025",
-  period: "Aug 2025 – Nov 2025",
-  location: "Chennai / Remote",
-  bullets: [
-    "Developed autonomous drone simulation workflows using ROS 2, PX4, and ArduPilot.",
-    "Built and validated simulation environments in Gazebo and RViz for mission planning and testing.",
-    "Implemented Visual SLAM using RTAB-Map for localization and autonomous navigation in simulation environments."
-  ]
-},
- {
-  id: "exp-6",
-  orgShort: "NITK",
-  orgFull: "National Institute of Technology Karnataka",
-  role: "Summer Research Intern",
-  year: "2025",
-  period: "May 2025 – Jul 2025",
-  location: "Mangaluru, Karnataka",
-  bullets: [
-    "Designed and developed a low-cost Autonomous Mobile Robot (AMR) using ROS 2 Humble, Raspberry Pi 4B, and RP-LiDAR A1.",
-    "Implemented LiDAR-based mapping and localization using Cartographer SLAM for indoor autonomous navigation.",
-    "Integrated Navigation2 (Nav2) for waypoint navigation, obstacle avoidance, and autonomous path execution.",
-    "Explored Vehicle-to-Infrastructure (V2I) communication concepts within an Internet of Vehicles (IoV) research framework."
-  ],
-  note: "Under Dr. Sourav Kanti Addya and Mr. Rajeev K. K.",
-  skills: "ROS 2, Cartographer SLAM, Nav2, Raspberry Pi, RP-LiDAR A1"
-},
-  {
-    id: "exp-7", orgShort: "UnlockDiscounts", orgFull: "UnlockDiscounts",
-    role: "Research Intern", year: "2025",
-    period: "May 2025 – Aug 2025", location: "Bengaluru / Remote",
-    bullets: ["Designed and developed research posters and technical presentations to visually communicate project findings."]
-  },
-  {
-    id: "exp-8", orgShort: "Indux Solar", orgFull: "Indux Solar",
-    role: "AI Intern", year: "2025",
-    period: "May 2025 – Jun 2025", location: "Remote",
-    bullets: ["Applied machine learning models to solar data and optimized edge-intelligence frameworks."]
-  },
-  {
-    id: "exp-9", orgShort: "CCSR", orgFull: "Center for Cyber Security Studies & Research",
-    role: "Intern", year: "2024",
-    period: "Sep 2024 – Dec 2024", location: "Remote",
-    bullets: [
-      "Assisted in advanced research on emerging cyber threats and zero-day exploit detection.",
-      "Contributed to educational content to bolster organizational security awareness.",
+      "Worked on autonomous drone and robotic systems design, physics-based simulations, and control optimization."
     ]
   },
   {
-    id: "exp-10", orgShort: "ShadowFox", orgFull: "ShadowFox",
-    role: "Cybersecurity Intern", year: "2024",
-    period: "Sep 2024 – Oct 2024", location: "Remote",
+    id: "exp-3",
+    orgShort: "IIT Tirupati NIF",
+    orgFull: "IIT Tirupati Navavishkar I-Hub Foundation",
+    role: "Project Intern",
+    year: "2025",
+    period: "Jun 2025 – Apr 2026",
+    location: "Tirupati, Andhra Pradesh",
+    bullets: [
+      "Designed a modular 1U CubeSat architecture for subsystem integration and testing.",
+      "Developed RP2040-based onboard computer, power management, and LoRaWAN communication modules.",
+      "Built telemetry and ground-station software for monitoring spacecraft health and communication."
+    ]
+  },
+  {
+    id: "exp-4",
+    orgShort: "CES, MVGR",
+    orgFull: "Center For Embedded Systems, MVGR",
+    role: "Student Member",
+    year: "2024",
+    period: "Jul 2024 – May 2026",
+    location: "Vizianagaram, AP",
+    bullets: [
+      "Designed PID-based control systems and wireless sensor networks using STM32 and Arduino.",
+      "Built functional embedded prototypes for robotics and industrial automation applications."
+    ],
+    skills: "PID Control, STM32, Arduino"
+  },
+  {
+    id: "exp-5",
+    orgShort: "Daloft Aerospace",
+    orgFull: "Daloft Aerospace Pvt. Ltd.",
+    role: "Intern",
+    year: "2025",
+    period: "Aug 2025 – Nov 2025",
+    location: "Chennai / Remote",
+    bullets: [
+      "Developed autonomous drone simulation workflows using ROS 2, PX4, and ArduPilot.",
+      "Built and validated simulation environments in Gazebo and RViz for mission planning and testing.",
+      "Implemented Visual SLAM using RTAB-Map for localization and autonomous navigation in simulation environments."
+    ]
+  },
+  {
+    id: "exp-6",
+    orgShort: "NITK",
+    orgFull: "National Institute of Technology Karnataka",
+    role: "Summer Research Intern",
+    year: "2025",
+    period: "May 2025 – Jul 2025",
+    location: "Mangaluru, Karnataka",
+    bullets: [
+      "Designed and developed a low-cost Autonomous Mobile Robot (AMR) using ROS 2 Humble, Raspberry Pi 4B, and RP-LiDAR A1.",
+      "Implemented LiDAR-based mapping and localization using Cartographer SLAM for indoor autonomous navigation.",
+      "Integrated Navigation2 (Nav2) for waypoint navigation, obstacle avoidance, and autonomous path execution.",
+      "Explored Vehicle-to-Infrastructure (V2I) communication concepts within an Internet of Vehicles (IoV) research framework."
+    ],
+    note: "Under Dr. Sourav Kanti Addya and Mr. Rajeev K. K.",
+    skills: "ROS 2, Cartographer SLAM, Nav2, Raspberry Pi, RP-LiDAR A1"
+  },
+  {
+    id: "exp-7",
+    orgShort: "UnlockDiscounts",
+    orgFull: "UnlockDiscounts",
+    role: "Research Intern",
+    year: "2025",
+    period: "May 2025 – Aug 2025",
+    location: "Bengaluru / Remote",
+    bullets: [
+      "Designed and developed research posters and technical presentations to visually communicate project findings."
+    ]
+  },
+  {
+    id: "exp-8",
+    orgShort: "Indux Solar",
+    orgFull: "Indux Solar",
+    role: "AI Intern",
+    year: "2025",
+    period: "May 2025 – Jun 2025",
+    location: "Remote",
+    bullets: [
+      "Applied machine learning models to solar data and optimized edge-intelligence frameworks."
+    ]
+  },
+  {
+    id: "exp-9",
+    orgShort: "CCSR",
+    orgFull: "Center for Cyber Security Studies & Research",
+    role: "Intern",
+    year: "2024",
+    period: "Sep 2024 – Dec 2024",
+    location: "Remote",
+    bullets: [
+      "Assisted in advanced research on emerging cyber threats and zero-day exploit detection.",
+      "Contributed to educational content to bolster organizational security awareness."
+    ]
+  },
+  {
+    id: "exp-10",
+    orgShort: "ShadowFox",
+    orgFull: "ShadowFox",
+    role: "Cybersecurity Intern",
+    year: "2024",
+    period: "Sep 2024 – Oct 2024",
+    location: "Remote",
     bullets: [
       "Conducted penetration testing using Metasploit, Nmap, Gobuster, Wireshark, Burp Suite, and VeraCrypt.",
       "Built custom exploits improving coverage by 15%, reducing client attack surface by 30%.",
-      "Produced detailed vulnerability assessment reports informing remediation strategies.",
+      "Produced detailed vulnerability assessment reports informing remediation strategies."
     ],
     skills: "Penetration Testing, Metasploit, Nmap, Wireshark"
   },
   {
-    id: "exp-11", orgShort: "SwechaAP", orgFull: "SwechaAP",
-    role: "Member", year: "2023",
-    period: "Oct 2023 – Present", location: "Vijayawada, AP",
+    id: "exp-11",
+    orgShort: "SwechaAP",
+    orgFull: "SwechaAP",
+    role: "Member",
+    year: "2023",
+    period: "Oct 2023 – Present",
+    location: "Vijayawada, AP",
     bullets: [
       "Contributed to Voice AI Telugu and OpenStreetMap, supporting open-source development.",
-      "Promoted open-source culture through technical community projects and collaborative development.",
+      "Promoted open-source culture through technical community projects and collaborative development."
     ]
   }
 ];
