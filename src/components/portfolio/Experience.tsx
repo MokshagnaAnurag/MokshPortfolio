@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Reveal } from "./Reveal";
-import { MapPin, Calendar, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  MapPin,
+  Calendar,
+  ChevronRight,
+  ChevronLeft,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ExperienceItem {
@@ -16,7 +21,6 @@ interface ExperienceItem {
   skills?: string;
 }
 
-
 const items: ExperienceItem[] = [
   {
     id: "exp-1",
@@ -29,8 +33,8 @@ const items: ExperienceItem[] = [
     bullets: [
       "Integrated and validated CubeOrange flight controllers on S500 and FPV UAV platforms.",
       "Configured ArduPilot, Mission Planner, telemetry, GPS, and onboard avionics for autonomous flight operations.",
-      "Performed sensor calibration, flight testing, and system validation for real-world UAV deployment."
-    ]
+      "Performed sensor calibration, flight testing, and system validation for real-world UAV deployment.",
+    ],
   },
   {
     id: "exp-2",
@@ -41,8 +45,8 @@ const items: ExperienceItem[] = [
     period: "May 2026 – June 2026",
     location: "Remote",
     bullets: [
-      "Worked on autonomous drone and robotic systems design, physics-based simulations, and control optimization."
-    ]
+      "Worked on autonomous drone and robotic systems design, physics-based simulations, and control optimization.",
+    ],
   },
   {
     id: "exp-3",
@@ -55,8 +59,8 @@ const items: ExperienceItem[] = [
     bullets: [
       "Designed a modular 1U CubeSat architecture for subsystem integration and testing.",
       "Developed RP2040-based onboard computer, power management, and LoRaWAN communication modules.",
-      "Built telemetry and ground-station software for monitoring spacecraft health and communication."
-    ]
+      "Built telemetry and ground-station software for monitoring spacecraft health and communication.",
+    ],
   },
   {
     id: "exp-4",
@@ -68,9 +72,9 @@ const items: ExperienceItem[] = [
     location: "Vizianagaram, AP",
     bullets: [
       "Designed PID-based control systems and wireless sensor networks using STM32 and Arduino.",
-      "Built functional embedded prototypes for robotics and industrial automation applications."
+      "Built functional embedded prototypes for robotics and industrial automation applications.",
     ],
-    skills: "PID Control, STM32, Arduino"
+    skills: "PID Control, STM32, Arduino",
   },
   {
     id: "exp-5",
@@ -83,8 +87,8 @@ const items: ExperienceItem[] = [
     bullets: [
       "Developed autonomous drone simulation workflows using ROS 2, PX4, and ArduPilot.",
       "Built and validated simulation environments in Gazebo and RViz for mission planning and testing.",
-      "Implemented Visual SLAM using RTAB-Map for localization and autonomous navigation in simulation environments."
-    ]
+      "Implemented Visual SLAM using RTAB-Map for localization and autonomous navigation in simulation environments.",
+    ],
   },
   {
     id: "exp-6",
@@ -98,10 +102,10 @@ const items: ExperienceItem[] = [
       "Designed and developed a low-cost Autonomous Mobile Robot (AMR) using ROS 2 Humble, Raspberry Pi 4B, and RP-LiDAR A1.",
       "Implemented LiDAR-based mapping and localization using Cartographer SLAM for indoor autonomous navigation.",
       "Integrated Navigation2 (Nav2) for waypoint navigation, obstacle avoidance, and autonomous path execution.",
-      "Explored Vehicle-to-Infrastructure (V2I) communication concepts within an Internet of Vehicles (IoV) research framework."
+      "Explored Vehicle-to-Infrastructure (V2I) communication concepts within an Internet of Vehicles (IoV) research framework.",
     ],
     note: "Under Dr. Sourav Kanti Addya and Mr. Rajeev K. K.",
-    skills: "ROS 2, Cartographer SLAM, Nav2, Raspberry Pi, RP-LiDAR A1"
+    skills: "ROS 2, Cartographer SLAM, Nav2, Raspberry Pi, RP-LiDAR A1",
   },
   {
     id: "exp-7",
@@ -112,8 +116,8 @@ const items: ExperienceItem[] = [
     period: "May 2025 – Aug 2025",
     location: "Bengaluru / Remote",
     bullets: [
-      "Designed and developed research posters and technical presentations to visually communicate project findings."
-    ]
+      "Designed and developed research posters and technical presentations to visually communicate project findings.",
+    ],
   },
   {
     id: "exp-8",
@@ -124,8 +128,8 @@ const items: ExperienceItem[] = [
     period: "May 2025 – Jun 2025",
     location: "Remote",
     bullets: [
-      "Applied machine learning models to solar data and optimized edge-intelligence frameworks."
-    ]
+      "Applied machine learning models to solar data and optimized edge-intelligence frameworks.",
+    ],
   },
   {
     id: "exp-9",
@@ -137,8 +141,8 @@ const items: ExperienceItem[] = [
     location: "Remote",
     bullets: [
       "Assisted in advanced research on emerging cyber threats and zero-day exploit detection.",
-      "Contributed to educational content to bolster organizational security awareness."
-    ]
+      "Contributed to educational content to bolster organizational security awareness.",
+    ],
   },
   {
     id: "exp-10",
@@ -151,9 +155,9 @@ const items: ExperienceItem[] = [
     bullets: [
       "Conducted penetration testing using Metasploit, Nmap, Gobuster, Wireshark, Burp Suite, and VeraCrypt.",
       "Built custom exploits improving coverage by 15%, reducing client attack surface by 30%.",
-      "Produced detailed vulnerability assessment reports informing remediation strategies."
+      "Produced detailed vulnerability assessment reports informing remediation strategies.",
     ],
-    skills: "Penetration Testing, Metasploit, Nmap, Wireshark"
+    skills: "Penetration Testing, Metasploit, Nmap, Wireshark",
   },
   {
     id: "exp-11",
@@ -165,348 +169,523 @@ const items: ExperienceItem[] = [
     location: "Vijayawada, AP",
     bullets: [
       "Contributed to Voice AI Telugu and OpenStreetMap, supporting open-source development.",
-      "Promoted open-source culture through technical community projects and collaborative development."
-    ]
-  }
+      "Promoted open-source culture through technical community projects and collaborative development.",
+    ],
+  },
 ];
 
 const accentColors = [
   "#EF4444", // McQueen Red
-  "#3B82F6", // The King Blue
+  "#3B82F6", // King Blue
   "#22C55E", // Chick Hicks Green
-  "#F59E0B", // Cruz Ramirez Yellow/Orange
-  "#6366F1", // Jackson Storm Neon Blue
+  "#F59E0B", // Cruz Ramirez Yellow
+  "#6366F1", // Jackson Storm Blue
   "#1E3A8A", // Doc Hudson Navy
   "#0EA5E9", // Dinoco Light Blue
-  "#EF4444", 
-  "#3B82F6", 
-  "#22C55E", 
-  "#F59E0B"
+  "#EF4444",
+  "#3B82F6",
+  "#22C55E",
+  "#F59E0B",
 ];
 
 export function Experience() {
-  const [featuredIdx, setFeaturedIdx] = useState(0);
+  const [featuredIdx, setFeaturedIdx] = useState<number>(0);
+
   const featured = items[featuredIdx];
-  const featuredColor = accentColors[featuredIdx];
-  const sideItems = items.filter((_, i) => i !== featuredIdx);
+
+  // Always fall back to the first accent color if an index is somehow invalid.
+  const featuredColor =
+    accentColors[featuredIdx % accentColors.length] ?? "#EF4444";
+
+  const goToPrevious = () => {
+    setFeaturedIdx((prev) =>
+      prev > 0 ? prev - 1 : items.length - 1
+    );
+  };
+
+  const goToNext = () => {
+    setFeaturedIdx((prev) =>
+      prev < items.length - 1 ? prev + 1 : 0
+    );
+  };
 
   return (
-    <section id="experience" className="relative py-24 bg-white border-b-[8px] border-yellow-400 overflow-hidden">
+    <section
+      id="experience"
+      className="relative overflow-hidden border-b-[8px] border-yellow-400 bg-white py-24"
+    >
+      <div className="relative z-10 mx-auto max-w-[1300px] px-4 md:px-8">
 
-      <div className="mx-auto max-w-[1300px] px-4 md:px-8 relative z-10">
-
-        {/* ── RACING HEADER ── */}
+        {/* =========================================================
+            RACING HEADER
+        ========================================================= */}
         <Reveal>
-          <div className="mb-6 transform -skew-x-6">
+          <div className="mb-6 -skew-x-6 transform">
+
             {/* Top rule */}
-            <div className="flex items-center gap-3 mb-3">
-              <div className="flex-1 h-[6px] bg-black" />
+            <div className="mb-3 flex items-center gap-3">
+              <div className="h-[6px] flex-1 bg-black" />
+
               <div className="h-[6px] w-12 bg-red-600" />
-              <div className="flex-1 h-[6px] bg-black" />
+
+              <div className="h-[6px] flex-1 bg-black" />
             </div>
 
             {/* Header row */}
-            <div className="flex items-end justify-between mb-2">
+            <div className="mb-2 flex items-end justify-between">
+
               <div className="flex items-end gap-6">
-                <h2 className="font-display font-black uppercase tracking-tighter text-[clamp(2.5rem,6vw,5rem)] leading-[0.85] text-black drop-shadow-[4px_4px_0_#ffd700]">
-                  WORK<br/>EXPERIENCE
+                <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-black leading-[0.85] tracking-tighter text-black drop-shadow-[4px_4px_0_#ffd700]">
+                  WORK
+                  <br />
+                  EXPERIENCE
                 </h2>
               </div>
-              <div className="text-right hidden md:block border-l-[4px] border-red-600 pl-4 bg-zinc-100 p-2 shadow-[4px_4px_0_#000]">
-                <p className="font-mono text-[0.6rem] font-black tracking-widest uppercase text-black">
+
+              {/* Desktop metadata */}
+              <div className="hidden border-l-[4px] border-red-600 bg-zinc-100 p-2 text-right shadow-[4px_4px_0_#000] md:block">
+                <p className="font-mono text-[0.6rem] font-black uppercase tracking-widest text-black">
                   VOL. IV, NO. {items.length} &nbsp;·&nbsp; WORK EDITION
                 </p>
-                <p className="font-mono text-[0.6rem] font-black tracking-widest uppercase text-black">
+
+                <p className="font-mono text-[0.6rem] font-black uppercase tracking-widest text-black">
                   HARDWARE · ROBOTICS · SYSTEMS
                 </p>
-                <p className="font-mono text-[0.6rem] font-black tracking-widest uppercase text-red-600 mt-1">
+
+                <p className="mt-1 font-mono text-[0.6rem] font-black uppercase tracking-widest text-red-600">
                   EST. 2023 &nbsp;·&nbsp; ALL ENTRIES VERIFIED
                 </p>
               </div>
             </div>
 
             {/* Bottom double rule */}
-            <div className="h-[4px] bg-yellow-400 mb-0.5" />
-            <div className="h-[8px] bg-black mb-4" />
+            <div className="mb-0.5 h-[4px] bg-yellow-400" />
+
+            <div className="mb-4 h-[8px] bg-black" />
           </div>
         </Reveal>
 
-        {/* ── MOBILE UNIQUE DESIGN (GIANT TYPOGRAPHY WATERMARK) ── */}
+        {/* =========================================================
+            MOBILE EXPERIENCE CARDS
+        ========================================================= */}
         <Reveal delay={0.1}>
-          <div className="flex flex-col gap-6 lg:hidden mt-8 px-2 pb-8">
-            {items.map((it, i) => {
-              const c = accentColors[i % accentColors.length];
-              return (
-                <div key={it.id} className="relative bg-white border-[3px] border-black shadow-[6px_6px_0_#000] p-6 transform -skew-x-6">
-                  
-                  {/* Left Accent Bar */}
-                  <div className="absolute left-0 top-0 bottom-0 w-2" style={{ backgroundColor: c }} />
+          <div className="mt-8 flex flex-col gap-6 px-2 pb-8 lg:hidden">
 
-                  {/* Giant Year Watermark */}
-                  <span className="absolute -bottom-2 -right-4 font-display text-[7rem] font-black leading-none text-zinc-100 select-none pointer-events-none z-0 transform skew-x-6">
-                    {it.year}
+            {items.map((item, index) => {
+              const color =
+                accentColors[index % accentColors.length];
+
+              return (
+                <article
+                  key={item.id}
+                  className="relative -skew-x-6 transform overflow-hidden border-[3px] border-black bg-white p-6 shadow-[6px_6px_0_#000]"
+                >
+
+                  {/* Accent bar */}
+                  <div
+                    className="absolute bottom-0 left-0 top-0 w-2"
+                    style={{ backgroundColor: color }}
+                  />
+
+                  {/* Giant year watermark */}
+                  <span className="pointer-events-none absolute -bottom-2 -right-4 z-0 -skew-x-6 transform select-none font-display text-[7rem] font-black leading-none text-zinc-100">
+                    {item.year}
                   </span>
 
-                  <div className="relative z-10 transform skew-x-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <span className="font-mono text-[10px] font-black uppercase tracking-widest text-zinc-600 bg-zinc-100 px-2 border-2 border-black">
-                        {it.period}
+                  {/* Card content */}
+                  <div className="relative z-10 skew-x-6 transform">
+
+                    {/* Period + location */}
+                    <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
+
+                      <span className="border-2 border-black bg-zinc-100 px-2 font-mono text-[10px] font-black uppercase tracking-widest text-zinc-600">
+                        {item.period}
                       </span>
-                      <span className="inline-flex items-center gap-1 font-mono text-[9px] font-black uppercase tracking-widest text-zinc-500 bg-zinc-100 px-2 border-2 border-black">
-                        <MapPin size={10} className="text-red-600" /> {it.location}
+
+                      <span className="inline-flex items-center gap-1 border-2 border-black bg-zinc-100 px-2 font-mono text-[9px] font-black uppercase tracking-widest text-zinc-500">
+                        <MapPin
+                          size={10}
+                          className="text-red-600"
+                        />
+                        {item.location}
                       </span>
                     </div>
 
-                    <h3 className="font-display text-[1.8rem] font-black uppercase tracking-tighter text-black leading-[1.1] mb-1">
-                      {it.orgShort}
+                    {/* Organization */}
+                    <h3 className="mb-1 font-display text-[1.8rem] font-black uppercase leading-[1.1] tracking-tighter text-black">
+                      {item.orgShort}
                     </h3>
-                    <p className="font-sans text-[13px] font-black uppercase tracking-widest mb-4" style={{ color: c }}>
-                      {it.role}
+
+                    {/* Role */}
+                    <p
+                      className="mb-4 font-sans text-[13px] font-black uppercase tracking-widest"
+                      style={{ color }}
+                    >
+                      {item.role}
                     </p>
 
-                    {it.bullets && (
-                      <div className="space-y-2 mb-5 border-l-4 border-dashed pl-3 border-zinc-300">
-                        {it.bullets.map((b, idx) => (
-                          <p key={idx} className="font-sans text-[12px] font-bold leading-relaxed text-zinc-700 flex items-start gap-2">
-                            <span className="mt-[0.35rem] w-2 h-2 shrink-0 border border-black" style={{ backgroundColor: c }} />
-                            {b}
+                    {/* Bullets */}
+                    {item.bullets && item.bullets.length > 0 && (
+                      <div className="mb-5 space-y-2 border-l-4 border-dashed border-zinc-300 pl-3">
+
+                        {item.bullets.map((bullet, bulletIndex) => (
+                          <p
+                            key={`${item.id}-bullet-${bulletIndex}`}
+                            className="flex items-start gap-2 font-sans text-[12px] font-bold leading-relaxed text-zinc-700"
+                          >
+                            <span
+                              className="mt-[0.35rem] h-2 w-2 shrink-0 border border-black"
+                              style={{ backgroundColor: color }}
+                            />
+
+                            <span>{bullet}</span>
                           </p>
                         ))}
                       </div>
                     )}
 
-                    {it.skills && (
-                      <div className="flex flex-wrap gap-1.5 mt-2">
-                        {it.skills.split(",").map((s, si) => (
-                          <span key={si} className="font-mono text-[9px] font-black uppercase tracking-widest px-2 py-1 bg-yellow-400 text-black border-2 border-black">
-                            {s.trim()}
-                          </span>
-                        ))}
+                    {/* Skills */}
+                    {item.skills && (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {item.skills
+                          .split(",")
+                          .map((skill, skillIndex) => (
+                            <span
+                              key={`${item.id}-skill-${skillIndex}`}
+                              className="border-2 border-black bg-yellow-400 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-widest text-black"
+                            >
+                              {skill.trim()}
+                            </span>
+                          ))}
                       </div>
                     )}
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
         </Reveal>
 
-        {/* ── DESKTOP RACING GRID ── */}
+        {/* =========================================================
+            DESKTOP RACING GRID
+        ========================================================= */}
         <Reveal delay={0.1}>
-          <div className="hidden lg:grid grid-cols-[1fr_320px] gap-0 border-[4px] border-black shadow-[12px_12px_0_#000] bg-zinc-50 transform -skew-x-6">
+          <div className="hidden overflow-hidden border-[4px] border-black bg-zinc-50 shadow-[12px_12px_0_#000] lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:-skew-x-6">
 
-            {/* LEFT — FEATURED STORY */}
-            <div className="border-r-[4px] border-b-0 border-black relative overflow-hidden bg-white">
+            {/* =====================================================
+                LEFT — FEATURED EXPERIENCE
+            ===================================================== */}
+            <div className="relative overflow-hidden border-r-[4px] border-black bg-white">
 
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={featuredIdx}
+                <motion.article
+                  key={featured.id}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
                   transition={{ duration: 0.22 }}
-                  className="h-full flex flex-col transform skew-x-6"
+                  className="flex h-full flex-col skew-x-6 transform"
                 >
-                  {/* Feature colored header bar */}
-                  <div className="h-3 w-full shrink-0 border-b-[4px] border-black" style={{ backgroundColor: featuredColor }} />
 
-                  {/* HEADLINE section */}
-                  <div className="p-6 md:p-8 border-b-[4px] border-dashed border-black bg-zinc-50">
+                  {/* Colored header */}
+                  <div
+                    className="h-3 w-full shrink-0 border-b-[4px] border-black"
+                    style={{ backgroundColor: featuredColor }}
+                  />
 
-                    {/* Kicker label and Nav */}
-                    <div className="flex items-center justify-between mb-3">
+                  {/* =================================================
+                      FEATURE HEADLINE
+                  ================================================= */}
+                  <div className="border-b-[4px] border-dashed border-black bg-zinc-50 p-6 md:p-8">
+
+                    {/* Kicker + navigation */}
+                    <div className="mb-3 flex items-center justify-between gap-4">
+
                       <div className="flex items-center gap-3">
+
                         <span
-                          className="font-mono text-[0.62rem] font-black tracking-[0.25em] uppercase px-3 py-1 text-white border-[2px] border-black shadow-[3px_3px_0_#000]"
-                          style={{ backgroundColor: featuredColor }}
+                          className="border-[2px] border-black px-3 py-1 font-mono text-[0.62rem] font-black uppercase tracking-[0.25em] text-white shadow-[3px_3px_0_#000]"
+                          style={{
+                            backgroundColor: featuredColor,
+                          }}
                         >
                           LEAD DRIVER
                         </span>
-                        <span className="font-mono text-[0.62rem] font-black text-black tracking-widest uppercase bg-yellow-400 px-2 py-1 border-[2px] border-black">
+
+                        <span className="border-[2px] border-black bg-yellow-400 px-2 py-1 font-mono text-[0.62rem] font-black uppercase tracking-widest text-black">
                           {featured.year}
                         </span>
                       </div>
-                      
-                      {/* Navigation Buttons (Desktop) */}
-                      <div className="hidden md:flex items-center gap-2">
-                        <button 
-                          onClick={() => setFeaturedIdx(prev => prev > 0 ? prev - 1 : items.length - 1)}
-                          className="w-8 h-8 flex items-center justify-center border-[3px] border-black text-black bg-white hover:bg-yellow-400 transition-colors shadow-[2px_2px_0_#000] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
-                          aria-label="Previous Experience"
+
+                      {/* Navigation */}
+                      <div className="hidden items-center gap-2 md:flex">
+
+                        <button
+                          type="button"
+                          onClick={goToPrevious}
+                          aria-label="Previous experience"
+                          className="flex h-8 w-8 items-center justify-center border-[3px] border-black bg-white text-black shadow-[2px_2px_0_#000] transition-colors hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-yellow-400 hover:shadow-none"
                         >
-                          <ChevronLeft size={16} strokeWidth={4} />
+                          <ChevronLeft
+                            size={16}
+                            strokeWidth={4}
+                          />
                         </button>
-                        <button 
-                          onClick={() => setFeaturedIdx(prev => prev < items.length - 1 ? prev + 1 : 0)}
-                          className="w-8 h-8 flex items-center justify-center border-[3px] border-black text-black bg-white hover:bg-yellow-400 transition-colors shadow-[2px_2px_0_#000] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
-                          aria-label="Next Experience"
+
+                        <button
+                          type="button"
+                          onClick={goToNext}
+                          aria-label="Next experience"
+                          className="flex h-8 w-8 items-center justify-center border-[3px] border-black bg-white text-black shadow-[2px_2px_0_#000] transition-colors hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-yellow-400 hover:shadow-none"
                         >
-                          <ChevronRight size={16} strokeWidth={4} />
+                          <ChevronRight
+                            size={16}
+                            strokeWidth={4}
+                          />
                         </button>
                       </div>
                     </div>
 
-                    {/* Headline org */}
+                    {/* Organization */}
                     <h3
-                      className="font-display font-black uppercase tracking-tighter leading-[0.88] mb-3 text-black drop-shadow-[2px_2px_0_#ffd700]"
-                      style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
+                      className="mb-3 font-display font-black uppercase leading-[0.88] tracking-tighter text-black drop-shadow-[2px_2px_0_#ffd700]"
+                      style={{
+                        fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                      }}
                     >
                       {featured.orgFull}
                     </h3>
 
-                    {/* Deck (sub-headline) */}
-                    <p className="font-display font-black uppercase tracking-widest text-[1rem] mb-4" style={{ color: featuredColor === '#18181B' ? '#EF4444' : featuredColor }}>
+                    {/* Role */}
+                    <p
+                      className="mb-4 font-display text-[1rem] font-black uppercase tracking-widest"
+                      style={{ color: featuredColor }}
+                    >
                       {featured.role}
                     </p>
 
-                    {/* Byline */}
+                    {/* Metadata */}
                     <div className="flex flex-wrap gap-3">
-                      <span className="inline-flex items-center gap-1.5 font-mono text-[0.68rem] font-black bg-black text-white px-3 py-1.5 shadow-[2px_2px_0_#ffd700]">
-                        <Calendar size={12} className="text-yellow-400" />{featured.period}
+
+                      <span className="inline-flex items-center gap-1.5 bg-black px-3 py-1.5 font-mono text-[0.68rem] font-black text-white shadow-[2px_2px_0_#ffd700]">
+                        <Calendar
+                          size={12}
+                          className="text-yellow-400"
+                        />
+                        {featured.period}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 font-mono text-[0.68rem] font-black bg-white text-black border-[3px] border-black px-3 py-1.5 shadow-[2px_2px_0_#ff0000]">
-                        <MapPin size={12} className="text-red-600" />{featured.location}
+
+                      <span className="inline-flex items-center gap-1.5 border-[3px] border-black bg-white px-3 py-1.5 font-mono text-[0.68rem] font-black text-black shadow-[2px_2px_0_#ff0000]">
+                        <MapPin
+                          size={12}
+                          className="text-red-600"
+                        />
+                        {featured.location}
                       </span>
                     </div>
                   </div>
 
-                  {/* BODY COPY */}
-                  <div className="p-6 md:p-8 flex-1 grid md:grid-cols-[1fr_auto] gap-8 bg-white">
+                  {/* =================================================
+                      BODY
+                  ================================================= */}
+                  <div className="grid flex-1 gap-8 bg-white p-6 md:grid-cols-[minmax(0,1fr)_auto] md:p-8">
 
-                    {/* Article body columns */}
+                    {/* Experience details */}
                     <div>
-                      {/* Drop cap style first bullet */}
-                      {featured.bullets && featured.bullets.length > 0 && (
-                        <div className="mb-4">
-                          {featured.bullets.map((b, i) => (
-                            <p key={i} className="font-mono text-[0.84rem] text-zinc-800 font-bold leading-[1.85] mb-3 flex gap-3 items-start bg-zinc-50 p-2 border-l-[4px] border-black">
-                              <span className="mt-[0.5em] w-3 h-3 shrink-0 border-[2px] border-black bg-yellow-400" />
-                              {b}
-                            </p>
-                          ))}
-                        </div>
-                      )}
 
+                      {featured.bullets &&
+                        featured.bullets.length > 0 && (
+                          <div className="mb-4">
+
+                            {featured.bullets.map(
+                              (bullet, bulletIndex) => (
+                                <p
+                                  key={`${featured.id}-bullet-${bulletIndex}`}
+                                  className="mb-3 flex items-start gap-3 border-l-[4px] border-black bg-zinc-50 p-2 font-mono text-[0.84rem] font-bold leading-[1.85] text-zinc-800"
+                                >
+                                  <span className="mt-[0.5em] h-3 w-3 shrink-0 border-[2px] border-black bg-yellow-400" />
+
+                                  <span>{bullet}</span>
+                                </p>
+                              )
+                            )}
+                          </div>
+                        )}
+
+                      {/* Note */}
                       {featured.note && (
-                        <p className="font-mono text-[0.72rem] font-black uppercase border-l-4 pl-3 mt-4 bg-yellow-400 text-black border-black p-2 shadow-[2px_2px_0_#ff0000]">
+                        <p className="mt-4 border-l-4 border-black bg-yellow-400 p-2 font-mono text-[0.72rem] font-black uppercase text-black shadow-[2px_2px_0_#ff0000]">
                           {featured.note}
                         </p>
                       )}
                     </div>
 
-                    {/* Sidebar: skill tags */}
+                    {/* Skills */}
                     {featured.skills && (
-                      <div className="shrink-0 border-l-[4px] border-dashed pl-6 border-zinc-300">
-                        <p className="font-mono text-[0.65rem] font-black tracking-[0.25em] uppercase mb-3 text-red-600">PIT STOP SPECS</p>
+                      <div className="shrink-0 border-l-[4px] border-dashed border-zinc-300 pl-6">
+
+                        <p className="mb-3 font-mono text-[0.65rem] font-black uppercase tracking-[0.25em] text-red-600">
+                          PIT STOP SPECS
+                        </p>
+
                         <div className="flex flex-col gap-2">
-                          {featured.skills.split(",").map((s, si) => (
-                            <span
-                              key={si}
-                              className="font-mono text-[0.65rem] font-black uppercase tracking-widest px-2.5 py-1.5 border-[3px] text-center bg-black text-white shadow-[2px_2px_0_#ffd700]"
-                              style={{ borderColor: "black" }}
-                            >
-                              {s.trim()}
-                            </span>
-                          ))}
+
+                          {featured.skills
+                            .split(",")
+                            .map((skill, skillIndex) => (
+                              <span
+                                key={`${featured.id}-skill-${skillIndex}`}
+                                className="border-[3px] border-black bg-black px-2.5 py-1.5 text-center font-mono text-[0.65rem] font-black uppercase tracking-widest text-white shadow-[2px_2px_0_#ffd700]"
+                              >
+                                {skill.trim()}
+                              </span>
+                            ))}
                         </div>
                       </div>
                     )}
                   </div>
-                </motion.div>
+                </motion.article>
               </AnimatePresence>
             </div>
 
-            {/* RIGHT — BRIEFS COLUMN */}
-            <div className="bg-zinc-100 flex flex-col">
+            {/* =====================================================
+                RIGHT — ALL EXPERIENCE
+            ===================================================== */}
+            <aside className="flex flex-col bg-zinc-100">
 
               {/* Column header */}
-              <div className="px-5 py-4 border-b-[4px] border-black flex items-center gap-2 bg-yellow-400">
-                <div className="w-3 h-3 bg-red-600 border-[2px] border-black" />
-                <span className="font-mono text-[0.65rem] font-black tracking-[0.2em] uppercase text-black">
+              <div className="flex items-center gap-2 border-b-[4px] border-black bg-yellow-400 px-5 py-4">
+
+                <div className="h-3 w-3 border-[2px] border-black bg-red-600" />
+
+                <span className="font-mono text-[0.65rem] font-black uppercase tracking-[0.2em] text-black">
                   ALL LAPS ({items.length})
                 </span>
               </div>
 
-              {/* Brief items list */}
-              <div className="flex-1 overflow-y-auto max-h-[600px] divide-y-[4px] divide-black">
-                {items.map((it, i) => {
-                  const c = accentColors[i];
-                  const isActive = i === featuredIdx;
+              {/* Experience list */}
+              <div className="max-h-[600px] flex-1 divide-y-[4px] divide-black overflow-y-auto">
+
+                {items.map((item, index) => {
+                  const color =
+                    accentColors[index % accentColors.length];
+
+                  const isActive =
+                    index === featuredIdx;
+
                   return (
                     <button
-                      key={it.id}
-                      onClick={() => setFeaturedIdx(i)}
-                      className={`w-full text-left px-5 py-4 group transition-colors duration-150 flex gap-3 items-start transform skew-x-6 ${
+                      key={item.id}
+                      type="button"
+                      onClick={() => setFeaturedIdx(index)}
+                      aria-current={
+                        isActive ? "true" : undefined
+                      }
+                      className={`group flex w-full transform skew-x-6 items-start gap-3 px-5 py-4 text-left transition-colors duration-150 ${
                         isActive
                           ? "bg-black text-white"
-                          : "hover:bg-yellow-400 text-black"
+                          : "text-black hover:bg-yellow-400"
                       }`}
                     >
+
                       {/* Accent bar */}
                       <div
-                        className="shrink-0 w-2 self-stretch mt-0.5 border-[2px] border-black"
-                        style={{ backgroundColor: c }}
+                        className="mt-0.5 w-2 shrink-0 self-stretch border-[2px] border-black"
+                        style={{
+                          backgroundColor: color,
+                        }}
                       />
 
-                      <div className="flex-1 min-w-0">
-                        {/* Year + active indicator */}
-                        <div className="flex items-center justify-between mb-1">
+                      {/* Content */}
+                      <div className="min-w-0 flex-1">
+
+                        {/* Year + active state */}
+                        <div className="mb-1 flex items-center justify-between gap-2">
+
                           <span
-                            className="font-mono text-[0.57rem] font-black tracking-widest uppercase"
-                            style={{ color: isActive ? "#EAB308" : "var(--color-industrial-gray)" }}
+                            className="font-mono text-[0.57rem] font-black uppercase tracking-widest"
+                            style={{
+                              color: isActive
+                                ? "#EAB308"
+                                : "#71717A",
+                            }}
                           >
-                            [{it.year}]
+                            [{item.year}]
                           </span>
+
                           {isActive && (
-                            <span className="font-mono text-[0.52rem] font-black uppercase tracking-widest text-red-600 bg-white px-1 border border-black">
+                            <span className="border border-black bg-white px-1 font-mono text-[0.52rem] font-black uppercase tracking-widest text-red-600">
                               RACING
                             </span>
                           )}
                         </div>
 
+                        {/* Organization */}
                         <p
-                          className="font-display font-black uppercase tracking-tight text-[0.82rem] leading-tight mb-0.5"
-                          style={{ color: isActive ? "#fff" : "#000" }}
+                          className="mb-0.5 font-display text-[0.82rem] font-black uppercase leading-tight tracking-tight"
+                          style={{
+                            color: isActive
+                              ? "#FFFFFF"
+                              : "#000000",
+                          }}
                         >
-                          {it.orgShort}
+                          {item.orgShort}
                         </p>
 
+                        {/* Role */}
                         <p
-                          className="font-mono text-[0.6rem] font-bold uppercase tracking-wider leading-tight"
-                          style={{ color: isActive ? "#a1a1aa" : "#52525b" }}
+                          className="font-mono text-[0.6rem] font-bold uppercase leading-tight tracking-wider"
+                          style={{
+                            color: isActive
+                              ? "#A1A1AA"
+                              : "#52525B",
+                          }}
                         >
-                          {it.role}
+                          {item.role}
                         </p>
                       </div>
 
+                      {/* Arrow */}
                       <ChevronRight
                         size={16}
                         strokeWidth={4}
-                        className="shrink-0 mt-1 transition-transform duration-150 group-hover:translate-x-1"
-                        style={{ color: isActive ? "#EAB308" : "#000", opacity: isActive ? 1 : 0.4 }}
+                        className="mt-1 shrink-0 transition-transform duration-150 group-hover:translate-x-1"
+                        style={{
+                          color: isActive
+                            ? "#EAB308"
+                            : "#000000",
+                          opacity: isActive ? 1 : 0.4,
+                        }}
                       />
                     </button>
                   );
                 })}
               </div>
 
-              {/* Column footer */}
-              <div className="px-5 py-3 border-t-[4px] border-black mt-auto bg-black">
-                <p className="font-mono text-[0.55rem] font-black tracking-widest uppercase text-white text-center">
+              {/* Footer */}
+              <div className="mt-auto border-t-[4px] border-black bg-black px-5 py-3">
+
+                <p className="text-center font-mono text-[0.55rem] font-black uppercase tracking-widest text-white">
                   SELECT ANY LAP TO REVIEW
                 </p>
               </div>
-            </div>
-
+            </aside>
           </div>
         </Reveal>
 
-        {/* Bottom rule */}
+        {/* =========================================================
+            FINISH LINE
+        ========================================================= */}
         <Reveal delay={0.15}>
-          <div className="mt-8 flex items-center gap-2 transform -skew-x-6">
-            <div className="flex-1 h-[4px] bg-black" />
-            <span className="font-mono text-[0.65rem] font-black tracking-[0.3em] uppercase text-red-600 bg-zinc-100 px-3 border-[2px] border-black">FINISH LINE</span>
-            <div className="flex-1 h-[4px] bg-black" />
+          <div className="mt-8 flex -skew-x-6 transform items-center gap-2">
+
+            <div className="h-[4px] flex-1 bg-black" />
+
+            <span className="border-[2px] border-black bg-zinc-100 px-3 font-mono text-[0.65rem] font-black uppercase tracking-[0.3em] text-red-600">
+              FINISH LINE
+            </span>
+
+            <div className="h-[4px] flex-1 bg-black" />
           </div>
         </Reveal>
 
