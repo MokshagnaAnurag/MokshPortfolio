@@ -23,7 +23,7 @@ interface ExperienceItem {
 
 const items: ExperienceItem[] = [
   {
-    id: "exp-1",
+    id: "exp-0",
     orgShort: "Zebu Intelligent Systems",
     orgFull: "Zebu Intelligent Systems Pvt. Ltd.",
     role: "UAV Engineering Intern",
@@ -37,7 +37,7 @@ const items: ExperienceItem[] = [
     ],
   },
   {
-    id: "exp-2",
+    id: "exp-1",
     orgShort: "Spaceborn",
     orgFull: "Spaceborn",
     role: "Robotics & Simulation Intern",
@@ -49,7 +49,7 @@ const items: ExperienceItem[] = [
     ],
   },
   {
-    id: "exp-3",
+    id: "exp-2",
     orgShort: "IIT Tirupati NIF",
     orgFull: "IIT Tirupati Navavishkar I-Hub Foundation",
     role: "Project Intern",
@@ -63,7 +63,7 @@ const items: ExperienceItem[] = [
     ],
   },
   {
-    id: "exp-4",
+    id: "exp-3",
     orgShort: "CES, MVGR",
     orgFull: "Center For Embedded Systems, MVGR",
     role: "Student Member",
@@ -77,7 +77,7 @@ const items: ExperienceItem[] = [
     skills: "PID Control, STM32, Arduino",
   },
   {
-    id: "exp-5",
+    id: "exp-4",
     orgShort: "Daloft Aerospace",
     orgFull: "Daloft Aerospace Pvt. Ltd.",
     role: "Intern",
@@ -91,7 +91,7 @@ const items: ExperienceItem[] = [
     ],
   },
   {
-    id: "exp-6",
+    id: "exp-5",
     orgShort: "NITK",
     orgFull: "National Institute of Technology Karnataka",
     role: "Summer Research Intern",
@@ -108,7 +108,7 @@ const items: ExperienceItem[] = [
     skills: "ROS 2, Cartographer SLAM, Nav2, Raspberry Pi, RP-LiDAR A1",
   },
   {
-    id: "exp-7",
+    id: "exp-6",
     orgShort: "UnlockDiscounts",
     orgFull: "UnlockDiscounts",
     role: "Research Intern",
@@ -120,7 +120,7 @@ const items: ExperienceItem[] = [
     ],
   },
   {
-    id: "exp-8",
+    id: "exp-7",
     orgShort: "Indux Solar",
     orgFull: "Indux Solar",
     role: "AI Intern",
@@ -132,7 +132,7 @@ const items: ExperienceItem[] = [
     ],
   },
   {
-    id: "exp-9",
+    id: "exp-8",
     orgShort: "CCSR",
     orgFull: "Center for Cyber Security Studies & Research",
     role: "Intern",
@@ -145,7 +145,7 @@ const items: ExperienceItem[] = [
     ],
   },
   {
-    id: "exp-10",
+    id: "exp-9",
     orgShort: "ShadowFox",
     orgFull: "ShadowFox",
     role: "Cybersecurity Intern",
@@ -160,7 +160,7 @@ const items: ExperienceItem[] = [
     skills: "Penetration Testing, Metasploit, Nmap, Wireshark",
   },
   {
-    id: "exp-11",
+    id: "exp-10",
     orgShort: "SwechaAP",
     orgFull: "SwechaAP",
     role: "Member",
@@ -189,7 +189,7 @@ const accentColors = [
 ];
 
 // The experience that should be featured when the section first loads.
-const INITIAL_FEATURED_ID = "exp-1"; // Zebu Intelligent Systems
+const INITIAL_FEATURED_ID = "exp-0"; // Zebu Intelligent Systems
 
 export function Experience() {
   // Start on Zebu Intelligent Systems (falls back to index 0 if id not found).
