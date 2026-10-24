@@ -188,8 +188,15 @@ const accentColors = [
   "#F59E0B",
 ];
 
+// The experience that should be featured when the section first loads.
+const INITIAL_FEATURED_ID = "exp-1"; // Zebu Intelligent Systems
+
 export function Experience() {
-  const [featuredIdx, setFeaturedIdx] = useState<number>(0);
+  // Start on Zebu Intelligent Systems (falls back to index 0 if id not found).
+  const [featuredIdx, setFeaturedIdx] = useState<number>(() => {
+    const idx = items.findIndex((item) => item.id === INITIAL_FEATURED_ID);
+    return idx >= 0 ? idx : 0;
+  });
 
   const featured = items[featuredIdx];
 
